@@ -4,7 +4,7 @@
 * {: id="20210110124653-76r3bj0"}conda activate name # 激活某个环境
   conda deactivate # 推出环境
 * {: id="20210110124653-927t3tr"}conda install [包名=版本号] # 使用 conda 内置安装
-* {: id="20210110124653-3mnnl5k"}conda create -n name python=3.8 opencv=4.5.0 jupyter # 创建某个环境
+* {: id="20210110124653-3mnnl5k"}conda create -n cv4 python=3.9.* opencv=4.5.* jupyter # 创建某个环境
   * {: id="20210110131228-w5g6bai"}conda env create -f env.yaml 也可以创建环境
   {: id="20210110131228-3fndy37"}
 * {: id="20210110124653-c445hfp"}conda remove -n name --all 移除某个环境
