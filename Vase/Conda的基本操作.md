@@ -35,8 +35,16 @@ ssl_verify: true
 
 {: id="20210110131515-iobjz89"}
 
-ubuntu 安装conda后要手动将conda加入系统环境
+ubuntu 安装conda后要手动将conda加入系统环境变量中，方便之后的使用
 {: id="20210110131517-i8a3xx8"}
+
+```
+$ echo 'export PATH="/home/vase/miniconda4/bin:$ PATH"' >> ~/.profile
+$ source ~/.profile
+```
+{: id="20210110131605-stcgod0"}
+
+{: id="20210110131552-ch39suw"}
 
 
 {: id="20210110124639-ubr0y74" type="doc"}
