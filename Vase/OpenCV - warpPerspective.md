@@ -25,3 +25,6 @@ dst	=	cv.warpPerspective(	src, M, dsize[, dst[, flags[, borderMode[, borderValue
 $$
 𝚍𝚜𝚝(x,y)=𝚜𝚛𝚌(\frac{M_{11}x+M_{12}y+M_{13}}{M31x+M32y+M33},\frac{M_{21}x+M_{22}y+M_{23}}{M31x+M32y+M33})
 $$
+
+
+{: id="20201120095601-2pbettx" type="doc"}

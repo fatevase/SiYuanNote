@@ -13,3 +13,6 @@ def _get_color(self, index):
 	idx = index % len(self.color)
 	return self.color[idx]
 ```
+
+
+{: id="20201120095601-2ipzrmh" type="doc"}

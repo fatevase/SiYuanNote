@@ -125,3 +125,6 @@ fourcc = cv.VideoWriter_fourcc（*'MJPG')
 
 > 大多数视频编码都是有损的，可以使用以下无损格式输出你的无损视频 (eg. FFmpeg FFV1, Huffman HFYU, Lagarith LAGS, etc...)
 > 如果 FFmpeg 可用， 设置 codec=0; fps=0; 可以获得未压缩的原始视频。
+
+
+{: id="20201120095601-qahmu4r" type="doc"}

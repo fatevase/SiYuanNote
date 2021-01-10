@@ -24,3 +24,6 @@ $$
 也就是说 kernel 并不是中心点的镜像，如果需要一个正真的卷积，使用函数 flip()并将中心点设置为(kernel.cols - anchor.x - 1, kernel.rows - anchor.y -1).
 
 > ddepth 输入值为-1 时，目标图像和原图像深度保持一致。
+
+
+{: id="20201120095601-2ylir28" type="doc"}

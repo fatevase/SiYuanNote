@@ -17,3 +17,6 @@
 如果只使用命令行模式，则可以下载对于的[服务器版本](https://ubuntu.com/download/server)，https://ubuntu.com/download/server
 
 按照[官方指导](https://ubuntu.com/tutorials/install-ubuntu-server#1-overview)进行安装，https://ubuntu.com/tutorials/install-ubuntu-s#1-overview#
+
+
+{: id="20210105194423-yg7b5jv" type="doc"}

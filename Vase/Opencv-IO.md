@@ -12,3 +12,6 @@ int 	flags = IMREAD_COLOR)
 > 1:八深度，三通道
 > 2:原深度，一通道
 > 3:八深度，通道
+
+
+{: id="20201120095601-h0d6yey" type="doc"}

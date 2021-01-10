@@ -60,3 +60,6 @@ std()相当于 sqrt(mean(abs(x - x.mean())**2))，或相当于 sqrt(x.var())
 | np.arctan(a) | 对矩阵 a 中每个元素取反正切，arctan(x) |
 | np.exp(a)    | 对矩阵 a 中每个元素取指数函数，ex     |
 | np.sqrt(a)   | 对矩阵 a 中每个元素开根号$\sqrt{x}$      |
+
+
+{: id="20201120095601-e761oe3" type="doc"}
