@@ -2,7 +2,7 @@
 
 #### Sobel
 
-sobel期望处理的是(2,2)的灰度图像 (单通道) ，当处理三通道图片时候会作用于每一个通道层
+sobel 期望处理的是(2,2)的灰度图像 (单通道) ，当处理三通道图片时候会作用于每一个通道层
 
 ```python
 sobelx = cv2.Sobel(img,cv2.CV_64F,1,0,ksize=5)
@@ -13,7 +13,7 @@ sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5)
 
 #### Laplacian
 
-### Canny边缘检测
+### Canny 边缘检测
 
 Canny Edge Detection 常用边缘检测
 
@@ -22,7 +22,7 @@ edges = cv2.Canny(img,minVal,maxVal,aperture_size，L2gradient)
 # aperture_size :图像寻找边缘使用核心的大小默认为3
 ```
 
-L2gradient默认为False，当为True是，将会使用该函数：
+L2gradient 默认为 False，当为 True 是，将会使用该函数：
 
 $$
 Edge\_Gradient \; (G) = |G_x| + |G_y|
@@ -32,7 +32,7 @@ $$
 
 1. 减小噪声(高斯模糊等操作)
 2. 找到图像中梯度变化较大的地方
-   > 通过Sobel 内核在水平和垂直方向进行平滑图像过滤，以获得水平方向（G_x）和垂直方向（G_y）的第一个导数。从这两个图像中，我们可以找到每个像素的边缘渐变和方向
+   > 通过 Sobel 内核在水平和垂直方向进行平滑图像过滤，以获得水平方向（G_x）和垂直方向（G_y）的第一个导数。从这两个图像中，我们可以找到每个像素的边缘渐变和方向
    >
 
 $$

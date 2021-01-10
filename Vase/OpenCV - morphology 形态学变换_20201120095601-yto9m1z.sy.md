@@ -16,7 +16,7 @@ dst	= erode(
 )	
 ```
 
-* kernel：内核。若为 null，默认使用3*3的内核。我们一般使用 getStructuringElement 配合这个参数使用。在 getStructuringElement 里面指定形状和尺寸：
+* kernel：内核。若为 null，默认使用 3*3 的内核。我们一般使用 getStructuringElement 配合这个参数使用。在 getStructuringElement 里面指定形状和尺寸：
   * 形状包含如下三种：
   * 矩形：MORPH_RECT
   * 交叉形：MORPH_CORSS
@@ -26,8 +26,8 @@ dst	= erode(
 > kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
 
 * anchor：锚点的位置，默认 Point(-1,-1)，表示锚点位于中心。
-* iterations：int 类型的，迭代使用 erode()的次数，默认为1
-* borderType：int 类型的，推断图像外部像素的某种边界模式。默认BORDER_DEFAULT
+* iterations：int 类型的，迭代使用 erode()的次数，默认为 1
+* borderType：int 类型的，推断图像外部像素的某种边界模式。默认 BORDER_DEFAULT
 * borderValue：const Scalar 类型的，当边界为常数时的边界，有默认值 ：morphologyDefaultBorderValue()
 
 开运算、闭运算、形态学梯度
@@ -58,7 +58,7 @@ dst = morphologyEx(
 `erode -> erode -> dilate -> dilate `
 而不是`erode -> dilate -> erode -> dilate`。
 
-闭运算能够排除小型黑洞，平滑图像轮廓，与开运算不同的是闭运算会将狭窄的缺口链接起来，填充比结构元素小的洞,其目标都为减小噪声。
+闭运算能够排除小型黑洞，平滑图像轮廓，与开运算不同的是闭运算会将狭窄的缺口链接起来，填充比结构元素小的洞，其目标都为减小噪声。
 
 > 开运算
 > ![open](Pasted%20image%2020201107003623.png)
