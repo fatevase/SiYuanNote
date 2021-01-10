@@ -125,7 +125,8 @@ git commit -m 'my project push' #给提交做备注
 git push origin <branch> #提交一次push
 
 
-
+# pull 
+git pull origin master
 
 #clone
 git clone https://github.com/ProjectName.git #将对应的项目下载下来
