@@ -1,7 +1,10 @@
-# Anacoda + CUDA 安装
+# Anaconda + CUDA 安装
 {: id="20210120125837-d110pqb"}
 
 {: id="20210120125843-7rh8x0t"}
+
+## Anaconda 安装配置
+{: id="20210120230750-4mdkl8z"}
 
 首先是miniconda的安装
 {: id="20210120130012-lyar9jj"}
@@ -59,15 +62,39 @@ conda config
 此时conda会在 自己用户目录下生成`/usr/login_name/.condarc` 也就是 `~/.condarc`文件
 {: id="20210120230249-5sikk41"}
 
-将配置文件里的内容修改为
+将配置文件里的内容修改为：
 {: id="20210120230359-t63gl9f"}
 
 ```yml
-
+show_channel_urls: true
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/free/
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+  - http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+ssl_verify: true
 ```
 {: id="20210120230506-c05rbrs"}
 
-{: id="20210120230505-6q6ekys"}
+
+{: id="20210120230555-yd0nism"}
+
+此时conda的配置源基本处理结束，可以安装自己想用的内容了，
+{: id="20210120230548-buu2j9f"}
+
+### conda的常用基本命令
+{: id="20210120230627-8p7typq"}
+
+((20210110124639-ubr0y74 "{{.text}}")) 
+{: id="20210120230640-a379eqp"}
+
+
+{: id="20210120230744-1e0ievr"}
+
+## CUDA 安装配置
+{: id="20210120230741-ccsqxbq"}
 
 ubuntu20.04 tls只支持cuda11以上版本 所以目标安装cuda11.2最新版本
 {: id="20210120125843-e616g1f"}
