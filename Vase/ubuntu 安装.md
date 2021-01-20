@@ -37,7 +37,7 @@
 ((20210110110411-eb83f2v "ubuntu-安装 v2ray 并配置"))
 {: id="20210110112821-7qjisw1"}
 
-{: id="20210110110529-308o66f"}
+{: id="20210118124106-d4hwn5u"}
 
 ### 网络下载应用安装
 {: id="20210110110525-upk55qn"}
@@ -51,13 +51,15 @@ sudo dpkg -i  "software.deb"
 # 如果提示依赖问题 安装所有依赖
 sudo apt-get install -f
 # 卸载通过
-# 通过 pkg -l soft* 去查找卸载软件的完整名称
-pkg --remove softname
+# 通过 dpkg -l soft* 去查找卸载软件的完整名称
+sudo dpkg --remove softname
 
 ```
 {: id="20210110111200-cbn5w01"}
 
-{: id="20210110111215-tn8e719"}
+{: id="20210118124106-c3ayc5m"}
+
+{: id="20210118124106-nfc1fps"}
 
 
 {: id="20210105194423-yg7b5jv" type="doc"}
