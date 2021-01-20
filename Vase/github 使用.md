@@ -110,13 +110,13 @@ git remote add origin git@github.com:YourName/ProjectName.git
 {: id="20210110105947-ukqqe52"}
 
 ```bash
-#push
+ .#push
 git init # 在你对应目录下生成git仓库
 git status # 通过查看状态看看仓库中那些东西会被上传到github中(绿色的为会提交的)
 
 git remote add origin git@github.com:YourName/ProjectName.git #链接你的github对应的仓库
 
-git add <file> # 添加要提交的文件
+git add <file> # 添加要提交的文件 . 表示全部文件
 git rm -r --cached <file> #删除不需要提交的文件
 
 git branch #查看有那些分之
@@ -143,6 +143,8 @@ git clone https://github.com/ProjectName.git #将对应的项目下载下来
 > master 指的是主分支名，如果是其他分支，则填写相应的分支名
 > {: id="20210110105947-be0vbor"}
 {: id="20210110105947-tsa953d"}
+
+{: id="20210121004921-m3wo5sa"}
 
 
 {: id="20201120095601-8jm5kh2" type="doc"}
