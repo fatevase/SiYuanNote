@@ -31,17 +31,43 @@ linux 环境变量配置的地方有几处如 `~/.bashrc` 和`~/.profile`，个�
 {: id="20210120224232-278f3p2"}
 
 ```bash
-nano ~/.profile
-#在底端添加
-export PATH=$PATH:condapath/conda
+$ echo 'export PATH="~/miniconda3/bin:$ PATH"' >> ~/.profile
+$ source ~/.profile
 # 一般conda默认安装在~/minicondaX 里，我这边修改后的示例为
 # export PATH=$PATH:~/software/miniconda3/bin
 
 # 之后执行 source指令激活修改后的环境变量
 source ~/.profile
-# 测试是否
+# 测试是否正常
+conda env list
 ```
 {: id="20210120224727-dmr9laa"}
+
+
+{: id="20210120225923-tpqg5qo"}
+
+为了加速之后conda的下载速度，建议修改conda channel到国内的镜像源
+{: id="20210120225530-a1gzcmk"}
+
+```bash
+# 首先生成conda配置文件
+conda config
+
+```
+{: id="20210120230026-518ngb8"}
+
+此时conda会在 自己用户目录下生成`/usr/login_name/.condarc` 也就是 `~/.condarc`文件
+{: id="20210120230249-5sikk41"}
+
+将配置文件里的内容修改为
+{: id="20210120230359-t63gl9f"}
+
+```yml
+
+```
+{: id="20210120230506-c05rbrs"}
+
+{: id="20210120230505-6q6ekys"}
 
 ubuntu20.04 tls只支持cuda11以上版本 所以目标安装cuda11.2最新版本
 {: id="20210120125843-e616g1f"}
