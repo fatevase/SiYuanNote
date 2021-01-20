@@ -96,6 +96,9 @@ ssl_verify: true
 ## CUDA 安装配置
 {: id="20210120230741-ccsqxbq"}
 
+安装cuda主要为了gpu可以参加深度学习的运算。
+{: id="20210120232647-juf5je7"}
+
 ubuntu20.04 tls只支持cuda11以上版本 所以目标安装cuda11.2最新版本
 {: id="20210120125843-e616g1f"}
 
