@@ -180,5 +180,19 @@ apt-get install speedtest
 ```
 {: id="20210122000145-fmdvspc"}
 
+{: id="20210122031603-dnaeob3"}
+
+{: id="20210122031607-afeseiw"}
+
+### v2ray 自建
+{: id="20210122031607-w60dq2k"}
+
+建议使用 websocket 进行链接,安全性对比 tcp 高不少,要求更高的安全性可以选择 ws+tls 的 https 证书形式
+{: id="20210122031613-ww93nrq"}
+
+{: id="20210122031859-txofqcv"}
+
+{: id="20210122031634-pfzjz8n"}
+
 
 {: id="20210110110411-eb83f2v" type="doc"}
