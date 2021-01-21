@@ -1,20 +1,20 @@
 # 创建桌面快捷方式
 {: id="20210110115305-sk4ueih"}
 
-对于ubuntu来说，有很多的应用都是通过termail直接执行，需要重复进入文件夹在进行命令行打开。
+对于 ubuntu 来说，有很多的应用都是通过 termail 直接执行，需要重复进入文件夹在进行命令行打开。
 {: id="20210110115316-id69ba7"}
 
-我们可以在桌面创建对应的快捷方式来达到和mac相似的效果。
+我们可以在桌面创建对应的快捷方式来达到和 mac 相似的效果。
 {: id="20210110115404-ah33g7g"}
 
-我们要知道的是，ubuntu桌面应用的存储地址在:
+我们要知道的是，ubuntu 桌面应用的存储地址在
 {: id="20210110115429-sj50ody"}
 
 > /usr/share/applications
 > {: id="20210110115459-k6p42o9"}
 {: id="20210110115458-m7y72p1"}
 
-我们可以直接使用`sudo vi softname.desktop`的命名创建名称为.desktop的快捷方式。
+我们可以直接使用 `sudo vi softname.desktop` 的命名创建名称为.desktop 的快捷方式。
 {: id="20210110115533-vhn2k7k"}
 
 其内容为
@@ -47,7 +47,7 @@ StartupNotify=false
 直接保存，我们就可以在桌面看到对于的文件了
 {: id="20210110115515-o234dhb"}
 
-![20210110115911的屏幕截图.png](assets/ubuntu-softwre-desktop-icon.png)
+![20210110115911 的屏幕截图.png](assets/ubuntu-softwre-desktop-icon.png)
 {: id="20210110115923-zh60p8n"}
 
 
