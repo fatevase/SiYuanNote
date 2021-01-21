@@ -22,7 +22,7 @@
 然后，点“New SSH Key”，填上任意 Title，在 Key 文本框里粘贴 id_rsa.pub 文件的内容即可。
 {: id="20210110105947-dip0yov"}
 
-![](assets/%E6%88%AA%E5%B1%8F2020-11-12%20%E4%B8%8A%E5%8D%881.25.26.png)
+![](assets/github-ssh.png)
 {: id="20210110105947-ard35h7"}
 
 点“Add Key”，你就应该看到已经添加的 Key。
@@ -143,8 +143,6 @@ git clone https://github.com/ProjectName.git #将对应的项目下载下来
 > master 指的是主分支名，如果是其他分支，则填写相应的分支名
 > {: id="20210110105947-be0vbor"}
 {: id="20210110105947-tsa953d"}
-
-{: id="20210121004921-m3wo5sa"}
 
 
 {: id="20201120095601-8jm5kh2" type="doc"}

@@ -47,7 +47,7 @@ StartupNotify=false
 直接保存，我们就可以在桌面看到对于的文件了
 {: id="20210110115515-o234dhb"}
 
-![20210110115911的屏幕截图.png](assets/20210110115926-mvtgahw-2021-01-10 11-59-11 的屏幕截图.png)
+![20210110115911的屏幕截图.png](assets/ubuntu-softwre-desktop-icon.png)
 {: id="20210110115923-zh60p8n"}
 
 

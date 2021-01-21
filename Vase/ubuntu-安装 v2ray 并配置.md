@@ -35,7 +35,7 @@
 当然配置文件为你在其他平台购买的配置文件，如果第一次没有配置文件会自动生产默认的配置文件，如果系统中没有 MMDB，clash 会自行进行下载和安装。
 {: id="20210110110422-mje5nue"}
 
-![image.png](assets/20210109204500-qh3t2y7-image.png)
+![image.png](assets/clash-proxy-setting.png)
 {: id="20210110110422-83h8uzf"}
 
 在正式使用 clash 前，我们需要配置对应的 clash 代理端口和 clash 的配置文件，之后在文件夹下放好对应的 config.yaml。注意  此时 clash 的配置文件目录在`~/.config/clash`下。
@@ -47,7 +47,7 @@
 注意控制台输入的端口与给出的'restful API '一致才可登陆正常
 {: id="20210110110422-z3hwy2f"}
 
-![image.png](assets/20210109204451-31nyjyr-image.png)
+![image.png](assets/ubuntu-clash-setting.png)
 {: id="20210110110422-qi0ef70"}
 
 #### Qv2ray install and using
@@ -67,8 +67,6 @@ Qv2ray相对于clash有具体的图形界面，并且可以在ubuntu中下载并
 
 检查v2ray核心设置是否正确后就可以正常使用了。
 {: id="20210110110422-usiohqd"}
-
-{: id="20210120234357-qydngg8"}
 
 
 {: id="20210110110411-eb83f2v" type="doc"}
