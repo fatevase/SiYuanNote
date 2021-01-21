@@ -86,6 +86,27 @@ ssl_verify: true
 安装cuda主要为了gpu可以参加深度学习的运算。
 {: id="20210120232647-juf5je7"}
 
+对于CUDA 安装首先是要确认机器是否可以安装CUDA，使用以下命令显示自己的nivida显卡信息，并对比显卡
+{: id="20210121181431-ttlulh0"}
+
+是否在对应
+{: id="20210121181900-4o4rpz1"}
+
+```bash
+lspci | grep -i nvidia
+```
+{: id="20210121181454-ih0mdl1"}
+
+如果没有任何显示，则更新下自己的驱动
+{: id="20210121181514-3g9knnm"}
+
+```bash
+update-pciids
+```
+{: id="20210121181634-winl5ew"}
+
+{: id="20210121181804-ipdmsni"}
+
 ubuntu20.04 tls只支持cuda11以上版本 所以目标安装cuda11.2最新版本,先是在nvidia官网的[cuda archived](https://developer.nvidia.com/cuda-toolkit-archive)中找到对于的版本，![20210121001419的屏幕截图.png](assets/cuda-tookit-archived.png)
 {: id="20210120125843-e616g1f"}
 
