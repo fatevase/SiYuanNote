@@ -83,17 +83,10 @@ Debian10 下进行修改:
 date 查看当前的系统时间
 date -R 可查看时区 不是08区，则更新时区
 
-sudo tzselect
-选择5) Asia
-选择9) China
-选择1) Beijing Time
-选择1) Yes
+执行 echo "export TZ='Asia/Shanghai'"  >> /etc/profile
 
-执行 sudo nano /etc/profile
-添加 export TZ='Asia/Shanghai'
-
-Crtl+O写入、Ctrl+X退出
-执行：source /etc/profile更新系统变量
+执行：source /etc/profile 新系统变量
+hwclock -w 更新硬件时间
 
 再次查看时间
 date -R
