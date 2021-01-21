@@ -68,8 +68,6 @@ Qv2ray 相对于 clash 有具体的图形界面，并且可以在 ubuntu 中下�
 检查 v2ray 核心设置是否正确后就可以正常使用了。
 {: id="20210110110422-usiohqd"}
 
-{: id="20210121235842-y4p33gx"}
-
 ### 服务器配置 v2ray
 {: id="20210121235838-gtwjlub"}
 
@@ -91,9 +89,6 @@ hwclock
 ```
 {: id="20210122002941-126jcap"}
 
-
-{: id="20210122003414-bxmknbq"}
-
 对服务器进行测速
 {: id="20210122003412-ig9lv6g"}
 
@@ -105,9 +100,6 @@ chown root:root /usr/local/bin/speedtest
 speedtest
 ```
 {: id="20210122003421-enppb7q"}
-
-
-{: id="20210122003412-1hgemyo"}
 
 这里直接使用开源的一键脚本:
 {: id="20210121235853-o1t4o23"}
@@ -129,10 +121,8 @@ source <(curl -sL https://multi.netlify.app/v2ray.sh) -k
 
 # 卸载命令
 source <(curl -sL https://multi.netlify.app/v2ray.sh) --remove
+```
 {: id="20210122000014-02q1xjs"}
-
-
-{: id="20210122000230-y614i2t"}
 
 参数操作:
 {: id="20210122000229-i99ksm4"}
@@ -166,10 +156,6 @@ v2ray/xray [-h|help] [options]
 ```
 {: id="20210122000145-d87n0ll"}
 
-{: id="20210122002100-8rczva3"}
-
-{: id="20210122002101-bsioflz"}
-
 ```
 apt-get install gnupg1 apt-transport-https dirmngr
 export INSTALL_KEY=379CE192D401AB61
@@ -180,19 +166,10 @@ apt-get install speedtest
 ```
 {: id="20210122000145-fmdvspc"}
 
-{: id="20210122031603-dnaeob3"}
-
-{: id="20210122031607-afeseiw"}
-
-### v2ray 自建
+###
 {: id="20210122031607-w60dq2k"}
 
-建议使用 websocket 进行链接,安全性对比 tcp 高不少,要求更高的安全性可以选择 ws+tls 的 https 证书形式
-{: id="20210122031613-ww93nrq"}
-
-{: id="20210122031859-txofqcv"}
-
-{: id="20210122031634-pfzjz8n"}
+{: id="20210122032410-w3vi8af"}
 
 
 {: id="20210110110411-eb83f2v" type="doc"}
