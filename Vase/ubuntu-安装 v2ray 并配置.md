@@ -83,10 +83,7 @@ Debian10 下进行修改:
 date 查看当前的系统时间
 date -R 可查看时区 不是08区，则更新时区
 
-执行 echo "export TZ='Asia/Shanghai'"  >> /etc/profile
-
-执行：source /etc/profile 新系统变量
-hwclock -w 更新硬件时间
+执行 echo "export TZ='Asia/Shanghai'"  >> /etc/profile && source /etc/profile && hwclock -w
 
 再次查看时间
 date -R
@@ -118,15 +115,12 @@ speedtest
 [Linux-NetSpeed](https://github.com/chiakge/Linux-NetSpeed):https://github.com/chiakge/Linux-NetSpeed
 {: id="20210121235930-ly83dxm"}
 
-[multi-v2ray](https://github.com/Jrohy/multi-v2ray):https://github.com/Jrohy/multi-v2ray
+[multi-v2ray](https://github.com/Jrohy/multi-v2ray):https://github.com/ylx2016/Linux-NetSpeed
 {: id="20210121235947-27se3nx"}
 
 ```bash
 # 进行锐速调整
-wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
-chmod +x tcp.sh
-./tcp.sh
-
+wget -N "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
 # 安装V2ray
 source <(curl -sL https://multi.netlify.app/v2ray.sh) --zh
 
