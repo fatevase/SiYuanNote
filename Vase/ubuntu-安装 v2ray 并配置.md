@@ -73,6 +73,28 @@ Qv2ray 相对于 clash 有具体的图形界面，并且可以在 ubuntu 中下�
 ### 服务器配置 v2ray
 {: id="20210121235838-gtwjlub"}
 
+对服务器一定要进行时区的调整,否则会因为时区的时间差异无法连接服务器
+{: id="20210122002735-0ivccgj"}
+
+Debian10 下进行修改:
+{: id="20210122002806-j5sw2n3"}
+
+```bash
+10.执行 sudo nano /etc/profile
+11.在export PATH 前加一行：export TZ='Asia/Shanghai'
+12.export PATH 添加：export PATH=$JAVA_HOME/bin:$TZ:$PATH
+13.Crtl+O写入、Ctrl+X退出
+14.执行：source /etc/profile更新系统变量B 更新时区：
+4.date -R 可查看时区 不是08区，则更新时区
+5.sudo tzselect
+6.选择5) Asia
+7.选择9) China
+8.选择1) Beijing Time
+9.选择1) Yes
+
+```
+{: id="20210122002941-126jcap"}
+
 这里直接使用开源的一键脚本:
 {: id="20210121235853-o1t4o23"}
 
@@ -133,6 +155,18 @@ v2ray/xray [-h|help] [options]
 ```
 {: id="20210122000145-d87n0ll"}
 
+{: id="20210122002100-8rczva3"}
+
+{: id="20210122002101-bsioflz"}
+
+```
+apt-get install gnupg1 apt-transport-https dirmngr
+export INSTALL_KEY=379CE192D401AB61
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
+echo "deb https://ookla.bintray.com/debian generic main" | tee  /etc/apt/sources.list.d/speedtest.list
+apt-get update
+apt-get install speedtest
+```
 {: id="20210122000145-fmdvspc"}
 
 
