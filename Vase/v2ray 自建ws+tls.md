@@ -66,7 +66,7 @@ server {
 
         location /ray { # keep the same path with v2ray conf
         proxy_redirect off;
-        proxy_pass http://127.0.0.1:10000; # dont need same port
+        proxy_pass http://127.0.0.1:10000; # same port
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
@@ -95,13 +95,16 @@ server {
 ```
 {: id="20210122032926-omlh8s7"}
 
+[UUID 在线生成](https://www.uuidgenerator.net/)
 {: id="20210122034012-ji70uqu"}
+
+{: id="20210122034014-n3bxwrb"}
 
 ```json
 {
     "inbounds": [
         {
-            "port": 10086,
+            "port": 10000,
             "listen": "127.0.0.1",
             "protocol": "vmess",
             "settings": {
