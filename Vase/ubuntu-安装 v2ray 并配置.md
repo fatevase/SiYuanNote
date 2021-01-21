@@ -1,7 +1,7 @@
 # clash install and using
 {: id="20210110110411-hvy77mm"}
 
-首先是下载[clash for linux](https://github.com/Dreamacro/clash/releases) https://github.com/Dreamacro/clash/releases
+首先是下载 [clash for linux](https://github.com/Dreamacro/clash/releases) https://github.com/Dreamacro/clash/releases
 {: id="20210110110422-o030uxw"}
 
 安装好后放到自己软件的文件夹 如/home/username/software/clash
@@ -38,10 +38,10 @@
 ![image.png](assets/clash-proxy-setting.png)
 {: id="20210110110422-83h8uzf"}
 
-在正式使用 clash 前，我们需要配置对应的 clash 代理端口和 clash 的配置文件，之后在文件夹下放好对应的 config.yaml。注意  此时 clash 的配置文件目录在`~/.config/clash`下。
+在正式使用 clash 前，我们需要配置对应的 clash 代理端口和 clash 的配置文件，之后在文件夹下放好对应的 config.yaml。注意  此时 clash 的配置文件目录在 `~/.config/clash` 下。
 {: id="20210110110422-q2x5upn"}
 
-重新启动 clash 即可通过[clash 控制台](https://clash.razord.top/#/settings)：clash.razord.top/ 进入控制面板进行操作。
+重新启动 clash 即可通过 [clash 控制台](https://clash.razord.top/#/settings)：clash.razord.top/ 进入控制面板进行操作。
 {: id="20210110110422-qgsw0yd"}
 
 注意控制台输入的端口与给出的'restful API '一致才可登陆正常
@@ -53,22 +53,34 @@
 #### Qv2ray install and using
 {: id="20210110110422-ffkz9va"}
 
-Qv2ray相对于clash有具体的图形界面，并且可以在ubuntu中下载并使用![20210110104753的屏幕截图.png](assets/qv2ray-in-software-store.png)
+Qv2ray 相对于 clash 有具体的图形界面，并且可以在 ubuntu 中下载并使用![20210110104753 的屏幕截图.png](assets/qv2ray-in-software-store.png)
 {: id="20210110110422-gkhul65"}
 
-安装前建议修改ubuntu的software镜像原，改为aliyun的会快不少。![20210120234511的屏幕截图.png](assets/change-ubuntu-store-source.png)
+安装前建议修改 ubuntu 的 software 镜像原，改为 aliyun 的会快不少。![20210120234511 的屏幕截图.png](assets/change-ubuntu-store-source.png)
 {: id="20210120234406-soc8rus"}
 
-安装好qv2ray后，我们需要对其v2ray核心进行配置，首先是下载[v2ray-core](https://hub.fastgit.org/v2fly/v2ray-core/releases):https://hub.fastgit.org/v2fly/v2ray-core/releases
+安装好 qv2ray 后，我们需要对其 v2ray 核心进行配置，首先是下载 [v2ray-core](https://hub.fastgit.org/v2fly/v2ray-core/releases):https://hub.fastgit.org/v2fly/v2ray-core/releases
 {: id="20210110110422-au17wms"}
 
-下载后解压到对应的qv2ray核心中，如![20210110105123的屏幕截图.png](assets/setting-qv2-core.png)
+下载后解压到对应的 qv2ray 核心中，如![20210110105123 的屏幕截图.png](assets/setting-qv2-core.png)
 {: id="20210110110422-icvse1l"}
 
-检查v2ray核心设置是否正确后就可以正常使用了。
+检查 v2ray 核心设置是否正确后就可以正常使用了。
 {: id="20210110110422-usiohqd"}
 
-{: id="20210121180711-djjyohm"}
+{: id="20210121235842-y4p33gx"}
+
+### 服务器配置 v2ray
+{: id="20210121235838-gtwjlub"}
+
+这里直接使用开源的一键脚本:
+{: id="20210121235853-o1t4o23"}
+
+[Linux-NetSpeed](https://github.com/chiakge/Linux-NetSpeed):https://github.com/chiakge/Linux-NetSpeed
+{: id="20210121235930-ly83dxm"}
+
+[multi-v2ray](https://github.com/Jrohy/multi-v2ray):https://github.com/Jrohy/multi-v2ray
+{: id="20210121235947-27se3nx"}
 
 
 {: id="20210110110411-eb83f2v" type="doc"}
