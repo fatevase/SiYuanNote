@@ -64,11 +64,9 @@ $$
 
 4. {: id="20210110105623-2uxdxpc"}滞后阈值(Hysteresis Thresholding)
    在上述操作后我们需要确定那些是我们需要的边缘，所以我们需要设置最大、最小阈值来确定边缘
-   ![](assets/Pasted%20image%2020201110000928.png)
+   ![](assets/Hysteresis-Thresholding.png)
 5. {: id="20210110105711-t4iegwx"}
 {: id="20210110105623-t0rjmrm"}
-
-{: id="20210110105659-nqob5lv"}
 
 
 {: id="20201120095601-h4jmbth" type="doc"}

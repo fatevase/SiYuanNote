@@ -43,7 +43,7 @@ ret,thresh1 = cv2.threshold(src,thresh,maxval,cv2.type)
 {: id="20210110105947-ejc015c"}
 
 Otsu 算法(大律法或最大类间方差法)
-![](assets/Pasted%20image%2020201106232102.png)
+![](assets/threshold-otsu.png)
 {: id="20210110105947-dr8uxsi"}
 
 
