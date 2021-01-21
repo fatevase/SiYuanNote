@@ -1,4 +1,4 @@
-# Anaconda + CUDA 安装
+# Anaconda + CUDA 基础环境安装
 {: id="20210120125837-d110pqb"}
 
 ## Anaconda 安装配置
@@ -116,8 +116,11 @@ sudo apt-get install gcc g++
 ```
 {: id="20210121181804-ipdmsni"}
 
-值得注意的是ubuntu20.04安装的gcc默认版本是9.x，但是cuda10.1并不支持gcc9.x版本，需要自己手动安装底版本的gcc。
+值得注意的是ubuntu20.04安装的gcc默认版本是9.x，但是cuda10.1并不支持gcc9.x版本，需要自己
 {: id="20210121183009-nwmovh3"}
+
+->((20210121183236-qx9uelp "手动安装底版本的gcc")) <-。
+{: id="20210121183718-jz7hgib"}
 
 ubuntu20.04 tls只支持cuda11以上版本 所以目标安装cuda11.2最新版本,先是在nvidia官网的[cuda archived](https://developer.nvidia.com/cuda-toolkit-archive)中找到对于的版本，可以使用 `uname -m && cat /etc/*release`查看自己的系统信息。![20210121001419的屏幕截图.png](assets/cuda-tookit-archived.png)
 {: id="20210120125843-e616g1f"}
@@ -149,7 +152,15 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 > {: id="20210121002129-17op5zo"}
 {: id="20210121002114-5s766zs"}
 
+{: id="20210121184036-fufqjte"}
+
+### CUDA 卸载
 {: id="20210121182748-lge95v6"}
+
+对于cuda卸载官方给出过脚本，只需要执行对于cuda文件中的sh文件即可
+{: id="20210121184045-yu55a1c"}
+
+{: id="20210121184122-7gyx7cx"}
 
 
 {: id="20210120125837-xlp5tbq" type="doc"}
