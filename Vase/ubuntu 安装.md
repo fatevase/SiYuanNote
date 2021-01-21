@@ -37,10 +37,13 @@
 ((20210110110411-eb83f2v "ubuntu-安装 v2ray 并配置"))
 {: id="20210110112821-7qjisw1"}
 
-{: id="20210121190302-3og7fqk"}
+{: id="20210121191557-5g5t06r"}
 
 ### 截图软件安装
 {: id="20210121190301-0wu2a3j"}
+
+flameshot 是一个很好用的截图软件，并且不断的更新中![flameshotanimatedUsage.gif](assets/flameshot-animatedUsage.gif)
+{: id="20210121191906-shnnuq5"}
 
 ```
 # flameshot 一个支持自定义截图的截屏软件
@@ -57,13 +60,15 @@ flameshot gui
 * {: id="20210121190425-v45v3z7"}页面中会列出所有现有的键盘快捷键，拉到底部就会看见一个 “+” 按钮
 * {: id="20210121190425-ebyl8y5"}点击 “+” 按钮添加自定义快捷键并输入以下两个字段：
   * {: id="20210121190425-jzzlexh"}“名称”： 任意名称均可。
-  * {: id="20210121190425-qvmp30x"}“命令”： `/usr/bin/flameshot gui`
+  * {: id="20210121190425-qvmp30x"}“命令”： `flameshot gui`
   {: id="20210121190425-beg1s0n"}
 {: id="20210121190425-l1i0kjs"}
 
-{: id="20210121190425-qat6hne"}
-
+![flameshotsetting.png](assets/flameshot-setting.png)
 {: id="20210121181355-37j3uuf"}
+
+之后就可以使用快捷键愉快的截图啦。
+{: id="20210121191638-b2rjd5z"}
 
 ### 网络下载应用安装
 {: id="20210110110525-upk55qn"}
@@ -83,9 +88,9 @@ sudo dpkg --remove softname
 ```
 {: id="20210110111200-cbn5w01"}
 
-{: id="20210121181355-kddr05w"}
+{: id="20210121191557-tp9ae5t"}
 
-{: id="20210121181355-ro1211e"}
+{: id="20210121191557-kexhp9l"}
 
 
 {: id="20210105194423-yg7b5jv" type="doc"}
