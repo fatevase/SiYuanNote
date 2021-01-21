@@ -13,10 +13,33 @@
 > {: id="20210122032926-uxl6jxd"}
 {: id="20210122032926-0inqpys"}
 
+
+{: id="20210122033203-uj3yieb"}
+
+## 解析域名
+{: id="20210122033201-urfi1ux"}
+
+ws 操作需要解析一个域名到自己的 vps 中, 随便买一个即可.如果需要加入 tls 加密,则需要在申请个 https 的证书,这个证书有脚本自动获取,也可以手动,这里我推荐手动,因为脚本会有失误的时候,且每 3 个月过期一次,手动申请的有效期一年,也就是 1 年只需要操作一次即可.
+{: id="20210122033236-wcqgzsu"}
+
+[这里也有自动申请的方式](https://neko.re/archives/112.html)
+{: id="20210122033202-jm1hlgy"}
+
 ## 配置 Nginx
 {: id="20210122032926-wpmkbtz"}
 
-先将域名解析到 vps 上，然后 cd 到 /etc/nginx/conf.d，添加文件 v2ray.conf，填入以下内容，文中 example.com 修改为你解析到 vps 的域名
+```bash
+安装 nginx：apt update && apt install -y nginx
+安装 v2ray：wget https://install.direct/go.sh && bash go.sh
+安装 Certbot：
+OS 不同，方法不同，参考 https://certbot.eff.org/
+```
+{: id="20210122033431-umlsf85"}
+
+
+{: id="20210122033431-u2b32ff"}
+
+安装好 Nginx 后, cd 到 /etc/nginx/conf.d，添加文件 v2ray.conf，填入以下内容，文中 example.com 修改为你解析到 vps 的域名
 {: id="20210122032926-ecles8h"}
 
 ```
@@ -67,40 +90,56 @@ server {
 ## 配置 V2ray
 {: id="20210122032926-otlzbh1"}
 
-```json
-{
-inbounds": [
-{
-"port": 10086,
-"listen": "127.0.0.1",
-"protocol": "vmess",
-"settings": {
-"clients": [
-{
-"id": "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-"alterId": 64
-}
-]
-},
-"streamSettings": {
-"network": "ws",
-"wsSettings": {
-"path": "/ray" # the path is same with your nginx web path
-}
-}
-}
-],
-"outbounds": [
-{
-"protocol": "freedom",
-"settings": {}
-}
-]
+```
+/etc/v2ray/config.json
 ```
 {: id="20210122032926-omlh8s7"}
 
+{: id="20210122034012-ji70uqu"}
+
+```json
+{
+    "inbounds": [
+        {
+            "port": 10086,
+            "listen": "127.0.0.1",
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                        "alterId": 64
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "/ray" # the path is same with your nginx web path
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {}
+        }
+    ]
 }
+
+```
 {: id="20210122032926-ygr5fnm"}
+
+{: id="20210122033801-er75xnk"}
+
+## 客户端连接
+{: id="20210122033802-a4w50e0"}
+
+客户端连接的时候设置 path 为 ray，开启底层传输安全（tls），地址即为你的域名，用户 id 即为你的 uuid
+{: id="20210122033802-0lm3s4e"}
+
+{: id="20210122033802-xwx1nar"}
 
 
 {: id="20210122032910-k292ue1" type="doc"}
