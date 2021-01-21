@@ -80,20 +80,44 @@ Debian10 下进行修改:
 {: id="20210122002806-j5sw2n3"}
 
 ```bash
-10.执行 sudo nano /etc/profile
-11.在export PATH 前加一行：export TZ='Asia/Shanghai'
-12.export PATH 添加：export PATH=$JAVA_HOME/bin:$TZ:$PATH
-13.Crtl+O写入、Ctrl+X退出
-14.执行：source /etc/profile更新系统变量B 更新时区：
-4.date -R 可查看时区 不是08区，则更新时区
-5.sudo tzselect
-6.选择5) Asia
-7.选择9) China
-8.选择1) Beijing Time
-9.选择1) Yes
+date 查看当前的系统时间
+date -R 可查看时区 不是08区，则更新时区
 
+sudo tzselect
+选择5) Asia
+选择9) China
+选择1) Beijing Time
+选择1) Yes
+
+执行 sudo nano /etc/profile
+添加 export TZ='Asia/Shanghai'
+
+Crtl+O写入、Ctrl+X退出
+执行：source /etc/profile更新系统变量
+
+再次查看时间
+date -R
+hwclock
 ```
 {: id="20210122002941-126jcap"}
+
+
+{: id="20210122003414-bxmknbq"}
+
+对服务器进行测速
+{: id="20210122003412-ig9lv6g"}
+
+```bash
+wget https://raw.github.com/sivel/speedtest-cli/master/speedtest.py
+chmod a+rx speedtest.py
+mv speedtest.py /usr/local/bin/speedtest
+chown root:root /usr/local/bin/speedtest
+speedtest
+```
+{: id="20210122003421-enppb7q"}
+
+
+{: id="20210122003412-1hgemyo"}
 
 这里直接使用开源的一键脚本:
 {: id="20210121235853-o1t4o23"}
