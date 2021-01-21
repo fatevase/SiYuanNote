@@ -82,5 +82,58 @@ Qv2ray 相对于 clash 有具体的图形界面，并且可以在 ubuntu 中下�
 [multi-v2ray](https://github.com/Jrohy/multi-v2ray):https://github.com/Jrohy/multi-v2ray
 {: id="20210121235947-27se3nx"}
 
+```bash
+# 进行锐速调整
+wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
+chmod +x tcp.sh
+./tcp.sh
+
+# 安装V2ray
+source <(curl -sL https://multi.netlify.app/v2ray.sh) --zh
+
+# 升级命令(保留配置文件更新)
+source <(curl -sL https://multi.netlify.app/v2ray.sh) -k
+
+# 卸载命令
+source <(curl -sL https://multi.netlify.app/v2ray.sh) --remove
+{: id="20210122000014-02q1xjs"}
+
+
+{: id="20210122000230-y614i2t"}
+
+参数操作:
+{: id="20210122000229-i99ksm4"}
+
+```bash
+v2ray/xray [-h|help] [options]
+    -h, help             查看帮助
+    -v, version          查看版本号
+    start                启动 V2Ray
+    stop                 停止 V2Ray
+    restart              重启 V2Ray
+    status               查看 V2Ray 运行状态
+    new                  重建新的v2ray json配置文件
+    update               更新 V2Ray 到最新Release版本
+    update [version]     更新 V2Ray 到指定版本
+    update.sh            更新 multi-v2ray 到最新版本
+    add                  新增端口组
+    add [protocol]       新增一种协议的组, 端口随机, 如 v2ray add utp 为新增utp协议
+    del                  删除端口组
+    info                 查看配置
+    port                 修改端口
+    tls                  修改tls
+    tfo                  修改tcpFastOpen
+    stream               修改传输协议
+    cdn                  走cdn
+    stats                v2ray流量统计
+    iptables             iptables流量统计
+    clean                清理日志
+    log                  查看日志
+    rm                   卸载core
+```
+{: id="20210122000145-d87n0ll"}
+
+{: id="20210122000145-fmdvspc"}
+
 
 {: id="20210110110411-eb83f2v" type="doc"}
