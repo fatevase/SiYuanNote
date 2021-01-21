@@ -53,16 +53,16 @@
 #### Qv2ray install and using
 {: id="20210110110422-ffkz9va"}
 
-Qv2ray相对于clash有具体的图形界面，并且可以在ubuntu中下载并使用![20210110104753的屏幕截图.png](assets/20210110104804-6n426dt-2021-01-10 10-47-53 的屏幕截图.png)
+Qv2ray相对于clash有具体的图形界面，并且可以在ubuntu中下载并使用![20210110104753的屏幕截图.png](assets/qv2ray-in-software-store.png)
 {: id="20210110110422-gkhul65"}
 
-安装前建议修改ubuntu的software镜像原，改为ali的会快不少。![20210120234511的屏幕截图.png](assets/20210120234522-oqqj67k-2021-01-20 23-45-11 的屏幕截图.png)
+安装前建议修改ubuntu的software镜像原，改为ali的会快不少。![20210120234511的屏幕截图.png](assets/change-ubuntu-store-source.png)
 {: id="20210120234406-soc8rus"}
 
 安装好qv2ray后，我们需要对其v2ray核心进行配置，首先是下载[v2ray-core](https://hub.fastgit.org/v2fly/v2ray-core/releases)，https://hub.fastgit.org/v2fly/v2ray-core/releases
 {: id="20210110110422-au17wms"}
 
-下载后解压到对应的qv2ray核心中，如![20210110105123的屏幕截图.png](assets/20210110105142-66zp561-2021-01-10 10-51-23 的屏幕截图.png)
+下载后解压到对应的qv2ray核心中，如![20210110105123的屏幕截图.png](assets/setting-qv2-core.png)
 {: id="20210110110422-icvse1l"}
 
 检查v2ray核心设置是否正确后就可以正常使用了。

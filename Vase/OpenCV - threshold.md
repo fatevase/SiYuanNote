@@ -35,7 +35,7 @@ ret,thresh1 = cv2.threshold(src,thresh,maxval,cv2.type)
 * {: id="20210110105947-5i6yzun"}type：阈值类型，可以具体类型如下：
 {: id="20210110105947-xlk80jk"}
 
-![](assets/Pasted%20image%2020201106232302.png)
+![](assets/opencv-threshold-enumerator.png)
 图像
 ![](assets/threshold.png)
 可视化

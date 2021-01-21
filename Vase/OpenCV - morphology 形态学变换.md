@@ -64,7 +64,7 @@ dst = morphologyEx(
   * {: id="20210110105947-qwxazrd"}MORPH_CLOSE 闭运算
   * {: id="20210110105947-c3vskki"}MORPH_OPEN 开运算
   * {: id="20210110105947-pmtn5sy"}MORPH_GRADIENT 梯度
-    ![morphologyEx 主要类型](assets/Pasted%20image%2020201107002459.png)
+    ![morphologyEx 主要类型](assets/opencv-morphologyEx-type.png)
   {: id="20210110105947-8s2fchx"}
 {: id="20210110105947-hh2cmak"}
 
@@ -78,12 +78,12 @@ dst = morphologyEx(
 {: id="20210110105947-zx2inf2"}
 
 > 开运算
-> ![open](assets/Pasted%20image%2020201107003623.png)
+> ![open](assets/opencv-morph-open.png)
 > {: id="20210110105947-7q9hg6g"}
 {: id="20210110105947-t8zxw2y"}
 
 > 闭运算
-> ![close](assets/Pasted%20image%2020201107003705.png)
+> ![close](assets/opencv-morph-close.png)
 > {: id="20210110105947-behe04v"}
 {: id="20210110105947-6q5nt7w"}
 
