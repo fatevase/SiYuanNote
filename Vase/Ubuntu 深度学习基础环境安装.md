@@ -295,14 +295,14 @@ Cuda compilation tools, release 10.1, V10.1.243
 ### ubuntu20.04 安装 cuda10.1
 {: id="20210123002124-g9z3cjw"}
 
-正常是无法安装的,为此我们需要先将 gcc,g++ 降级, 才可以正常的运行,值得注意的是,在安装 cuda10.1 时,由于未知原因,在安装前要指定好 cuda 的库文件 即通过 `--liberarypath=/usr/local/conda10.1`
+正常是无法安装的,为此我们需要先将 gcc,g++ 降级, 才可以正常的运行,值得注意的是,在安装 cuda10.1 时,由于未知原因,在安装前要指定好 cuda 的库文件 即通过 `--liberarypath=/usr/local/cuda-10.1`
 {: id="20210123004707-vy7eilm"}
 
 即运行指令
 {: id="20210123005338-fn0oyfz"}
 
 ```bash
-sudo sh cuda_10.1.*.run --liberarypath=/usr/local/conda10.1
+sudo sh cuda_10.1.*.run --librarypath=/usr/local/cuda-10.1
 ```
 {: id="20210123005345-m4m40ro"}
 
