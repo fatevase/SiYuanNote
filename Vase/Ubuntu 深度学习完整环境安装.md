@@ -284,5 +284,8 @@ sudo /usr/local/cuda-x.x/bin/uninstall_cuda_x.x.pl
 
 {: id="20210123011229-hikrlqw"}
 
+检查是否卸载干净直接去/usr/local 看看有无残留 cuda 文件即可
+{: id="20210123011751-gm3jwmc"}
+
 
 {: id="20210120125837-xlp5tbq" type="doc"}
