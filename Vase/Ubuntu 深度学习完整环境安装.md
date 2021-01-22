@@ -219,7 +219,33 @@ Cuda compilation tools, release 10.1, V10.1.243
 ```
 {: id="20210123002831-cudu5la"}
 
+{: id="20210123004648-s2umuqt"}
+
+#### ubuntu20.04 安装 cuda10.1
 {: id="20210123002124-g9z3cjw"}
+
+正常是无法安装的,为此我们需要先将 gcc,g++ 降级, 才可以正常的运行,值得注意的是,在安装 cuda10.1 时,由于未知原因,在安装前要指定好 cuda 的库文件 即通过 `--liberarypath=/usr/local/conda10.1`
+{: id="20210123004707-vy7eilm"}
+
+> 这里
+> {: id="20210123005441-av2dz47"}
+{: id="20210123005437-i5hh9vf"}
+
+即运行指令
+{: id="20210123005338-fn0oyfz"}
+
+```bash
+sudo sh cuda_10.1.*.run --liberarypath=/usr/local/conda10.1
+```
+{: id="20210123005345-m4m40ro"}
+
+conda 的库文件如下:
+{: id="20210123004947-3o1dgfp"}
+
+![](assets/cuda-liberary-files.png)
+{: id="20210123005310-06juegm"}
+
+{: id="20210123004959-8c9rfpx"}
 
 ### CUDA 卸载
 {: id="20210121182748-lge95v6"}
