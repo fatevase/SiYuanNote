@@ -279,7 +279,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 
 ```bash
 echo "export PATH=\"\$PATH:/usr/local/cuda/bin\"" >> ~/.profile
-
+echo "export LD_LIBRARY_PATH=\"/usr/local/cuda/lib64\"" >> ~/.profile
 source ~/.profile
 ```
 {: id="20210123001958-jderxr9"}
@@ -318,7 +318,7 @@ sudo sh cuda_10.1.*.run --librarypath=/usr/local/cuda-10.1
 
 {: id="20210123021124-emjat8z"}
 
-conda 的库文件如下:
+cuda 的库文件如下:
 {: id="20210123004947-3o1dgfp"}
 
 ![](assets/cuda-liberary-files.png)
