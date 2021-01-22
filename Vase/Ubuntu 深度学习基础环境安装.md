@@ -320,6 +320,15 @@ conda 的库文件如下:
 
 {: id="20210123021124-8z056eb"}
 
+简单在 conda 中安装测试
+{: id="20210123024235-az0s06l"}
+
+```shell
+conda create -n gluon python=3.6 mxnet-cu101 jupyter matplotlib pandas d2lzh=1.0.0
+
+```
+{: id="20210123024251-5o9mwwb"}
+
 {: id="20210123021124-2vjukqq"}
 
 ### CUDA 卸载
@@ -356,6 +365,8 @@ sudo /usr/local/cuda-x.x/bin/uninstall_cuda_x.x.pl
 
 检查是否卸载干净直接去/usr/local 看看有无残留 cuda 文件即可
 {: id="20210123011751-gm3jwmc"}
+
+{: id="20210123024226-91ah2dy"}
 
 
 {: id="20210120125837-xlp5tbq" type="doc"}
