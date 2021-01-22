@@ -105,7 +105,7 @@ update-pciids
 ```
 {: id="20210121181634-winl5ew"}
 
-{: id="20210122225943-ixptosf"}
+{: id="20210122235639-thbn7l7"}
 
 一般来说 cuda 均需要 gcc 和 g++ 的支持，所以在执行给定脚本前，先安装好 g++ 和 gcc
 {: id="20210121182903-8mnxw5g"}
@@ -121,6 +121,9 @@ sudo apt-get install gcc g++
 ->((20210121183236-qx9uelp "手动安装低版本的 gcc")) <-。
 {: id="20210121183718-jz7hgib"}
 
+### CUDA 高版本安裝
+{: id="20210122235551-nl5vupb"}
+
 ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新版本,先是在 nvidia 官网的 [cuda archived](https://developer.nvidia.com/cuda-toolkit-archive) 中找到对于的版本，可以使用 `uname -m && cat /etc/*release` 查看自己的系统信息。![20210121001419 的屏幕截图.png](assets/cuda-tookit-archived.png)
 {: id="20210120125843-e616g1f"}
 
@@ -133,7 +136,7 @@ ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新
 ![2](assets/cuda-select-kit.png)
 {: id="20210121105111-fwa8bap"}
 
-{: id="20210122225943-oto9y8h"}
+{: id="20210122235639-lxyjngx"}
 
 之后就是执行对应的安装脚本了。
 {: id="20210121001602-p45k38e"}
@@ -157,7 +160,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 ![](assets/cuda-install-accpet-license.png)
 {: id="20210122230622-8j2uubk"}
 
-{: id="20210122230854-9lnhwmn"}
+{: id="20210122235639-on92w7w"}
 
 这里选择号自己要安装的内容,CUDA Toolkit 为必须安装内容,其他的根据自己选择进行安装,一般桌面版的 ubuntu 第一个驱动都不装(因为自己以及装过了)
 {: id="20210122230622-dvbvdaz"}
@@ -165,7 +168,24 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 ![cudainstallselector.png](assets/cuda-install-selector.png)
 {: id="20210122231010-bi16rmf"}
 
-{: id="20210122225943-s4drs38"}
+其中 cuda 安装所作的主要是以下的工作:
+{: id="20210123000057-j1m0171"}
+
+* {: id="20210123000149-7fvjkql"}安装 cuda toolkit 到/usr/local/cuda-version
+* {: id="20210123000151-4m8p8iz"}创建软连接到/usr/local/cuda
+* {: id="20210123000219-9z1p11f"}安装 cuda 示例到/usr/local/cuda/samples 和 home 文件夹下的 NVIDIA_CUDA-10.1_Samples
+* {: id="20210123000316-ylf0we3"}添加 cuda 的 library path
+{: id="20210123000124-pct9dmi"}
+
+看到以下则表示安装正常:
+{: id="20210122235746-8dg7rmq"}
+
+{: id="20210122235755-3auqfmv"}
+
+配置一下
+{: id="20210122235639-vpu1jqh"}
+
+{: id="20210122235704-cjm24yi"}
 
 ### CUDA 卸载
 {: id="20210121182748-lge95v6"}
@@ -173,7 +193,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 对于 cuda 卸载官方给出过脚本，只需要执行对于 cuda 文件中的 sh 文件即可
 {: id="20210121184045-yu55a1c"}
 
-{: id="20210122225943-ke1uz66"}
+{: id="20210122235639-ltzyjxn"}
 
 
 {: id="20210120125837-xlp5tbq" type="doc"}
