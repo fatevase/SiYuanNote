@@ -151,6 +151,20 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 > {: id="20210121002129-17op5zo"}
 {: id="20210121002114-5s766zs"}
 
+接受 cuda 的 license
+{: id="20210122230835-ooi8j8b"}
+
+![](assets/cuda-install-accpet-license.png)
+{: id="20210122230622-8j2uubk"}
+
+{: id="20210122230854-9lnhwmn"}
+
+这里选择号自己要安装的内容,CUDA Toolkit 为必须安装内容,其他的根据自己选择进行安装,一般桌面版的 ubuntu 第一个驱动都不装(因为自己以及装过了)
+{: id="20210122230622-dvbvdaz"}
+
+![cudainstallselector.png](assets/cuda-install-selector.png)
+{: id="20210122231010-bi16rmf"}
+
 {: id="20210122225943-s4drs38"}
 
 ### CUDA 卸载
