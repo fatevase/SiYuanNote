@@ -82,7 +82,7 @@ flameshot gui
 # 对无法双脚安装的应用进行安装
 # --instdir 指定安装目录
 # dpkg -x same.deb 解压到当前目录
-sudo dpkg -i --instdir=/home/username/software/path "software.deb"
+sudo dpkg -i "software.deb"
 # 如果提示依赖问题 安装所有依赖
 sudo apt-get install -f
 # 卸载通过
