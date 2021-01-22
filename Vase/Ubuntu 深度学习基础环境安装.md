@@ -278,7 +278,10 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 {: id="20210123021124-ey8l0kf"}
 
 ```bash
+# CUDA 基础命令
 echo "export PATH=\"\$PATH:/usr/local/cuda/bin\"" >> ~/.profile
+
+# 一些深度学习框架需要LD_LIBRARY_PATH 如mxnet
 echo "export LD_LIBRARY_PATH=\"/usr/local/cuda/lib64\"" >> ~/.profile
 source ~/.profile
 ```
@@ -336,6 +339,21 @@ pip install mxnet-cu101 d2lzh=1.0.0
 ```
 {: id="20210123024251-5o9mwwb"}
 
+{: id="20210123031410-yt4cwho"}
+
+测试内容
+{: id="20210123031411-mykc1d3"}
+
+```shell
+Python 3.6.12 |Anaconda, Inc.| (default, Sep  8 2020, 23:10:56) 
+[GCC 7.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import mxnet
+>>> mxnet.gpu
+<function gpu at 0x7f3339576730>
+>>> 
+
+```
 {: id="20210123021124-2vjukqq"}
 
 ### CUDA 卸载
