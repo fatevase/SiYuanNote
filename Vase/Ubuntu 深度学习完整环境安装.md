@@ -180,10 +180,16 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 看到以下则表示安装正常:
 {: id="20210122235746-8dg7rmq"}
 
+![](assets/cuda-install-over.png)
 {: id="20210122235755-3auqfmv"}
 
-配置一下
+配置一下环境变量
 {: id="20210122235639-vpu1jqh"}
+
+```bash
+echo "export PATH=$PATH:/usr/local/conda/bin"
+```
+{: id="20210123000938-g6wbx80"}
 
 {: id="20210122235704-cjm24yi"}
 
