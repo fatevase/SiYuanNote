@@ -86,6 +86,9 @@ ssl_verify: true
 安装 cuda 主要为了 gpu 可以参加深度学习的运算。
 {: id="20210120232647-juf5je7"}
 
+### NVIDIA 驱动
+{: id="20210123012647-w6zmo1x"}
+
 对于 CUDA 安装首先是要确认机器是否可以安装 CUDA，使用以下命令显示自己的 nivida 显卡信息，并对比显卡
 {: id="20210121181431-ttlulh0"}
 
@@ -98,13 +101,14 @@ nvidia-smi
 ```
 {: id="20210121181454-ih0mdl1"}
 
-如果没有任何显示，则更新下自己的驱动
+如果没有任何显示，或者在软件与更新中检查自己是否安装 nvdia 驱动,则更新下自己的驱动
 {: id="20210121181514-3g9knnm"}
 
-```bash
-update-pciids
-```
-{: id="20210121181634-winl5ew"}
+![](assets/check-display-drive.png)
+{: id="20210123012538-lf10znj"}
+
+
+{: id="20210123012610-z10m4tg"}
 
 这里推荐手动下载 nvidia 驱动,[驱动官网](https://www.nvidia.com/download/index.aspx?lang=en-us):https://www.nvidia.com/download/index.aspx?lang=en-us
 {: id="20210122235639-thbn7l7"}
@@ -120,6 +124,15 @@ sudo sh dirve-file-path.run
 ```
 {: id="20210123004106-opwmokr"}
 
+
+{: id="20210123012640-88be0v7"}
+
+
+{: id="20210123012709-9b6kmal"}
+
+### GCC + G++ 编译器
+{: id="20210123012640-tm3ck1f"}
+
 一般来说 cuda 均需要 gcc 和 g++ 的支持，所以在执行给定脚本前，先安装好 g++ 和 gcc
 {: id="20210121182903-8mnxw5g"}
 
@@ -134,7 +147,10 @@ sudo apt-get install gcc g++
 ->((20210121183236-qx9uelp "手动安装低版本的 gcc")) <-。
 {: id="20210121183718-jz7hgib"}
 
-{: id="20210123002922-gifbnrx"}
+{: id="20210123012721-e3zgg1u"}
+
+### CUDA 脚本 下载与安装
+{: id="20210123012206-diil5mz"}
 
 ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新版本,先是在 nvidia 官网的 [cuda archived](https://developer.nvidia.com/cuda-toolkit-archive) 中找到对于的版本，可以使用 `uname -m && cat /etc/*release` 查看自己的系统信息。![20210121001419 的屏幕截图.png](assets/cuda-tookit-archived.png)
 {: id="20210120125843-e616g1f"}
@@ -142,13 +158,10 @@ ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新
 并在之后的选择器中选择对于要使用的程序，建议使用 runfile 本地安装的形式。
 {: id="20210121001219-499ewck"}
 
-![20210121001546 的屏幕截图.png](assets/20210121001558-ez4j99h-2021-01-21 00-15-46 的屏幕截图.png)
-{: id="20210121001555-yf62uje"}
-
 ![2](assets/cuda-select-kit.png)
 {: id="20210121105111-fwa8bap"}
 
-{: id="20210122235639-lxyjngx"}
+{: id="20210123012206-aksqujb"}
 
 之后就是执行对应的安装脚本了。
 {: id="20210121001602-p45k38e"}
@@ -172,7 +185,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 ![](assets/cuda-install-accpet-license.png)
 {: id="20210122230622-8j2uubk"}
 
-{: id="20210122235639-on92w7w"}
+{: id="20210123012206-mq6wgqf"}
 
 这里选择号自己要安装的内容,CUDA Toolkit 为必须安装内容,其他的根据自己选择进行安装,一般桌面版的 ubuntu 第一个驱动都不装(因为自己以及装过了)
 {: id="20210122230622-dvbvdaz"}
@@ -198,7 +211,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 配置一下环境变量
 {: id="20210122235639-vpu1jqh"}
 
-{: id="20210123002110-uie6kw5"}
+{: id="20210123012206-9ako5jt"}
 
 ```bash
 echo "export PATH=\"\$PATH:/usr/local/cuda/bin\"" >> ~/.profile
@@ -219,9 +232,9 @@ Cuda compilation tools, release 10.1, V10.1.243
 ```
 {: id="20210123002831-cudu5la"}
 
-{: id="20210123004648-s2umuqt"}
+{: id="20210123012206-7huqozp"}
 
-#### ubuntu20.04 安装 cuda10.1
+### ubuntu20.04 安装 cuda10.1
 {: id="20210123002124-g9z3cjw"}
 
 正常是无法安装的,为此我们需要先将 gcc,g++ 降级, 才可以正常的运行,值得注意的是,在安装 cuda10.1 时,由于未知原因,在安装前要指定好 cuda 的库文件 即通过 `--liberarypath=/usr/local/conda10.1`
@@ -239,8 +252,7 @@ sudo sh cuda_10.1.*.run --liberarypath=/usr/local/conda10.1
 > {: id="20210123005527-gvs4o0e"}
 {: id="20210123005524-ei5gx7g"}
 
-
-{: id="20210123005524-zfxbnzk"}
+{: id="20210123012206-bkmsk7w"}
 
 conda 的库文件如下:
 {: id="20210123004947-3o1dgfp"}
@@ -248,9 +260,9 @@ conda 的库文件如下:
 ![](assets/cuda-liberary-files.png)
 {: id="20210123005310-06juegm"}
 
-{: id="20210123005536-52j8u1t"}
+{: id="20210123012206-ma7qpbl"}
 
-{: id="20210123004959-8c9rfpx"}
+{: id="20210123012206-r7bf1zb"}
 
 ### CUDA 卸载
 {: id="20210121182748-lge95v6"}
@@ -268,7 +280,7 @@ sudo sh ./cuda-uninstaller
 ```
 {: id="20210123005857-70lcuxm"}
 
-{: id="20210123010035-6hdfiym"}
+{: id="20210123012206-oeqbniw"}
 
 对于一些低版本 cuda 可能用的.pl 执行文件,具体为
 {: id="20210123010037-j2b2z2q"}
@@ -282,7 +294,7 @@ sudo /usr/local/cuda-x.x/bin/uninstall_cuda_x.x.pl
 ![](assets/uninstall-cuda.png)
 {: id="20210123010052-txe40gq"}
 
-{: id="20210123011229-hikrlqw"}
+{: id="20210123012206-4ym34tp"}
 
 检查是否卸载干净直接去/usr/local 看看有无残留 cuda 文件即可
 {: id="20210123011751-gm3jwmc"}
