@@ -227,10 +227,6 @@ Cuda compilation tools, release 10.1, V10.1.243
 正常是无法安装的,为此我们需要先将 gcc,g++ 降级, 才可以正常的运行,值得注意的是,在安装 cuda10.1 时,由于未知原因,在安装前要指定好 cuda 的库文件 即通过 `--liberarypath=/usr/local/conda10.1`
 {: id="20210123004707-vy7eilm"}
 
-> 这里
-> {: id="20210123005441-av2dz47"}
-{: id="20210123005437-i5hh9vf"}
-
 即运行指令
 {: id="20210123005338-fn0oyfz"}
 
@@ -239,11 +235,20 @@ sudo sh cuda_10.1.*.run --liberarypath=/usr/local/conda10.1
 ```
 {: id="20210123005345-m4m40ro"}
 
+> 这里更改库地址为其他并不会影响 cuda 的安装,但是建议和 cuda 主文件安装在一起
+> {: id="20210123005527-gvs4o0e"}
+{: id="20210123005524-ei5gx7g"}
+
+
+{: id="20210123005524-zfxbnzk"}
+
 conda 的库文件如下:
 {: id="20210123004947-3o1dgfp"}
 
 ![](assets/cuda-liberary-files.png)
 {: id="20210123005310-06juegm"}
+
+{: id="20210123005536-52j8u1t"}
 
 {: id="20210123004959-8c9rfpx"}
 
@@ -253,7 +258,26 @@ conda 的库文件如下:
 对于 cuda 卸载官方给出过脚本，只需要执行对于 cuda 文件中的 sh 文件即可
 {: id="20210121184045-yu55a1c"}
 
+一般为 cuda 目录下的 bin 文件夹里的 cuda-uninstaller,即运行
 {: id="20210122235639-ltzyjxn"}
+
+```bash
+sudo sh /usr/local/conda-10.1/bin/cuda-uninstaller
+```
+{: id="20210123005857-70lcuxm"}
+
+{: id="20210123010035-6hdfiym"}
+
+对于一些低版本 cuda 可能用的.pl 执行文件,具体为
+{: id="20210123010037-j2b2z2q"}
+
+```bash
+# x.x 为自己的具体版本
+sudo /usr/local/cuda-x.x/bin/uninstall_cuda_x.x.pl
+```
+{: id="20210123010112-3bb3l5n"}
+
+{: id="20210123010052-txe40gq"}
 
 
 {: id="20210120125837-xlp5tbq" type="doc"}
