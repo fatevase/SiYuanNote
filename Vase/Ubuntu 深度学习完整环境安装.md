@@ -262,7 +262,9 @@ conda 的库文件如下:
 {: id="20210122235639-ltzyjxn"}
 
 ```bash
-sudo sh /usr/local/conda-10.1/bin/cuda-uninstaller
+cd /usr/local/conda/bin
+
+sudo sh ./cuda-uninstaller
 ```
 {: id="20210123005857-70lcuxm"}
 
@@ -277,7 +279,10 @@ sudo /usr/local/cuda-x.x/bin/uninstall_cuda_x.x.pl
 ```
 {: id="20210123010112-3bb3l5n"}
 
+![](assets/uninstall-cuda.png)
 {: id="20210123010052-txe40gq"}
+
+{: id="20210123011229-hikrlqw"}
 
 
 {: id="20210120125837-xlp5tbq" type="doc"}
