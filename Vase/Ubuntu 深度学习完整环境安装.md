@@ -4,13 +4,13 @@
 ## Anaconda 安装配置
 {: id="20210120230750-4mdkl8z"}
 
-首先是miniconda的安装
+首先是 miniconda 的安装
 {: id="20210120130012-lyar9jj"}
 
-先去conda官网下载对应系统的[最新版本miniconda](https://docs.conda.io/en/latest/miniconda.html)，linux操作系统下载.sh的执行文件
+先去 conda 官网下载对应系统的[最新版本 miniconda](https://docs.conda.io/en/latest/miniconda.html)，linux 操作系统下载.sh 的执行文件
 {: id="20210120130030-6vxy9fx"}
 
-![20210120130210的屏幕截图.png](assets/miniconda3-web-index.png)
+![20210120130210 的屏幕截图.png](assets/miniconda3-web-index.png)
 {: id="20210120130150-mnqmpsh"}
 
 命令行模式下给下载的文件执行权限,并执行
@@ -23,10 +23,10 @@ sudo chmod +x filename.sh
 ```
 {: id="20210120223759-o2xkhnn"}
 
-根据提示安装好conda后，此时环境变量并没有配，需要手动把conda加入环境变量中即可
+根据提示安装好 conda 后，此时环境变量并没有配，需要手动把 conda 加入环境变量中即可
 {: id="20210120224135-v3v6c33"}
 
-linux 环境变量配置的地方有几处如 `~/.bashrc` 和`~/.profile`，个人建议装在profile中配置自己的环境变量。
+linux 环境变量配置的地方有几处如 `~/.bashrc` 和 `~/.profile`，个人建议装在 profile 中配置自己的环境变量。
 {: id="20210120224232-278f3p2"}
 
 ```bash
@@ -42,7 +42,7 @@ conda env list
 ```
 {: id="20210120224727-dmr9laa"}
 
-为了加速之后conda的下载速度，建议修改conda channel到国内的镜像源
+为了加速之后 conda 的下载速度，建议修改 conda channel 到国内的镜像源
 {: id="20210120225530-a1gzcmk"}
 
 ```bash
@@ -52,7 +52,7 @@ conda config
 ```
 {: id="20210120230026-518ngb8"}
 
-此时conda会在 自己用户目录下生成`/usr/login_name/.condarc` 也就是 `~/.condarc`文件
+此时 conda 会在 自己用户目录下生成 `/usr/login_name/.condarc` 也就是 `~/.condarc` 文件
 {: id="20210120230249-5sikk41"}
 
 将配置文件里的内容修改为：
@@ -71,10 +71,10 @@ ssl_verify: true
 ```
 {: id="20210120230506-c05rbrs"}
 
-此时conda的配置源基本处理结束，可以安装自己想用的内容了，
+此时 conda 的配置源基本处理结束，可以安装自己想用的内容了，
 {: id="20210120230548-buu2j9f"}
 
-### conda的常用基本命令
+### conda 的常用基本命令
 {: id="20210120230627-8p7typq"}
 
 ((20210110124639-ubr0y74 "{{.text}}"))
@@ -83,10 +83,10 @@ ssl_verify: true
 ## CUDA 安装配置
 {: id="20210120230741-ccsqxbq"}
 
-安装cuda主要为了gpu可以参加深度学习的运算。
+安装 cuda 主要为了 gpu 可以参加深度学习的运算。
 {: id="20210120232647-juf5je7"}
 
-对于CUDA 安装首先是要确认机器是否可以安装CUDA，使用以下命令显示自己的nivida显卡信息，并对比显卡
+对于 CUDA 安装首先是要确认机器是否可以安装 CUDA，使用以下命令显示自己的 nivida 显卡信息，并对比显卡
 {: id="20210121181431-ttlulh0"}
 
 是否在对应
@@ -105,10 +105,9 @@ update-pciids
 ```
 {: id="20210121181634-winl5ew"}
 
+{: id="20210122225943-ixptosf"}
 
-{: id="20210121182910-chbceq0"}
-
-一般来说cuda均需要gcc 和 g++的支持，所以在执行给定脚本前，先安装好g++和gcc
+一般来说 cuda 均需要 gcc 和 g++ 的支持，所以在执行给定脚本前，先安装好 g++ 和 gcc
 {: id="20210121182903-8mnxw5g"}
 
 ```bash
@@ -116,25 +115,25 @@ sudo apt-get install gcc g++
 ```
 {: id="20210121181804-ipdmsni"}
 
-值得注意的是ubuntu20.04安装的gcc默认版本是9.x，但是cuda10.1并不支持gcc9.x版本，需要自己
+值得注意的是 ubuntu20.04 安装的 gcc 默认版本是 9.x，但是 cuda10.1 并不支持 gcc9.x 版本，需要自己
 {: id="20210121183009-nwmovh3"}
 
-->((20210121183236-qx9uelp "手动安装底版本的gcc")) <-。
+->((20210121183236-qx9uelp "手动安装低版本的 gcc")) <-。
 {: id="20210121183718-jz7hgib"}
 
-ubuntu20.04 tls只支持cuda11以上版本 所以目标安装cuda11.2最新版本,先是在nvidia官网的[cuda archived](https://developer.nvidia.com/cuda-toolkit-archive)中找到对于的版本，可以使用 `uname -m && cat /etc/*release`查看自己的系统信息。![20210121001419的屏幕截图.png](assets/cuda-tookit-archived.png)
+ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新版本,先是在 nvidia 官网的 [cuda archived](https://developer.nvidia.com/cuda-toolkit-archive) 中找到对于的版本，可以使用 `uname -m && cat /etc/*release` 查看自己的系统信息。![20210121001419 的屏幕截图.png](assets/cuda-tookit-archived.png)
 {: id="20210120125843-e616g1f"}
 
-并在之后的选择器中选择对于要使用的程序，建议使用runfile本地安装的形式。
+并在之后的选择器中选择对于要使用的程序，建议使用 runfile 本地安装的形式。
 {: id="20210121001219-499ewck"}
 
-![20210121001546的屏幕截图.png](assets/20210121001558-ez4j99h-2021-01-21 00-15-46 的屏幕截图.png)
+![20210121001546 的屏幕截图.png](assets/20210121001558-ez4j99h-2021-01-21 00-15-46 的屏幕截图.png)
 {: id="20210121001555-yf62uje"}
 
 ![2](assets/cuda-select-kit.png)
 {: id="20210121105111-fwa8bap"}
 
-{: id="20210121182851-78ivq1u"}
+{: id="20210122225943-oto9y8h"}
 
 之后就是执行对应的安装脚本了。
 {: id="20210121001602-p45k38e"}
@@ -152,15 +151,15 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 > {: id="20210121002129-17op5zo"}
 {: id="20210121002114-5s766zs"}
 
-{: id="20210121184036-fufqjte"}
+{: id="20210122225943-s4drs38"}
 
 ### CUDA 卸载
 {: id="20210121182748-lge95v6"}
 
-对于cuda卸载官方给出过脚本，只需要执行对于cuda文件中的sh文件即可
+对于 cuda 卸载官方给出过脚本，只需要执行对于 cuda 文件中的 sh 文件即可
 {: id="20210121184045-yu55a1c"}
 
-{: id="20210121184122-7gyx7cx"}
+{: id="20210122225943-ke1uz66"}
 
 
 {: id="20210120125837-xlp5tbq" type="doc"}
