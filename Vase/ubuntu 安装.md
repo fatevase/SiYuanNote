@@ -68,9 +68,9 @@ flameshot gui
 之后就可以使用快捷键愉快的截图啦。
 {: id="20210121191638-b2rjd5z"}
 
-{: id="20210121192538-1sf4clu"}
+{: id="20210122122455-3if2bdk"}
 
-{: id="20210121192538-ep6poc2"}
+{: id="20210122122455-5gxm1oq"}
 
 ### 网络下载应用安装
 {: id="20210110110525-upk55qn"}
@@ -80,7 +80,9 @@ flameshot gui
 
 ```
 # 对无法双脚安装的应用进行安装
-sudo dpkg -i  "software.deb"
+# --instdir 指定安装目录
+# dpkg -x same.deb 解压到当前目录
+sudo dpkg -i --instdir=/home/username/software/path "software.deb"
 # 如果提示依赖问题 安装所有依赖
 sudo apt-get install -f
 # 卸载通过
@@ -89,6 +91,8 @@ sudo dpkg --remove softname
 
 ```
 {: id="20210110111200-cbn5w01"}
+
+{: id="20210122123316-xdvz8hl"}
 
 
 {: id="20210105194423-yg7b5jv" type="doc"}
