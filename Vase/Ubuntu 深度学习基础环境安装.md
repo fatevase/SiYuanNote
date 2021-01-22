@@ -80,6 +80,12 @@ ssl_verify: true
 ((20210110124639-ubr0y74 "{{.text}}"))
 {: id="20210120230640-a379eqp"}
 
+{: id="20210123025335-rl6634p"}
+
+> Conda 里也可以配置 cudatoolkit
+> {: id="20210123025337-5q7ws6i"}
+{: id="20210123025335-6t16stl"}
+
 ## CUDA 安装配置
 {: id="20210120230741-ccsqxbq"}
 
@@ -324,7 +330,8 @@ conda 的库文件如下:
 {: id="20210123024235-az0s06l"}
 
 ```shell
-conda create -n gluon python=3.6 mxnet-cu101 jupyter matplotlib pandas d2lzh=1.0.0
+conda create -n gluon python=3.6 jupyter matplotlib pandas
+pip install mxnet-cu101 d2lzh=1.0.0
 
 ```
 {: id="20210123024251-5o9mwwb"}
