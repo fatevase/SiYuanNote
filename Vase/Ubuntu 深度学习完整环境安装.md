@@ -94,6 +94,7 @@ ssl_verify: true
 
 ```bash
 lspci | grep -i nvidia
+nvidia-smi
 ```
 {: id="20210121181454-ih0mdl1"}
 
@@ -105,7 +106,19 @@ update-pciids
 ```
 {: id="20210121181634-winl5ew"}
 
+这里推荐手动下载 nvidia 驱动,[驱动官网](https://www.nvidia.com/download/index.aspx?lang=en-us):https://www.nvidia.com/download/index.aspx?lang=en-us
 {: id="20210122235639-thbn7l7"}
+
+![](assets/search-nvidia-driver.png)
+{: id="20210123003810-8ce0cpv"}
+
+下载之后 sh 运行即可
+{: id="20210123004045-0yc1hji"}
+
+```bash
+sudo sh dirve-file-path.run
+```
+{: id="20210123004106-opwmokr"}
 
 一般来说 cuda 均需要 gcc 和 g++ 的支持，所以在执行给定脚本前，先安装好 g++ 和 gcc
 {: id="20210121182903-8mnxw5g"}
@@ -167,7 +180,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 ![cudainstallselector.png](assets/cuda-install-selector.png)
 {: id="20210122231010-bi16rmf"}
 
-其中 cuda 安装所作的主要是以下的工作:
+[其中 cuda 安装所作的主要是以下的工作](https://www.pugetsystems.com/labs/hpc/How-To-Install-CUDA-10-1-on-Ubuntu-19-04-1405/):
 {: id="20210123000057-j1m0171"}
 
 * {: id="20210123000149-7fvjkql"}安装 cuda toolkit 到/usr/local/cuda-version
