@@ -107,8 +107,7 @@ nvidia-smi
 ![](assets/check-display-drive.png)
 {: id="20210123012538-lf10znj"}
 
-
-{: id="20210123012610-z10m4tg"}
+{: id="20210123015806-9725b52"}
 
 这里推荐手动下载 nvidia 驱动,[驱动官网](https://www.nvidia.com/download/index.aspx?lang=en-us):https://www.nvidia.com/download/index.aspx?lang=en-us
 {: id="20210122235639-thbn7l7"}
@@ -116,21 +115,37 @@ nvidia-smi
 ![](assets/search-nvidia-driver.png)
 {: id="20210123003810-8ce0cpv"}
 
+Nvidia 驱动安装需要用到 make 命令
+{: id="20210123020024-vqf6xq0"}
+
+```bash
+sudo apt-get install make
+```
+{: id="20210123020050-9aoo61f"}
+
 下载之后 通过 Ctrl+Alt+F3 切换到文字界面安装驱动, 执行对应的驱动文件即可
 {: id="20210123004045-0yc1hji"}
 
 ```bash
-sudo service lightdm stop
-sudo sh dirve-file-path.run
-sudo service lightdm restart
+
+sudo sh dirve-file-path.run -no-x-check -no-nouveau-check -no-opengl-files
 ```
 {: id="20210123004106-opwmokr"}
+
+只有禁用 opengl 这样安装才不会出现循环登陆的问题
+{: id="20210123015850-scbgz4r"}
+
+* {: id="20210123015858-zg8rv3x"}-no-x-check：安装驱动时关闭 X 服务
+* {: id="20210123015904-72im7c6"}-no-nouveau-check：安装驱动时禁用 nouveau
+* {: id="20210123015908-dbyoc51"}-no-opengl-files：只安装驱动文件，不安装 OpenGL 文件
+{: id="20210123015850-epkfhgc"}
+
+{: id="20210123015850-e3cfj4m"}
 
 Ctrl+Alt+F2,切回桌面
 {: id="20210123012640-88be0v7"}
 
-
-{: id="20210123012709-9b6kmal"}
+{: id="20210123015806-u89m7rj"}
 
 ### GCC + G++ 编译器
 {: id="20210123012640-tm3ck1f"}
@@ -149,7 +164,7 @@ sudo apt-get install gcc g++
 ->((20210121183236-qx9uelp "手动安装低版本的 gcc")) <-。
 {: id="20210121183718-jz7hgib"}
 
-{: id="20210123012721-e3zgg1u"}
+{: id="20210123015806-1yj10kg"}
 
 ### CUDA 脚本 下载与安装
 {: id="20210123012206-diil5mz"}
@@ -163,7 +178,7 @@ ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新
 ![2](assets/cuda-select-kit.png)
 {: id="20210121105111-fwa8bap"}
 
-{: id="20210123012206-aksqujb"}
+{: id="20210123015806-nmjhb1r"}
 
 之后就是执行对应的安装脚本了。
 {: id="20210121001602-p45k38e"}
@@ -187,7 +202,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 ![](assets/cuda-install-accpet-license.png)
 {: id="20210122230622-8j2uubk"}
 
-{: id="20210123012206-mq6wgqf"}
+{: id="20210123015806-nu9okmd"}
 
 这里选择号自己要安装的内容,CUDA Toolkit 为必须安装内容,其他的根据自己选择进行安装,一般桌面版的 ubuntu 第一个驱动都不装(因为自己以及装过了)
 {: id="20210122230622-dvbvdaz"}
@@ -213,7 +228,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 配置一下环境变量
 {: id="20210122235639-vpu1jqh"}
 
-{: id="20210123012206-9ako5jt"}
+{: id="20210123015806-z42vs36"}
 
 ```bash
 echo "export PATH=\"\$PATH:/usr/local/cuda/bin\"" >> ~/.profile
@@ -234,7 +249,7 @@ Cuda compilation tools, release 10.1, V10.1.243
 ```
 {: id="20210123002831-cudu5la"}
 
-{: id="20210123012206-7huqozp"}
+{: id="20210123015806-iz8gx6s"}
 
 ### ubuntu20.04 安装 cuda10.1
 {: id="20210123002124-g9z3cjw"}
@@ -254,7 +269,7 @@ sudo sh cuda_10.1.*.run --liberarypath=/usr/local/conda10.1
 > {: id="20210123005527-gvs4o0e"}
 {: id="20210123005524-ei5gx7g"}
 
-{: id="20210123012206-bkmsk7w"}
+{: id="20210123015806-m5eqoie"}
 
 conda 的库文件如下:
 {: id="20210123004947-3o1dgfp"}
@@ -262,9 +277,9 @@ conda 的库文件如下:
 ![](assets/cuda-liberary-files.png)
 {: id="20210123005310-06juegm"}
 
-{: id="20210123012206-ma7qpbl"}
+{: id="20210123015806-g1qk48v"}
 
-{: id="20210123012206-r7bf1zb"}
+{: id="20210123015806-1bdxnco"}
 
 ### CUDA 卸载
 {: id="20210121182748-lge95v6"}
@@ -282,7 +297,7 @@ sudo sh ./cuda-uninstaller
 ```
 {: id="20210123005857-70lcuxm"}
 
-{: id="20210123012206-oeqbniw"}
+{: id="20210123015806-bb60b8q"}
 
 对于一些低版本 cuda 可能用的.pl 执行文件,具体为
 {: id="20210123010037-j2b2z2q"}
@@ -296,7 +311,7 @@ sudo /usr/local/cuda-x.x/bin/uninstall_cuda_x.x.pl
 ![](assets/uninstall-cuda.png)
 {: id="20210123010052-txe40gq"}
 
-{: id="20210123012206-4ym34tp"}
+{: id="20210123015806-txwka39"}
 
 检查是否卸载干净直接去/usr/local 看看有无残留 cuda 文件即可
 {: id="20210123011751-gm3jwmc"}
