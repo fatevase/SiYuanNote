@@ -116,15 +116,17 @@ nvidia-smi
 ![](assets/search-nvidia-driver.png)
 {: id="20210123003810-8ce0cpv"}
 
-下载之后 通过切换到文字界面安装驱动 Ctrl+Alt+F3,执行对应的驱动文件即可
+下载之后 通过 Ctrl+Alt+F3 切换到文字界面安装驱动, 执行对应的驱动文件即可
 {: id="20210123004045-0yc1hji"}
 
 ```bash
+sudo service lightdm stop
 sudo sh dirve-file-path.run
+sudo service lightdm restart
 ```
 {: id="20210123004106-opwmokr"}
 
-
+Ctrl+Alt+F2,切回桌面
 {: id="20210123012640-88be0v7"}
 
 
