@@ -121,8 +121,7 @@ sudo apt-get install gcc g++
 ->((20210121183236-qx9uelp "手动安装低版本的 gcc")) <-。
 {: id="20210121183718-jz7hgib"}
 
-### CUDA 高版本安裝
-{: id="20210122235551-nl5vupb"}
+{: id="20210123002922-gifbnrx"}
 
 ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新版本,先是在 nvidia 官网的 [cuda archived](https://developer.nvidia.com/cuda-toolkit-archive) 中找到对于的版本，可以使用 `uname -m && cat /etc/*release` 查看自己的系统信息。![20210121001419 的屏幕截图.png](assets/cuda-tookit-archived.png)
 {: id="20210120125843-e616g1f"}
@@ -189,15 +188,23 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 {: id="20210123002110-uie6kw5"}
 
 ```bash
-echo "export PATH=\$PATH:/usr/local/cuda/bin"  >> ~/.profile
+echo "export PATH=\"\$PATH:/usr/local/cuda/bin\"" >> ~/.profile
 
 source ~/.profile
 ```
 {: id="20210123001958-jderxr9"}
 
-{: id="20210123002248-at4hv1u"}
-
+之后使用 ncvv -V 检查下 CUDA 环境即可
 {: id="20210123002124-prk491v"}
+
+```shell
+(base) vase@vase:~/software/YesPlayMusic$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2019 NVIDIA Corporation
+Built on Sun_Jul_28_19:07:16_PDT_2019
+Cuda compilation tools, release 10.1, V10.1.243
+```
+{: id="20210123002831-cudu5la"}
 
 {: id="20210123002124-g9z3cjw"}
 
