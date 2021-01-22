@@ -186,12 +186,20 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 配置一下环境变量
 {: id="20210122235639-vpu1jqh"}
 
-```bash
-echo "export PATH=$PATH:/usr/local/conda/bin"
-```
-{: id="20210123000938-g6wbx80"}
+{: id="20210123002110-uie6kw5"}
 
-{: id="20210122235704-cjm24yi"}
+```bash
+echo "export PATH=\$PATH:/usr/local/cuda/bin"  >> ~/.profile
+
+source ~/.profile
+```
+{: id="20210123001958-jderxr9"}
+
+{: id="20210123002248-at4hv1u"}
+
+{: id="20210123002124-prk491v"}
+
+{: id="20210123002124-g9z3cjw"}
 
 ### CUDA 卸载
 {: id="20210121182748-lge95v6"}
