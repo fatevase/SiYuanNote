@@ -7,11 +7,11 @@
 > 安装 nginx：apt update && apt install -y nginx
 > {: id="20210122032926-a630m9z"}
 >
-> 安装 v2ray：wget https://install.direct/go.sh && bash go.sh
-> {: id="20210122032926-uxl6jxd"}
+> 安装 v2ray：wget https://github.com/v2fly/fhs-install-v2ray/blob/master/install-release.sh && bash install-release.sh
+> {: id="null"}
 {: id="20210122032926-0inqpys"}
 
-{: id="20210123021042-id0ibsp"}
+{: id="20210124230003-wc04x4e"}
 
 ## 解析域名
 {: id="20210122033201-urfi1ux"}
@@ -33,7 +33,7 @@ OS 不同，方法不同，参考 https://certbot.eff.org/
 ```
 {: id="20210122033431-umlsf85"}
 
-{: id="20210123021042-mpcmbpa"}
+{: id="20210124230003-e2kht6i"}
 
 安装好 Nginx 后, cd 到 /etc/nginx/conf.d，添加文件 v2ray.conf，填入以下内容，文中 example.com 修改为你解析到 vps 的域名
 {: id="20210122032926-ecles8h"}
@@ -94,7 +94,7 @@ server {
 [UUID 在线生成](https://www.uuidgenerator.net/)
 {: id="20210122034012-ji70uqu"}
 
-{: id="20210123021042-5uax1y5"}
+{: id="20210124230003-t656irp"}
 
 ```json
 {
@@ -130,7 +130,7 @@ server {
 ```
 {: id="20210122032926-ygr5fnm"}
 
-{: id="20210123021042-crkqn2r"}
+{: id="20210124230003-8rktkla"}
 
 ## 客户端连接
 {: id="20210122033802-a4w50e0"}
@@ -138,7 +138,7 @@ server {
 客户端连接的时候设置 path 为 ray，开启底层传输安全（tls），地址即为你的域名，用户 id 即为你的 uuid
 {: id="20210122033802-0lm3s4e"}
 
-{: id="20210123021042-yagu5fr"}
+{: id="20210124230003-5sf3585"}
 
 
 {: id="20210122032910-k292ue1" type="doc"}
