@@ -4,7 +4,7 @@
 ![Docker Architecture Diagram](assets/docker-architecture.svg)
 {: id="20210125122454-r5xeh3u"}
 
-{: id="20210125122453-dwqq1qy"}
+{: id="20210125124344-kbuf81b"}
 
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
@@ -32,13 +32,14 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 {: id="20210125122218-64qqkr9"}
 
-{: id="20210125122218-jt7r0km"}
+{: id="20210125124344-h721v3n"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
 
 ```shell
 
+# 更新 apt-get
 sudo apt-get update
 
 sudo apt-get install \
@@ -47,16 +48,42 @@ sudo apt-get install \
     curl \
     gnupg-agent \
     software-properties-common
+
+# 加Docker官方GPG key:
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# 设定 stable版本的镜像存储库(用于下载Docker)
+sudo add-apt-repository \
+   "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+
+# 安装Docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 {: id="20210125122221-7gmzse0"}
 
-{: id="20210125122220-nipf8g5"}
+#### **值得注意的:**
+{: id="20210125124153-9glzph0"}
+
+> 在设定 docker 镜像存储库时,官方指定的仓库为:https://download.docker.com/linux/ubuntu
+> {: id="20210125124211-vv1a53r"}
+>
+> 这里我改为的是 aliyun 的国内镜像仓库用于加速下载
+> {: id="20210125124300-qvdedap"}
+{: id="20210125124153-gxmxqif"}
+
+{: id="20210125124344-dkz3aoj"}
+
+{: id="20210125124344-cs8qwp9"}
+
+{: id="20210125124344-xcb9b7s"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
-{: id="20210125122143-ae327nl"}
+{: id="20210125124344-n0v8uw6"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
