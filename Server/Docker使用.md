@@ -42,7 +42,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 # 更新 apt-get
 sudo apt-get update
 
-安装 apt 依赖包，用于通过HTTPS来获取仓库:
+# 安装 apt 依赖包，用于通过HTTPS来获取仓库:
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -59,27 +59,39 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-
-# 安装Docker
+# 安装安装最新版本的 Docker Engine-Community 和 containerd 
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 {: id="20210125122221-7gmzse0"}
 
-#### **值得注意的:**
-{: id="20210125124153-9glzph0"}
-
 > 在设定 docker 镜像存储库时,官方指定的仓库为:https://download.docker.com/linux/ubuntu
-> {: id="20210125124211-vv1a53r"}
+> {: id="20210125225103-nb6wki7"}
 >
-> 这里我改为的是 aliyun 的国内镜像仓库用于加速下载
-> {: id="20210125124300-qvdedap"}
-{: id="20210125124153-gxmxqif"}
+> 这里我改为的是 aliyun 的国内镜像仓库用于加速下载;
+> {: id="20210125225103-8zhwcg4"}
+>
+> 加入并验证 Docker GPG key 并不是必须的步骤,只需要在 apt-get 添加 `--nogpgcheck`
+> {: id="20210125225118-rctb1wm"}
+{: id="20210125224958-pehyirv"}
 
+{: id="20210125225052-owfl4il"}
+
+### 更新
+{: id="20210125225002-zcpmze0"}
+
+```shell
+# 更新docker 需要卸载旧版本后安装新版本
+```
+{: id="20210125225012-no97jdi"}
+
+### 小结
+{: id="20210125225001-ipm3x7f"}
+
+这一套 Docker 命令行安装还不如自己手动下载 deb,用 dpkg 安装来的简单
 {: id="20210125222849-nxqhdxt"}
 
-{: id="20210125222849-483z6my"}
-
-{: id="20210125222849-6vhstni"}
+deb 安装包地址:
+{: id="20210125225413-1nuib3n"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
