@@ -4,8 +4,11 @@
 ### 第一步：注册账号 GitHub 官网
 {: id="20210110105947-2f1h2jl"}
 
-第二步：创建 SSH Key。在用户主目录下，看看有没有。SSH 目录，如果有，再看看这个目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果已经有了，可直接跳到下一步。
+### 第二步：创建 SSH Key。
 {: id="20210110105947-xo2sjca"}
+
+在用户主目录下，看看有没有。SSH 目录，如果有，再看看这个目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果已经有了，可直接跳到下一步。
+{: id="20210125120459-l57e78b"}
 
 如果没有，打开 Shell（Windows 下打开 Git Bash），创建 SSH Key：
 {: id="20210110105947-hoblo31"}
@@ -19,8 +22,13 @@
 
 如果一切顺利的话，可以在用户主目录里找到。SSH 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人。
 打开 id_rsa.pub，复制里面的内容。
-第三步，登陆 GitHub，打开“Account settings”，“SSH Keys and GPG keys”页面：
+{: id="20210125120503-w6ooa1o"}
+
+### 第三步:
 {: id="20210110105947-qel03h0"}
+
+登陆 GitHub，打开“Account settings”，“SSH Keys and GPG keys”页面：
+{: id="20210125120507-lkadsd7"}
 
 然后，点“New SSH Key”，填上任意 Title，在 Key 文本框里粘贴 id_rsa.pub 文件的内容即可。
 {: id="20210110105947-dip0yov"}
@@ -30,6 +38,9 @@
 
 点“Add Key”，你就应该看到已经添加的 Key。
 {: id="20210110105947-p2b73f6"}
+
+### 综述
+{: id="20210125120515-4po5584"}
 
 为什么 GitHub 需要 SSH Key 呢？因为 GitHub 需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而 Git 支持 SSH 协议，所以，GitHub 只要知道了你的公钥，就可以确认只有你自己才能推送。
 {: id="20210110105947-fxdi207"}
