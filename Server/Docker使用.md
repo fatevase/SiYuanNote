@@ -1,10 +1,28 @@
 ## Dock 工作流程
 {: id="20210125122452-xwfw293"}
 
+### DOcker 与虚拟机的区别
+{: id="20210125233920-q39gnal"}
+
+![Docker](http://udn.yyuap.com/doc/docker_practice/_images/docker.png)![传统虚拟化](http://udn.yyuap.com/doc/docker_practice/_images/virtualization.png)
+{: id="20210125233921-1djadhv"}
+
+{: id="20210125234004-yp0t9qg"}
+
+### Docker 纵览
+{: id="20210125233936-ajvlhy5"}
+
+在 Docker 的术语里，一个只读层被称为镜像，一个镜像是永久不会变的。
+{: id="20210125234213-iyfquiy"}
+
+{: id="20210125234219-fg7i9qi"}
+
+{: id="20210125234219-rv1u5ul"}
+
 ![Docker Architecture Diagram](assets/docker-architecture.svg)
 {: id="20210125122454-r5xeh3u"}
 
-{: id="20210125231854-zf8za0c"}
+{: id="20210125233255-d45yypf"}
 
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
@@ -17,6 +35,7 @@
 
 * {: id="20210125121817-fzhlyqk"}[docker 教程](https://www.bilibili.com/video/BV1og4y1q7M4?p=6):https://www.bilibili.com/video/BV1og4y1q7M4
 * {: id="20210125121817-cjhfsly"}[docker-document](https://docs.docker.com/):https://docs.docker.com/
+* {: id="20210125234031-8gmjvn2"}[docker 中文文档](http://www.dockerinfo.net):http://www.dockerinfo.net
 {: id="20210125121817-nfsboj9"}
 
 > 以下以 Ubuntu20.04LTS 进行安装操作,具体其他操作系统查看[官方文档](https://docs.docker.com/engine/install/):https://docs.docker.com/engine/install/
@@ -28,11 +47,12 @@
 
 ```shell
 sudo apt-get remove docker docker-engine docker.io containerd runc
-
+# 如果需要彻底卸载docker 包括docker下载的镜像,则执行如下命令
+sudo rm -rf /var/lib/docker
 ```
 {: id="20210125122218-64qqkr9"}
 
-{: id="20210125231854-xmhtifs"}
+{: id="20210125233255-uhi470k"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
@@ -77,7 +97,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 > {: id="20210125231755-v9bed15"}
 {: id="20210125224958-pehyirv"}
 
-{: id="20210125231854-bd9tvnd"}
+{: id="20210125233255-9tn4n5t"}
 
 ### 更新
 {: id="20210125225002-zcpmze0"}
@@ -105,12 +125,12 @@ ubuntu 的 deb 安装包地址:[https://download.docker.com/linux/ubuntu/dists/]
 ![dockerdebdonwload.png](assets/docker-deb-donwload.png)
 {: id="20210125230132-0xp28vy"}
 
-{: id="20210125231854-ymenq3u"}
+{: id="20210125233255-7d118td"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
-{: id="20210125231854-wh3dqv9"}
+{: id="20210125233255-a5cnl6j"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
