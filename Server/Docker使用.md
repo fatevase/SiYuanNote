@@ -1,7 +1,7 @@
 ## Dock 工作流程
 {: id="20210125122452-xwfw293"}
 
-![Docker Architecture Diagram](assets/docker-architecture.svg)
+![Docker Architecture Diagram](assets/docker-architecture.png)
 {: id="20210125122454-r5xeh3u"}
 
 {: id="20210125222849-iq889ba"}
@@ -42,6 +42,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 # 更新 apt-get
 sudo apt-get update
 
+安装 apt 依赖包，用于通过HTTPS来获取仓库:
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
