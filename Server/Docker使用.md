@@ -321,8 +321,24 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 #### docker 日志
 {: id="20210126003011-mfmvuk8"}
 
-`docker log -f -t --tail ? 容器ID`: 查看该镜像的运行的?条日志
+`docker logs -f -t --tail ? 容器ID`: 查看该镜像的运行的?条日志
 {: id="20210126003023-rd1hntp"}
+
+{: id="20210126003219-vkhvawv"}
+
+#### 查看 docker 进程
+{: id="20210126003443-cv177qt"}
+
+`docker top 容器ID`:查看容器中的进程 ID
+{: id="20210126003500-qg93zm7"}
+
+{: id="20210126003559-xxx60wz"}
+
+#### 查看容器信息
+{: id="20210126003601-xp4n67k"}
+
+`docker inspect 容器ID`: 查看容器的所有信息
+{: id="20210126003609-qfu7548"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
