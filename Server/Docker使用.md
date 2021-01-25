@@ -7,7 +7,7 @@
 ![Docker](http://udn.yyuap.com/doc/docker_practice/_images/docker.png)![传统虚拟化](http://udn.yyuap.com/doc/docker_practice/_images/virtualization.png)
 {: id="20210125233921-1djadhv"}
 
-{: id="20210125234004-yp0t9qg"}
+{: id="20210126000210-vh0cy29"}
 
 ### Docker 纵览
 {: id="20210125233936-ajvlhy5"}
@@ -21,17 +21,17 @@
 ![镜像层次](http://udn.yyuap.com/doc/chinese_docker/terms/images/docker-filesystems-multilayer.png)
 {: id="20210125234219-fg7i9qi"}
 
-{: id="20210125234342-mzijvr1"}
+{: id="20210126000210-o8vvax4"}
 
 所有镜像都是通过一个 64 位十六进制字符串 （内部是一个 256 bit 的值）来标识的。 为简化使用，前 12 个字符可以组成一个短 ID，可以在命令行中使用。短 ID 还是有一定的 碰撞机率，所以服务器总是返回长 ID。
 {: id="20210125234342-psngleg"}
 
-{: id="20210125234219-rv1u5ul"}
+{: id="20210126000210-6doy08s"}
 
 ![Docker Architecture Diagram](assets/docker-architecture.svg)
 {: id="20210125122454-r5xeh3u"}
 
-{: id="20210125233255-d45yypf"}
+{: id="20210126000210-kaba8fr"}
 
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
@@ -61,7 +61,7 @@ sudo rm -rf /var/lib/docker
 ```
 {: id="20210125122218-64qqkr9"}
 
-{: id="20210125233255-uhi470k"}
+{: id="20210126000210-pse3kio"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
@@ -106,7 +106,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 > {: id="20210125231755-v9bed15"}
 {: id="20210125224958-pehyirv"}
 
-{: id="20210125233255-9tn4n5t"}
+{: id="20210126000210-e186onu"}
 
 ### 更新
 {: id="20210125225002-zcpmze0"}
@@ -134,30 +134,36 @@ ubuntu 的 deb 安装包地址:[https://download.docker.com/linux/ubuntu/dists/]
 ![dockerdebdonwload.png](assets/docker-deb-donwload.png)
 {: id="20210125230132-0xp28vy"}
 
-{: id="20210125233255-7d118td"}
+{: id="20210126000210-3sxwmr1"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
-{: id="20210125234519-h3e9gs8"}
+{: id="20210126000210-sacqpae"}
 
-{: id="20210125234519-5zdi6yw"}
+{: id="20210126000210-ujw288p"}
 
 ## Docker 使用
 {: id="20210125233255-a5cnl6j"}
 
+`docker --help` 获取 docker 的所有命令,下面介绍一些简单的 docker 命令
 {: id="20210125234531-kktcp9b"}
 
-### 获取镜像
+### 镜像相关指令
+{: id="20210125235809-ejkg8fm"}
+
+#### 获取镜像
 {: id="20210125234532-ef5pnpr"}
 
-可以使用 `docker pull` 命令来从仓库获取所需要的镜像。我们可以先去 DockerHub 查看自己需要的镜像.
+可以使用 `docker pull` 命令来从仓库获取所需要的镜像。我们可以先去 [DockerHub](https://hub.docker.com/search) 查看自己需要的镜像或者使用 docker search pakege, 搜索指令.
 {: id="20210125234544-cx385se"}
 
 下面的例子将从 Docker Hub 仓库下载一个 Ubuntu 12.04 操作系统的镜像。
 {: id="20210125234544-nap3obi"}
 
 ```
+$ docker search ubuntu
+
 $ sudo docker pull ubuntu:18.04
 Pulling repository ubuntu
 ab8e2728644c: Pulling dependent layers
@@ -186,9 +192,9 @@ root@fe7fc4bd8fc9:/#
 ```
 {: id="20210125235122-ax993bg"}
 
-{: id="20210125235127-1owbr6k"}
+{: id="20210126000210-kdjen2i"}
 
-### 列出本地影像
+#### 列出本地镜像
 {: id="20210125235134-a3eejyd"}
 
 使用 `docker images` 显示本地已有的镜像。
@@ -204,13 +210,35 @@ root@fe7fc4bd8fc9:/#
 * {: id="20210125235210-jwkhund"}镜像大小
 {: id="20210125235210-o4i8lcw"}
 
-其中镜像的 `ID` 唯一标识了镜像，。
+其中镜像的 `ID` 唯一标识了镜像，如果 ID 相同表示他为同一个镜像。
 {: id="20210125235210-tstqcvu"}
 
-`TAG` 信息用来标记来自同一个仓库的不同镜像。例如 `ubuntu` 仓库中有多个镜像，通过 `TAG` 信息来区分发行版本，例如 `10.04`、`12.04`、`12.10`、`13.04`、`14.04` 等。例如下面的命令指定使用镜像 `ubuntu:14.04` 来启动一个容器。
+`TAG` 信息用来标记来自同一个仓库的不同镜像。例如 `ubuntu` 仓库中有多个镜像，通过 `TAG` 信息来区分发行版本，例如 `18.04`、`20.04` 等。例如下面的命令指定使用镜像 `ubuntu:18.04 来启动一个容器。
 {: id="20210125235210-a8tj7le"}
 
+#### 删除镜像
 {: id="20210125235210-tzb0kjc"}
+
+使用 `docker rmi -f 镜像ID [镜像ID...]` 删除指定的单个或多个镜像。
+{: id="20210125235827-xzrc3wa"}
+
+使用 `docker rmi -f $(docker images -aq)` 删除全部镜像。
+{: id="20210125235828-xely6yb"}
+
+### 容器相关指令
+{: id="20210125235828-qrg3srp"}
+
+{: id="20210126000210-87aerf6"}
+
+#### 新建容器并启动
+{: id="20210126000055-v1viofz"}
+
+`docker run [args] image`
+{: id="20210126000210-pnpw1wf"}
+
+{: id="20210126000235-t0fi2xe"}
+
+{: id="20210126000210-nrcuh77"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
