@@ -7,7 +7,7 @@
 ![Docker](http://udn.yyuap.com/doc/docker_practice/_images/docker.png)![传统虚拟化](http://udn.yyuap.com/doc/docker_practice/_images/virtualization.png)
 {: id="20210125233921-1djadhv"}
 
-{: id="20210126000210-vh0cy29"}
+{: id="20210126000816-lfds6jr"}
 
 ### Docker 纵览
 {: id="20210125233936-ajvlhy5"}
@@ -21,17 +21,17 @@
 ![镜像层次](http://udn.yyuap.com/doc/chinese_docker/terms/images/docker-filesystems-multilayer.png)
 {: id="20210125234219-fg7i9qi"}
 
-{: id="20210126000210-o8vvax4"}
+{: id="20210126000816-kx5fod3"}
 
 所有镜像都是通过一个 64 位十六进制字符串 （内部是一个 256 bit 的值）来标识的。 为简化使用，前 12 个字符可以组成一个短 ID，可以在命令行中使用。短 ID 还是有一定的 碰撞机率，所以服务器总是返回长 ID。
 {: id="20210125234342-psngleg"}
 
-{: id="20210126000210-6doy08s"}
+{: id="20210126000816-gxhnx3h"}
 
 ![Docker Architecture Diagram](assets/docker-architecture.svg)
 {: id="20210125122454-r5xeh3u"}
 
-{: id="20210126000210-kaba8fr"}
+{: id="20210126000816-6kdxjvo"}
 
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
@@ -61,7 +61,7 @@ sudo rm -rf /var/lib/docker
 ```
 {: id="20210125122218-64qqkr9"}
 
-{: id="20210126000210-pse3kio"}
+{: id="20210126000816-ezvyv97"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
@@ -106,7 +106,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 > {: id="20210125231755-v9bed15"}
 {: id="20210125224958-pehyirv"}
 
-{: id="20210126000210-e186onu"}
+{: id="20210126000816-5unxi2a"}
 
 ### 更新
 {: id="20210125225002-zcpmze0"}
@@ -134,14 +134,14 @@ ubuntu 的 deb 安装包地址:[https://download.docker.com/linux/ubuntu/dists/]
 ![dockerdebdonwload.png](assets/docker-deb-donwload.png)
 {: id="20210125230132-0xp28vy"}
 
-{: id="20210126000210-3sxwmr1"}
+{: id="20210126000816-c2c9032"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
-{: id="20210126000210-sacqpae"}
+{: id="20210126000816-8zpjnbr"}
 
-{: id="20210126000210-ujw288p"}
+{: id="20210126000816-vs2aojv"}
 
 ## Docker 使用
 {: id="20210125233255-a5cnl6j"}
@@ -164,15 +164,14 @@ ubuntu 的 deb 安装包地址:[https://download.docker.com/linux/ubuntu/dists/]
 ```
 $ docker search ubuntu
 
-$ sudo docker pull ubuntu:18.04
-Pulling repository ubuntu
-ab8e2728644c: Pulling dependent layers
-511136ea3c5a: Download complete
-5f0ffaa9455e: Download complete
-a300658979be: Download complete
-904483ae0c30: Download complete
-ffdaafd1ca50: Download complete
-d047ae21eeaf: Download complete
+(base) vase@vase:~/coding/docker$ sudo docker pull ubuntu:18.04
+18.04: Pulling from library/ubuntu
+d519e2592276: Pull complete 
+d22d2dfcfa9c: Pull complete 
+b3afe92c540b: Pull complete 
+Digest: sha256:ea188fdc5be9b25ca048f1e882b33f1bc763fb976a8a4fea446b38ed0efcbeba
+Status: Downloaded newer image for ubuntu:18.04
+docker.io/library/ubuntu:18.04
 ```
 {: id="20210125234544-vylzlre"}
 
@@ -187,12 +186,14 @@ d047ae21eeaf: Download complete
 {: id="20210125234959-8qo11ta"}
 
 ```
-$ sudo docker run -t -i ubuntu:12.04 /bin/bash
-root@fe7fc4bd8fc9:/#
+(base) vase@vase:~/coding/docker$ sudo docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+ubuntu        18.04     c090eaba6b94   4 days ago      63.3MB
+hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 ```
 {: id="20210125235122-ax993bg"}
 
-{: id="20210126000210-kdjen2i"}
+{: id="20210126000816-jbx1acn"}
 
 #### 列出本地镜像
 {: id="20210125235134-a3eejyd"}
@@ -228,17 +229,28 @@ root@fe7fc4bd8fc9:/#
 ### 容器相关指令
 {: id="20210125235828-qrg3srp"}
 
-{: id="20210126000210-87aerf6"}
+{: id="20210126000816-u3qzasb"}
 
 #### 新建容器并启动
 {: id="20210126000055-v1viofz"}
 
-`docker run [args] image`
+`docker run [args] image`:启动容器
 {: id="20210126000210-pnpw1wf"}
 
-{: id="20210126000235-t0fi2xe"}
+> 参数可选项:
+> {: id="20210126000308-g315it6"}
+>
+> * {: id="20210126000527-wz1w4y2"}--name="Name" 设定容器名称
+> * {: id="20210126000531-11ga3gc"}-d 后台方式运行
+> * {: id="20210126000534-u7q54fe"}-it 使用交互方式运行,进入容器查看
+> * {: id="20210126000539-nj469xu"}-p 指定容器端口 -p 主机端口:容器端口
+>   * {: id="20210126000559-zge16ax"}不填写默认随即端口
+>   {: id="20210126000559-z93n3dn"}
+> {: id="20210126000315-fzeoi3l"}
+{: id="20210126000307-1ryoxwp"}
 
-{: id="20210126000210-nrcuh77"}
+`docker run -it image /bin/bash` :启动镜像并使用 bash
+{: id="20210126000614-3q1n8f2"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
