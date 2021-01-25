@@ -4,7 +4,7 @@
 ![Docker Architecture Diagram](assets/docker-architecture.svg)
 {: id="20210125122454-r5xeh3u"}
 
-{: id="20210125124344-kbuf81b"}
+{: id="20210125222849-iq889ba"}
 
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
@@ -15,7 +15,7 @@
 用到的网站:
 {: id="20210125121840-8kid908"}
 
-* {: id="20210125121817-fzhlyqk"}[docker 教程](https://www.bilibili.com/video/BV1og4y1q7M4?p=6):https://www.bilibili.com/video/BV1og4y1q7M4?p=6
+* {: id="20210125121817-fzhlyqk"}[docker 教程](https://www.bilibili.com/video/BV1og4y1q7M4?p=6):https://www.bilibili.com/video/BV1og4y1q7M4
 * {: id="20210125121817-cjhfsly"}[docker-document](https://docs.docker.com/):https://docs.docker.com/
 {: id="20210125121817-nfsboj9"}
 
@@ -32,7 +32,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 {: id="20210125122218-64qqkr9"}
 
-{: id="20210125124344-h721v3n"}
+{: id="20210125222849-983wmli"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
@@ -74,16 +74,16 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 > {: id="20210125124300-qvdedap"}
 {: id="20210125124153-gxmxqif"}
 
-{: id="20210125124344-dkz3aoj"}
+{: id="20210125222849-nxqhdxt"}
 
-{: id="20210125124344-cs8qwp9"}
+{: id="20210125222849-483z6my"}
 
-{: id="20210125124344-xcb9b7s"}
+{: id="20210125222849-6vhstni"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
-{: id="20210125124344-n0v8uw6"}
+{: id="20210125222849-bx0csnk"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
