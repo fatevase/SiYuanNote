@@ -7,8 +7,6 @@
 ![Docker](http://udn.yyuap.com/doc/docker_practice/_images/docker.png)![传统虚拟化](http://udn.yyuap.com/doc/docker_practice/_images/virtualization.png)
 {: id="20210125233921-1djadhv"}
 
-{: id="20210126001753-h9l2dxk"}
-
 ### Docker 纵览
 {: id="20210125233936-ajvlhy5"}
 
@@ -21,17 +19,11 @@
 ![镜像层次](http://udn.yyuap.com/doc/chinese_docker/terms/images/docker-filesystems-multilayer.png)
 {: id="20210125234219-fg7i9qi"}
 
-{: id="20210126001753-m2yf53d"}
-
 所有镜像都是通过一个 64 位十六进制字符串 （内部是一个 256 bit 的值）来标识的。 为简化使用，前 12 个字符可以组成一个短 ID，可以在命令行中使用。短 ID 还是有一定的 碰撞机率，所以服务器总是返回长 ID。
 {: id="20210125234342-psngleg"}
 
-{: id="20210126001753-p8r9im1"}
-
 ![Docker Architecture Diagram](assets/docker-architecture.svg)
 {: id="20210125122454-r5xeh3u"}
-
-{: id="20210126001753-0fadz85"}
 
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
@@ -60,8 +52,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo rm -rf /var/lib/docker
 ```
 {: id="20210125122218-64qqkr9"}
-
-{: id="20210126001753-912x8ki"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
@@ -106,8 +96,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 > {: id="20210125231755-v9bed15"}
 {: id="20210125224958-pehyirv"}
 
-{: id="20210126001753-qmgo26b"}
-
 ### 更新
 {: id="20210125225002-zcpmze0"}
 
@@ -134,14 +122,8 @@ ubuntu 的 deb 安装包地址:[https://download.docker.com/linux/ubuntu/dists/]
 ![dockerdebdonwload.png](assets/docker-deb-donwload.png)
 {: id="20210125230132-0xp28vy"}
 
-{: id="20210126001753-0i60jie"}
-
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
-
-{: id="20210126001753-byk6iqx"}
-
-{: id="20210126001753-593vnu7"}
 
 ## Docker 使用
 {: id="20210125233255-a5cnl6j"}
@@ -193,8 +175,6 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 ```
 {: id="20210125235122-ax993bg"}
 
-{: id="20210126001753-ul3waa8"}
-
 #### 列出本地镜像
 {: id="20210125235134-a3eejyd"}
 
@@ -229,8 +209,6 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 ### 容器相关指令
 {: id="20210125235828-qrg3srp"}
 
-{: id="20210126001753-xcn6x7i"}
-
 #### 新建容器并启动
 {: id="20210126000055-v1viofz"}
 
@@ -260,8 +238,6 @@ bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  s
 ```
 {: id="20210126001509-umx2cgw"}
 
-{: id="20210126001836-ll7bb0f"}
-
 #### 退出当前容器
 {: id="20210126001833-herwmi7"}
 
@@ -270,9 +246,6 @@ bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  s
 
 `ctrl+p+q`:退出当前容器(该容器不会退出)
 {: id="20210126001919-7xamosa"}
-
- 
-{: id="20210126001753-ecf7jqj"}
 
 #### 查看运行的容器
 {: id="20210126001540-4robn0a"}
@@ -297,7 +270,24 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 ```
 {: id="20210126001754-i4o8160"}
 
-{: id="20210126002101-c8kl65j"}
+{: id="20210126002428-pnksp4j"}
+
+#### 启动和停止容器
+{: id="20210126002437-tl7fd1u"}
+
+`docker start 容器ID`:启动容器
+{: id="20210126002453-ycsf469"}
+
+`docker stop 容器ID`:停止容器
+{: id="20210126002503-qdj4z93"}
+
+`docker restart 容器ID`:重启容器
+{: id="20210126002429-w2jez48"}
+
+`docker kill 容器ID`:强制停止容器
+{: id="20210126002605-8s41dbb"}
+
+{: id="20210126002605-0m7dyfj"}
 
 #### 删除容器
 {: id="20210126001755-4ye7sy9"}
@@ -308,7 +298,31 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker rm -f $(docker ps -aq)`:强制删除全部容器
 {: id="20210126002132-qo0hwl1"}
 
-{: id="20210126002117-gezi9la"}
+`docker ps -a -q |xqrgs docker rm`:强制删除全部容器
+{: id="20210126002320-f260s08"}
+
+{: id="20210126002414-4f4yxt7"}
+
+### 常用其他命令
+{: id="20210126002813-0y9de6y"}
+
+#### 后台启动容器
+{: id="20210126002819-hwa8llf"}
+
+`docker run -d 镜像`: 在后端启动容器
+{: id="20210126002830-8r84vw7"}
+
+> 注意:如果该容器并没有运行任何东西会自动停止
+> {: id="20210126002930-excqzj4"}
+{: id="20210126002919-4bogq1m"}
+
+{: id="20210126003008-p9vh7fh"}
+
+#### docker 日志
+{: id="20210126003011-mfmvuk8"}
+
+`docker log -f -t --tail ? 容器ID`: 查看该镜像的运行的?条日志
+{: id="20210126003023-rd1hntp"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
