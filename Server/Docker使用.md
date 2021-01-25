@@ -1,25 +1,42 @@
+{: id="20210125122452-xwfw293"}
+
+{: id="20210125122454-r5xeh3u"}
+
+{: id="20210125122453-dwqq1qy"}
+
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
 
 环境准备: Linux , ssh
-{: id="20210125115603-x2h0ohh"}
+{: id="20210125121754-16llpue"}
 
-### 卸载就版本
+用到的网站:
+{: id="20210125121840-8kid908"}
+
+* {: id="20210125121817-fzhlyqk"}[docker 教程](https://www.bilibili.com/video/BV1og4y1q7M4?p=6):https://www.bilibili.com/video/BV1og4y1q7M4?p=6
+* {: id="20210125121817-cjhfsly"}[docker-document](https://docs.docker.com/):https://docs.docker.com/
+{: id="20210125121817-nfsboj9"}
+
+{: id="20210125122149-7nuf439"}
+
+### 卸载旧版本
 {: id="20210125120608-h9durcg"}
 
-{: id="20210125121421-7mhi5rj"}
+{: id="20210125122218-64qqkr9"}
+
+{: id="20210125122218-jt7r0km"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
 
-{: id="20210125121432-l9qtjyj"}
+{: id="20210125122221-7gmzse0"}
+
+{: id="20210125122220-nipf8g5"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
-{: id="20210125121439-rtdy190"}
-
-{: id="20210125120608-xsz8kub"}
+{: id="20210125122143-ae327nl"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
