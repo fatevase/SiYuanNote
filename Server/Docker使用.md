@@ -15,7 +15,16 @@
 在 Docker 的术语里，一个只读层被称为镜像，一个镜像是永久不会变的。
 {: id="20210125234213-iyfquiy"}
 
+每一个镜像都可能依赖于由一个或多个下层的组成的另一个镜像。我们有时说，下层那个 镜像是上层镜像的父镜像。
+{: id="20210125234339-uiu98c0"}
+
+![镜像层次](http://udn.yyuap.com/doc/chinese_docker/terms/images/docker-filesystems-multilayer.png)
 {: id="20210125234219-fg7i9qi"}
+
+{: id="20210125234342-mzijvr1"}
+
+所有镜像都是通过一个 64 位十六进制字符串 （内部是一个 256 bit 的值）来标识的。 为简化使用，前 12 个字符可以组成一个短 ID，可以在命令行中使用。短 ID 还是有一定的 碰撞机率，所以服务器总是返回长 ID。
+{: id="20210125234342-psngleg"}
 
 {: id="20210125234219-rv1u5ul"}
 
@@ -130,7 +139,78 @@ ubuntu 的 deb 安装包地址:[https://download.docker.com/linux/ubuntu/dists/]
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
+{: id="20210125234519-h3e9gs8"}
+
+{: id="20210125234519-5zdi6yw"}
+
+## Docker 使用
 {: id="20210125233255-a5cnl6j"}
+
+{: id="20210125234531-kktcp9b"}
+
+### 获取镜像
+{: id="20210125234532-ef5pnpr"}
+
+可以使用 `docker pull` 命令来从仓库获取所需要的镜像。我们可以先去 DockerHub 查看自己需要的镜像.
+{: id="20210125234544-cx385se"}
+
+下面的例子将从 Docker Hub 仓库下载一个 Ubuntu 12.04 操作系统的镜像。
+{: id="20210125234544-nap3obi"}
+
+```
+$ sudo docker pull ubuntu:18.04
+Pulling repository ubuntu
+ab8e2728644c: Pulling dependent layers
+511136ea3c5a: Download complete
+5f0ffaa9455e: Download complete
+a300658979be: Download complete
+904483ae0c30: Download complete
+ffdaafd1ca50: Download complete
+d047ae21eeaf: Download complete
+```
+{: id="20210125234544-vylzlre"}
+
+> 上述命令等同于 `sudo docker pull registry.hub.docker.com/ubuntu:12.04`
+> {: id="20210125234957-4jhfyi0"}
+>
+> 即从注册服务器 `registry.hub.docker.com` 中的 `ubuntu` 仓库来下载标记为 `12.04` 的镜像。
+> {: id="20210125235037-52jc5nt"}
+{: id="20210125234956-vcbv78t"}
+
+完成后，即可随时使用该镜像了，例如创建一个容器，让其中运行 bash 应用。
+{: id="20210125234959-8qo11ta"}
+
+```
+$ sudo docker run -t -i ubuntu:12.04 /bin/bash
+root@fe7fc4bd8fc9:/#
+```
+{: id="20210125235122-ax993bg"}
+
+{: id="20210125235127-1owbr6k"}
+
+### 列出本地影像
+{: id="20210125235134-a3eejyd"}
+
+使用 `docker images` 显示本地已有的镜像。
+{: id="20210125235151-nsr08r5"}
+
+在列出信息中，可以看到几个字段信息
+{: id="20210125235210-8st6rp1"}
+
+* {: id="20210125235210-60vxxid"}来自于哪个仓库，比如 ubuntu
+* {: id="20210125235210-wf75h1a"}镜像的标记，比如 18.04
+* {: id="20210125235210-23p6c4d"}它的 `ID` 号（唯一）
+* {: id="20210125235210-p3c197m"}创建时间
+* {: id="20210125235210-jwkhund"}镜像大小
+{: id="20210125235210-o4i8lcw"}
+
+其中镜像的 `ID` 唯一标识了镜像，。
+{: id="20210125235210-tstqcvu"}
+
+`TAG` 信息用来标记来自同一个仓库的不同镜像。例如 `ubuntu` 仓库中有多个镜像，通过 `TAG` 信息来区分发行版本，例如 `10.04`、`12.04`、`12.10`、`13.04`、`14.04` 等。例如下面的命令指定使用镜像 `ubuntu:14.04` 来启动一个容器。
+{: id="20210125235210-a8tj7le"}
+
+{: id="20210125235210-tzb0kjc"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
