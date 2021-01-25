@@ -4,7 +4,7 @@
 ![Docker Architecture Diagram](assets/docker-architecture.svg)
 {: id="20210125122454-r5xeh3u"}
 
-{: id="20210125230848-8qvfgr0"}
+{: id="20210125231854-zf8za0c"}
 
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
@@ -32,7 +32,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 {: id="20210125122218-64qqkr9"}
 
-{: id="20210125230848-hxyy0fs"}
+{: id="20210125231854-xmhtifs"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
@@ -72,9 +72,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 >
 > 加入并验证 Docker GPG key 并不是必须的步骤,只需要在 apt-get 添加 `--nogpgcheck`
 > {: id="20210125225118-rctb1wm"}
+>
+> 通过 `sudo docker run hello-world`, 进行测试 docker 是否正常工作.
+> {: id="20210125231755-v9bed15"}
 {: id="20210125224958-pehyirv"}
 
-{: id="20210125230848-yii3ij4"}
+{: id="20210125231854-bd9tvnd"}
 
 ### 更新
 {: id="20210125225002-zcpmze0"}
@@ -91,23 +94,23 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 {: id="20210125225754-bam5tcj"}
 
 ubuntu 的 deb 安装包地址:[https://download.docker.com/linux/ubuntu/dists/](https://download.docker.com/linux/ubuntu/dists/)
-{: id="20210125225413-1nuib3n"}
+{: id="20210125231511-l8thx6s"}
 
 通过 `lsb_release -a` 查看自己系统版本的代号,在对应代号后下的/pool/stable/里下载符合自己系统的
 {: id="20210125230035-inmw7ls"}
 
-`containerd.io_x.deb`
+`containerd.io_x.deb`,`docker-ce-cli_x.deb`,`docker-ce_x.deb`,并手动 dpkg 安装.
 {: id="20210125231431-7earg33"}
 
 ![dockerdebdonwload.png](assets/docker-deb-donwload.png)
 {: id="20210125230132-0xp28vy"}
 
-{: id="20210125230848-2rx1wpo"}
+{: id="20210125231854-ymenq3u"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
-{: id="20210125230848-k44ivx4"}
+{: id="20210125231854-wh3dqv9"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
