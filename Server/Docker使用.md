@@ -4,7 +4,7 @@
 ![Docker Architecture Diagram](assets/docker-architecture.png)
 {: id="20210125122454-r5xeh3u"}
 
-{: id="20210125222849-iq889ba"}
+{: id="20210125230351-3579hlf"}
 
 ## 安装 Docker
 {: id="20210125115557-u24f4jq"}
@@ -32,7 +32,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 {: id="20210125122218-64qqkr9"}
 
-{: id="20210125222849-983wmli"}
+{: id="20210125230351-ji0x2gc"}
 
 ### 安装新版本
 {: id="20210125121420-k9qs1e8"}
@@ -74,7 +74,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 > {: id="20210125225118-rctb1wm"}
 {: id="20210125224958-pehyirv"}
 
-{: id="20210125225052-owfl4il"}
+{: id="20210125230351-0rkqa11"}
 
 ### 更新
 {: id="20210125225002-zcpmze0"}
@@ -87,16 +87,22 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ### 小结
 {: id="20210125225001-ipm3x7f"}
 
-这一套 Docker 命令行安装还不如自己手动下载 deb,用 dpkg 安装来的简单
-{: id="20210125222849-nxqhdxt"}
+这一套 Docker 命令行安装还不如自己手动下载 deb,用 `sudo dpkg -i /path/to/package.deb` 来的方便.
+{: id="20210125225754-bam5tcj"}
 
-deb 安装包地址:
+ubuntu 的 deb 安装包地址:[https://download.docker.com/linux/ubuntu/dists/](https://download.docker.com/linux/ubuntu/dists/)
 {: id="20210125225413-1nuib3n"}
+
+通过 `lsb_release -a` 查看自己系统版本的代号,之后去下载对于的 stable 版本
+{: id="20210125230035-inmw7ls"}
+
+![docker-deb-donwload.png](/assets/docker-deb-donwload.png)
+{: id="20210125230132-0xp28vy"}
 
 ### 设置镜像库
 {: id="20210125121431-6l1jkwb"}
 
-{: id="20210125222849-bx0csnk"}
+{: id="20210125230351-hj26wsa"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
