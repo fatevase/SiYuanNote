@@ -4,7 +4,7 @@
 ## Anaconda 安装配置
 {: id="20210120230750-4mdkl8z"}
 
-首先是 miniconda 的安装
+### miniconda 安装
 {: id="20210120130012-lyar9jj"}
 
 先去 conda 官网下载对应系统的[最新版本 miniconda](https://docs.conda.io/en/latest/miniconda.html)，linux 操作系统下载.sh 的执行文件
@@ -22,6 +22,9 @@ sudo chmod +x filename.sh
 ./filename.sh
 ```
 {: id="20210120223759-o2xkhnn"}
+
+### conda 环境变量配置
+{: id="20210126123002-cohugq6"}
 
 根据提示安装好 conda 后，此时环境变量并没有配，需要手动把 conda 加入环境变量中即可
 {: id="20210120224135-v3v6c33"}
@@ -41,6 +44,12 @@ source ~/.profile
 conda env list
 ```
 {: id="20210120224727-dmr9laa"}
+
+
+{: id="20210126123032-ju5alga"}
+
+### conda 镜像加速
+{: id="20210126123033-ysak44v"}
 
 为了加速之后 conda 的下载速度，建议修改 conda channel 到国内的镜像源
 {: id="20210120225530-a1gzcmk"}
@@ -71,8 +80,10 @@ ssl_verify: true
 ```
 {: id="20210120230506-c05rbrs"}
 
-此时 conda 的配置源基本处理结束，可以安装自己想用的内容了，
+此时 conda 的配置源基本处理结束，可以安装自己想用的内容了
 {: id="20210120230548-buu2j9f"}
+
+{: id="20210126123055-0v0e0k6"}
 
 ### conda 的常用基本命令
 {: id="20210120230627-8p7typq"}
@@ -80,11 +91,15 @@ ssl_verify: true
 ((20210110124639-ubr0y74 "{{.text}}"))
 {: id="20210120230640-a379eqp"}
 
-{: id="20210123032217-bny0v3c"}
+{: id="20210126122915-o1u3ocg"}
 
 > Conda 里也可以配置 cudatoolkit
 > {: id="20210123025337-5q7ws6i"}
 {: id="20210123025335-6t16stl"}
+
+{: id="20210126123234-57l1y1x"}
+
+{: id="20210126123229-siqm7od"}
 
 ## CUDA 安装配置
 {: id="20210120230741-ccsqxbq"}
@@ -161,7 +176,7 @@ sudo sh dirve-file-path.run -no-x-check -no-nouveau-check -no-opengl-files
 如果遇到 gcc 版本检测失败,建议退出重新安装 gcc 以保证编译核心与系统兼容.
 {: id="20210123021456-b2u0edt"}
 
-{: id="20210123032217-k8wz5ug"}
+{: id="20210126122915-1l4qnkh"}
 
 安装完毕后,使用命令 `nvidia-smi` 即可看到自己的驱动信息
 {: id="20210123021825-l3r91ly"}
@@ -180,7 +195,7 @@ Sat Jan 23 02:10:00 2021
 | 47%   31C    P8    N/A /  N/A |     47MiB /  1996MiB |     N/A      Default |
 |                               |                      |                  N/A |
 +-------------------------------+----------------------+----------------------+
-                                                                       
+                                                                     
 +-----------------------------------------------------------------------------+
 | Processes:                                                                  |
 |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
@@ -192,7 +207,7 @@ Sat Jan 23 02:10:00 2021
 ```
 {: id="20210123021901-2tyozvo"}
 
-{: id="20210123032217-y19o0o0"}
+{: id="20210126122915-qnak15t"}
 
 ### GCC + G++ 编译器
 {: id="20210123012640-tm3ck1f"}
@@ -211,7 +226,7 @@ sudo apt-get install gcc g++
 ->((20210121183236-qx9uelp "手动安装低版本的 gcc")) <-。
 {: id="20210121183718-jz7hgib"}
 
-{: id="20210123032217-h41cvfk"}
+{: id="20210126122915-mn3ky38"}
 
 ### CUDA 脚本 下载与安装
 {: id="20210123012206-diil5mz"}
@@ -225,7 +240,7 @@ ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新
 ![2](assets/cuda-select-kit.png)
 {: id="20210121105111-fwa8bap"}
 
-{: id="20210123032217-g11eqal"}
+{: id="20210126122915-47qp6qm"}
 
 之后就是执行对应的安装脚本了。
 {: id="20210121001602-p45k38e"}
@@ -249,7 +264,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 ![](assets/cuda-install-accpet-license.png)
 {: id="20210122230622-8j2uubk"}
 
-{: id="20210123032217-zdem3sd"}
+{: id="20210126122915-t36nnfl"}
 
 这里选择号自己要安装的内容,CUDA Toolkit 为必须安装内容,其他的根据自己选择进行安装,一般桌面版的 ubuntu 第一个驱动都不装(因为自己以及装过了)
 {: id="20210122230622-dvbvdaz"}
@@ -275,7 +290,7 @@ sudo sh cuda_11.1.0_455.23.05_linux.run
 配置一下环境变量
 {: id="20210122235639-vpu1jqh"}
 
-{: id="20210123032217-iel2ss3"}
+{: id="20210126122915-06xmrsn"}
 
 ```bash
 # CUDA 基础命令
@@ -300,7 +315,7 @@ Cuda compilation tools, release 10.1, V10.1.243
 ```
 {: id="20210123002831-cudu5la"}
 
-{: id="20210123032217-zk46l5i"}
+{: id="20210126122915-tvdmfev"}
 
 ### ubuntu20.04 安装 cuda10.1
 {: id="20210123002124-g9z3cjw"}
@@ -320,7 +335,7 @@ sudo sh cuda_10.1.*.run --librarypath=/usr/local/cuda-10.1
 > {: id="20210123005527-gvs4o0e"}
 {: id="20210123005524-ei5gx7g"}
 
-{: id="20210123032217-1btgibd"}
+{: id="20210126122915-b3g5rxo"}
 
 cuda 的库文件如下:
 {: id="20210123004947-3o1dgfp"}
@@ -328,7 +343,7 @@ cuda 的库文件如下:
 ![](assets/cuda-liberary-files.png)
 {: id="20210123005310-06juegm"}
 
-{: id="20210123032217-kr5q4up"}
+{: id="20210126122915-adkyhn6"}
 
 简单在 conda 中安装测试
 {: id="20210123024235-az0s06l"}
@@ -340,7 +355,7 @@ pip install mxnet-cu101 d2lzh=1.0.0
 ```
 {: id="20210123024251-5o9mwwb"}
 
-{: id="20210123032217-7yfncjc"}
+{: id="20210126122915-val523b"}
 
 测试内容
 {: id="20210123031411-mykc1d3"}
@@ -373,7 +388,7 @@ sudo sh ./cuda-uninstaller
 ```
 {: id="20210123005857-70lcuxm"}
 
-{: id="20210123032217-2gp519k"}
+{: id="20210126122915-c8z5j9i"}
 
 对于一些低版本 cuda 可能用的.pl 执行文件,具体为
 {: id="20210123010037-j2b2z2q"}
@@ -387,12 +402,12 @@ sudo /usr/local/cuda-x.x/bin/uninstall_cuda_x.x.pl
 ![](assets/uninstall-cuda.png)
 {: id="20210123010052-txe40gq"}
 
-{: id="20210123032217-212dvu5"}
+{: id="20210126122915-2koq8fm"}
 
 检查是否卸载干净直接去/usr/local 看看有无残留 cuda 文件即可
 {: id="20210123011751-gm3jwmc"}
 
-{: id="20210123032217-sesuoav"}
+{: id="20210126122915-ce0r2ik"}
 
 
 {: id="20210120125837-xlp5tbq" type="doc"}
