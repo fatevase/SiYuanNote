@@ -340,5 +340,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker inspect 容器ID`: 查看容器的所有信息
 {: id="20210126003609-qfu7548"}
 
+{: id="20210126223534-zv4jrm2"}
+
 
 {: id="20210125115524-zotzeow" type="doc"}
