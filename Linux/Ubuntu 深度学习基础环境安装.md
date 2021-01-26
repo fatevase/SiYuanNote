@@ -4,6 +4,9 @@
 ## Anaconda 安装配置
 {: id="20210120230750-4mdkl8z"}
 
+安装 coda 可以方便的对我们系统中的 python 不同环境进行操作,避免因为 python 版本等问题导致系统环境混乱.
+{: id="20210126123249-tqh4sf7"}
+
 ### miniconda 安装
 {: id="20210120130012-lyar9jj"}
 
@@ -110,6 +113,11 @@ ssl_verify: true
 ### NVIDIA 驱动
 {: id="20210123012647-w6zmo1x"}
 
+{: id="20210126123557-aqcabho"}
+
+#### 驱动安装前检测
+{: id="20210126123555-7x26d6l"}
+
 对于 CUDA 安装首先是要确认机器是否可以安装 CUDA，使用以下命令显示自己的 nivida 显卡信息，并对比显卡
 {: id="20210121181431-ttlulh0"}
 
@@ -131,7 +139,7 @@ nvidia-smi
 可以直接使用 `software&update` 这个内置应用来更新驱动,也可以直接使用 apt-get install 的方式安装 nvidia 驱动,由于比较简单,这里介绍一个比较复杂的方式.
 {: id="20210123021124-ftpfkyu"}
 
-#### 手动安装 nvidia 驱动
+#### 安装 nvidia 驱动
 {: id="20210122235639-thbn7l7"}
 
 这里推荐手动下载 nvidia 驱动,[驱动官网](https://www.nvidia.com/download/index.aspx?lang=en-us):https://www.nvidia.com/download/index.aspx?lang=en-us
@@ -152,7 +160,7 @@ sudo apt-get install make
 {: id="20210123004045-0yc1hji"}
 
 ```bash
-sudo sh dirve-file-path.run -no-x-check -no-nouveau-check -no-opengl-files
+sudo sh /path/to/drive.run -no-x-check -no-nouveau-check -no-opengl-files
 ```
 {: id="20210123004106-opwmokr"}
 
@@ -191,11 +199,11 @@ Sat Jan 23 02:10:00 2021
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 |                               |                      |               MIG M. |
 |===============================+======================+======================|
-|   0  GeForce GTX 960     Off  | 00000000:0A:00.0 N/A |                  N/A |
+|   0  GeForce GTX 760     Off  | 00000000:0A:00.0 N/A |                  N/A |
 | 47%   31C    P8    N/A /  N/A |     47MiB /  1996MiB |     N/A      Default |
 |                               |                      |                  N/A |
 +-------------------------------+----------------------+----------------------+
-                                                                     
+                                                                 
 +-----------------------------------------------------------------------------+
 | Processes:                                                                  |
 |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
@@ -209,8 +217,11 @@ Sat Jan 23 02:10:00 2021
 
 {: id="20210126122915-qnak15t"}
 
-### GCC + G++ 编译器
+### CUDA 安装
 {: id="20210123012640-tm3ck1f"}
+
+#### 安装前准备
+{: id="20210126123910-rmze783"}
 
 一般来说 cuda 均需要 gcc 和 g++ 的支持，所以在执行给定脚本前，先安装好 g++ 和 gcc
 {: id="20210121182903-8mnxw5g"}
@@ -228,7 +239,7 @@ sudo apt-get install gcc g++
 
 {: id="20210126122915-mn3ky38"}
 
-### CUDA 脚本 下载与安装
+### CUDA 脚本下载安装
 {: id="20210123012206-diil5mz"}
 
 ubuntu20.04 tls 只支持 cuda11 以上版本 所以目标安装 cuda11.2 最新版本,先是在 nvidia 官网的 [cuda archived](https://developer.nvidia.com/cuda-toolkit-archive) 中找到对于的版本，可以使用 `uname -m && cat /etc/*release` 查看自己的系统信息。![20210121001419 的屏幕截图.png](assets/cuda-tookit-archived.png)
@@ -317,7 +328,7 @@ Cuda compilation tools, release 10.1, V10.1.243
 
 {: id="20210126122915-tvdmfev"}
 
-### ubuntu20.04 安装 cuda10.1
+### 强制安装低版本 CUDA
 {: id="20210123002124-g9z3cjw"}
 
 正常是无法安装的,为此我们需要先将 gcc,g++ 降级, 才可以正常的运行,值得注意的是,在安装 cuda10.1 时,由于未知原因,在安装前要指定好 cuda 的库文件 即通过 `--liberarypath=/usr/local/cuda-10.1`
@@ -327,7 +338,7 @@ Cuda compilation tools, release 10.1, V10.1.243
 {: id="20210123005338-fn0oyfz"}
 
 ```bash
-sudo sh cuda_10.1.*.run --librarypath=/usr/local/cuda-10.1
+sudo sh /path/to/cuda_10.1.*.run --librarypath=/usr/local/cuda-10.1
 ```
 {: id="20210123005345-m4m40ro"}
 
@@ -343,6 +354,10 @@ cuda 的库文件如下:
 ![](assets/cuda-liberary-files.png)
 {: id="20210123005310-06juegm"}
 
+$$
+
+
+$$
 {: id="20210126122915-adkyhn6"}
 
 简单在 conda 中安装测试
