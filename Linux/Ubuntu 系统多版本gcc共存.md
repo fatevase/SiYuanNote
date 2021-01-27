@@ -21,11 +21,10 @@ sudo update-alternatives --display gcc
 sudo update-alternatives --remove  <名称> <路径>   从 <名称> 替换组中去除 <路径> 项。
  			 --remove-all <名称>      从替换系统中删除 <名称> 替换组。
 
-
 ```
 {: id="20210121183413-f2tww2p"}
 
-{: id="20210122234402-15ktm92"}
+{: id="20210127224900-5szpsbt"}
 
 
 {: id="20210121183236-qx9uelp" type="doc"}
