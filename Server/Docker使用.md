@@ -175,6 +175,8 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 ```
 {: id="20210125235122-ax993bg"}
 
+{: id="20210127120419-sqgxwxr"}
+
 #### 列出本地镜像
 {: id="20210125235134-a3eejyd"}
 
@@ -206,16 +208,23 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 使用 `docker rmi -f $(docker images -aq)` 删除全部镜像。
 {: id="20210125235828-xely6yb"}
 
-
-{: id="20210127115754-wdab0fn"}
+{: id="20210127120629-xl4ttle"}
 
 #### 创建新镜像
 {: id="20210127114852-8zfptmc"}
 
+{: id="20210127120646-z2fkx5r"}
 
-{: id="20210127115754-yxl54zb"}
+1. {: id="20210127120649-hyyyrix"}title1
+   * {: id="20210127120715-0n7fqlj"}``shell111``
+   {: id="20210127120716-m8vpa0c"}
+{: id="20210127120647-005pz24"}
+
+{: id="20210127120629-263joxw"}
 
 1. {: id="20210127115507-yg88xz4"}创建镜像前我们需要创建对于的 Dockerfile
+   {: id="20210127120057-mylzg2c"}
+
    * {: id="20210127115553-awsg9th"}
      ```shell
      $ mkdir sinatra
@@ -225,42 +234,49 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
      {: id="20210127115602-u7bncue"}
    {: id="20210127115554-3so6l6h"}
 2. {: id="20210127115514-9rzr916"}Dockerfile 中每一条指令都用于创建镜像每一层
-   * {: id="20210127115522-xsks7jh"}
-     {: id="20210127115747-g2bddu9"}
+   {: id="20210127120057-7oi5yx4"}
 
-     ```
-     # This is a comment
-     FROM ubuntu:14.04
-     MAINTAINER Docker Newbee <newbee@docker.com>
-     RUN apt-get -qq update
-     RUN apt-get -qqy install ruby ruby-dev
-     RUN gem install sinatra
-     ```
-     {: id="20210127115523-dttitbd"}
+   * {: id="20210127120003-f8pvfhv"}
+   {: id="20210127120004-0lu6ni2"}
+3. {: id="20210127115936-3z4n8oo"}编写完成 Dockerfile 后可以使用 `docker build` 来生成镜像。
+   {: id="20210127120007-cvlpcrs"}
 
-     * {: id="20210127115523-a1xy5ua"}使用 `#` 来注释
-     * {: id="20210127115523-8rxu1tp"}`FROM` 指令告诉 Docker 使用哪个镜像作为基础
-     * {: id="20210127115523-kgj6xpr"}接着是维护者的信息
-     * {: id="20210127115523-0xtmlqs"}`RUN` 开头的指令会在创建中运行，比如安装一个软件包，在这里使用 apt-get 来安装了一些软件
-     {: id="20210127115523-k1y0xht"}
-   {: id="20210127115522-gpm366w"}
+   ```shell
+   # This is a comment
+   FROM ubuntu:14.04
+   MAINTAINER Docker Newbee <newbee@docker.com>
+   RUN apt-get -qq update
+   RUN apt-get -qqy install ruby ruby-dev
+   RUN gem install sinatra
+   ```
+   {: id="20210127115523-dttitbd"}
+
+   * {: id="20210127115523-a1xy5ua"}使用 `#` 来注释
+   * {: id="20210127115523-8rxu1tp"}`FROM` 指令告诉 Docker 使用哪个镜像作为基础
+   * {: id="20210127115523-kgj6xpr"}接着是维护者的信息
+   * {: id="20210127115523-0xtmlqs"}`RUN` 开头的指令会在创建中运行，比如安装一个软件包，在这里使用 apt-get 来安装了一些软件
+   {: id="20210127115523-k1y0xht"}
 {: id="20210127115440-p2b3dxl"}
 
+{: id="20210127120629-pqb07xf"}
 
-{: id="20210127115754-emqnn81"}
+1. {: id="20210127120249-xqakola"}创建镜像前我们需要创建对于的 Dockerfile:
+   1. {: id="20210127120249-4xhugy9"}
+   {: id="20210127120250-b4jr9pn"}
+{: id="20210127120110-82659zu"}
 
+* {: id="20210127120238-a8i5u8s"}
+  ```shell
+  $ mkdir sinatra
+  $ cd sinatra
+  $ touch Dockerfile
+  ```
+  {: id="20210127120238-gspw7f8"}
+{: id="20210127120238-jgq4itu"}
 
-{: id="20210127115754-8l6kaug"}
+{: id="20210127120629-uf20k9z"}
 
-1. {: id="20210127115154-r6w1r0o"}33
-2. {: id="20210127115156-fhl7szf"}44
-{: id="20210127114952-c0w33f8"}
-
-
-{: id="20210127115754-ulf033y"}
-
-
-{: id="20210127115754-2l48xyu"}
+{: id="20210127120629-i23rwbe"}
 
 ### 容器相关指令
 {: id="20210125235828-qrg3srp"}
@@ -326,8 +342,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 ```
 {: id="20210126001754-i4o8160"}
 
-
-{: id="20210127115754-nwg4ahv"}
+{: id="20210127120629-uymw7jl"}
 
 #### 启动和停止容器
 {: id="20210126002437-tl7fd1u"}
@@ -344,8 +359,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker kill 容器ID`:强制停止容器
 {: id="20210126002605-8s41dbb"}
 
-
-{: id="20210127115754-h6ovxdg"}
+{: id="20210127120629-9yj4sxo"}
 
 #### 删除容器
 {: id="20210126001755-4ye7sy9"}
@@ -359,8 +373,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker ps -a -q |xqrgs docker rm`:强制删除全部容器
 {: id="20210126002320-f260s08"}
 
-
-{: id="20210127115754-14sj51l"}
+{: id="20210127120629-v8c75wr"}
 
 ### 常用其他命令
 {: id="20210126002813-0y9de6y"}
@@ -375,8 +388,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 > {: id="20210126002930-excqzj4"}
 {: id="20210126002919-4bogq1m"}
 
-
-{: id="20210127115754-t601lx5"}
+{: id="20210127120629-5iam6j4"}
 
 #### docker 日志
 {: id="20210126003011-mfmvuk8"}
@@ -384,8 +396,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker logs -f -t --tail ? 容器ID`: 查看该镜像的运行的?条日志
 {: id="20210126003023-rd1hntp"}
 
-
-{: id="20210127115754-45yby3a"}
+{: id="20210127120629-im36as0"}
 
 #### 查看 docker 进程
 {: id="20210126003443-cv177qt"}
@@ -393,8 +404,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker top 容器ID`:查看容器中的进程 ID
 {: id="20210126003500-qg93zm7"}
 
-
-{: id="20210127115754-y84pr9r"}
+{: id="20210127120629-55krg3u"}
 
 #### 查看容器信息
 {: id="20210126003601-xp4n67k"}
@@ -402,8 +412,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker inspect 容器ID`: 查看容器的所有信息
 {: id="20210126003609-qfu7548"}
 
-
-{: id="20210127115754-m64gvfq"}
+{: id="20210127120629-pxuqsrs"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
