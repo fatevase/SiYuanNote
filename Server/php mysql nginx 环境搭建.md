@@ -4,11 +4,31 @@
 {: id="20210130003232-lpqav6m"}
 
 ```shell
-sudo apt-get intsall nginx
+apt install nginx
+
+# 请确保80端口没有被其他服务占用
+/etc/init.d/nginx start
 ```
 {: id="20210130003242-3a1m052"}
 
-{: id="20210130001814-i5o1rk6"}
+Ubuntu 安装之后的文件结构大致为:
+{: id="20210130003411-w3fhh32"}
+
+* {: id="20210130003411-yon7d8r"}所有的配置文件都在/etc/nginx 下,并且每个虚拟主机已经安排在了/etc/nginx/sites-available 下 www.jb51.net
+{: id="20210130003411-b6iiu9h"}
+
+* {: id="20210130003414-l358dm1"}程序文件在/usr/sbin/nginx * 日志放在了/var/log/nginx 中
+{: id="20210130003411-3ojw9wh"}
+
+* {: id="20210130003415-nfspr1d"}并已经在/etc/init.d/下创建了启动脚本 nginx
+{: id="20210130003411-uplwf34"}
+
+* {: id="20210130003411-hgabzl2"}默认的虚拟主机的目录设置在了/var/www/nginx-default
+{: id="20210130003411-g1avt6f"}
+
+{: id="20210130003411-2hpgc00"}
+
+{: id="20210130003411-3ikx2zv"}
 
 ### 安装 php7
 {: id="20210130001815-ry9wdu3"}
