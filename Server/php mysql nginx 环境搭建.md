@@ -16,13 +16,7 @@ nginx -t
 ```
 {: id="20210130003242-3a1m052"}
 
-
 {: id="20210130013759-x29gxih"}
-
-安装完成后访问对于的 80 端口看是否正常
-{: id="20210130013721-213i3aw"}
-
-{: id="20210130013710-6t27y5i"}
 
 Ubuntu 安装之后的文件结构大致为:
 {: id="20210130003411-w3fhh32"}
@@ -41,8 +35,85 @@ Ubuntu 安装之后的文件结构大致为:
 
 {: id="20210130004810-v6gzps2"}
 
+nginx 安装好之后，会创建/etc/nginx/conf.d/default.conf 文件，里面记录网站的配置信息。
 {: id="20210130003411-2hpgc00"}
 
+server {
+listen       80;
+server_name  localhost;
+{: id="20210130014850-9ed4jty"}
+
+```
+#charset koi8-r;
+#access_log  /var/log/nginx/host.access.log  main;
+
+location / {
+    root   /var/website;
+    index  index.html index.htm;
+}
+
+#error_page  404              /404.html;
+
+# redirect server error pages to the static page /50x.html
+#
+error_page   500 502 503 504  /50x.html;
+location = /50x.html {
+    root   /usr/share/nginx/html;
+}
+
+# proxy the PHP scripts to Apache listening on 127.0.0.1:80
+#
+#location ~ \.php$ {
+#    proxy_pass   http://127.0.0.1;
+#}
+
+# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+#
+#location ~ \.php$ {
+#    root           html;
+#    fastcgi_pass   127.0.0.1:9000;
+#    fastcgi_index  index.php;
+#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+#    include        fastcgi_params;
+}
+
+# deny access to .htaccess files, if Apache's document root
+# concurs with nginx's one
+#
+#location ~ /\.ht {
+#    deny  all;
+#}
+}
+```
+{: id="20210130014850-mr5pgcn"}
+
+{: id="20210130015005-v4v3tkf"}
+
+#### 参数介绍
+{: id="20210130014908-zaf5zhr"}
+
+* {: id="20210130014953-b782ibs"}listen - 定义 Nginx 将侦听的端口。
+* {: id="20210130014908-n11iruc"}root - 定义存储网站服务的文档根目录。
+* {: id="20210130014908-a0rcp67"}index- 配置 Nginx 请求索引文件时优先处理 index.php 命名的文件。
+* {: id="20210130014908-9hp0kuu"}server_name - 将此指令指向服务器的域名或公共 IP 地址。
+* {: id="20210130014908-x15zyxh"}location /- 第一个位置块包括一个 try_files 指令，该指令检查是否存在满足 URI 请求的文件。如果 Nginx 找不到合适的文件，则会返回 404 错误。
+* {: id="20210130014908-6iyouo4"}location ~ .php$- 此位置块通过将 Nginx 指向 fastcgi-php.conf 配置文件和 php7.2-fpm.sock 文件来处理实际的 PHP 处理，该文件声明了与哪个套接字相关联 php-fpm。检查/etc/php/7.0/fpm/pool.d/www.conf 文件并查找“listen”行。
+* {: id="20210130014908-vtqkh58"}location ~ /.ht- 通过添加 deny all 指令，如果任何.htaccess 文件碰巧进入文档根目录，它们将不会被提供给访问者。
+{: id="20210130014908-55n550q"}
+
+{: id="20210130014908-lruwftp"}
+
+#### 修改内容
+{: id="20210130014941-xpn5v97"}
+
+1. {: id="20210130014941-kbyd8xf"}将 root(网站根目录) 设置放在外面
+2. {: id="20210130014941-2023izc"}将 index 设置放在外面
+3. {: id="20210130014941-wh5o9ij"}打开.php 文件的解析设置内容。就是“ location ~ .php$ { … }”这一段内容
+{: id="20210130014941-z8rq06t"}
+
+{: id="20210130014941-q7dfnq0"}
+
+php-fpm 的 fpm 指 FastCGI Process Manager：FastCGI 进程管理器，是一种面向高负载的 PHP 解释器。现在算是主流的 PHP 解释器。关于 PHP-FPM 更多的资料可以参考 [nginx 如何解析 php 文件 php-fpm 的解释](https://www.jianshu.com/p/f7fd7aa6c1c6)。
 {: id="20210130003411-3ikx2zv"}
 
 ### 安装 php7
