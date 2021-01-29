@@ -81,7 +81,11 @@ ubuntu 20.04 使用 `apt install mysql-server mysql-client` 自动会安装 5.7 
 方法二:主机与路由器连接
 {: id="20210130005236-1lnzg84"}
 
+需要在路由器中手动配置以下 DMZ,这样就能让对于路由器的 ip 分配地址直接能够在互联网上访问
 {: id="20210130005307-xoi7kzc"}
+
+![](assets/tplink-dmz-host-setting.png)
+{: id="20210130005420-d6cw4qg"}
 
 {: id="20210130005242-ntz80dc"}
 
