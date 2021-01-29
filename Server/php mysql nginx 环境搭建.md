@@ -1,5 +1,3 @@
-{: id="20210130003232-ywveokg"}
-
 ### 安装 nginx
 {: id="20210130003232-lpqav6m"}
 
@@ -9,14 +7,16 @@ apt install nginx
 # 请确保80端口没有被其他服务占用
 /etc/init.d/nginx start
 
-
-
 # 测试配置文件是否正常
 nginx -t
+
+nginx           #启动
+nginx -s reload #重新加载配置文件
+nginx -s quit   #优雅退出
+nginx -s stop   #立即停止
+nginx -t        #验证配置文件
 ```
 {: id="20210130003242-3a1m052"}
-
-{: id="20210130013759-x29gxih"}
 
 Ubuntu 安装之后的文件结构大致为:
 {: id="20210130003411-w3fhh32"}
@@ -32,8 +32,6 @@ Ubuntu 安装之后的文件结构大致为:
 
 * {: id="20210130003411-hgabzl2"}默认的虚拟主机的目录设置在了/var/www/nginx-default
 {: id="20210130003411-g1avt6f"}
-
-{: id="20210130004810-v6gzps2"}
 
 nginx 安装好之后，会创建/etc/nginx/conf.d/default.conf 文件，里面记录网站的配置信息。
 {: id="20210130003411-2hpgc00"}
@@ -87,8 +85,6 @@ location = /50x.html {
 ```
 {: id="20210130014850-mr5pgcn"}
 
-{: id="20210130015005-v4v3tkf"}
-
 #### 参数介绍
 {: id="20210130014908-zaf5zhr"}
 
@@ -101,8 +97,6 @@ location = /50x.html {
 * {: id="20210130014908-vtqkh58"}location ~ /.ht- 通过添加 deny all 指令，如果任何.htaccess 文件碰巧进入文档根目录，它们将不会被提供给访问者。
 {: id="20210130014908-55n550q"}
 
-{: id="20210130014908-lruwftp"}
-
 #### 修改内容
 {: id="20210130014941-xpn5v97"}
 
@@ -111,10 +105,37 @@ location = /50x.html {
 3. {: id="20210130014941-wh5o9ij"}打开.php 文件的解析设置内容。就是“ location ~ .php$ { … }”这一段内容
 {: id="20210130014941-z8rq06t"}
 
+```nginx
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                # With php-fpm (or other unix sockets):
+                fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        }
+
+```
 {: id="20210130014941-q7dfnq0"}
 
-php-fpm 的 fpm 指 FastCGI Process Manager：FastCGI 进程管理器，是一种面向高负载的 PHP 解释器。现在算是主流的 PHP 解释器。关于 PHP-FPM 更多的资料可以参考 [nginx 如何解析 php 文件 php-fpm 的解释](https://www.jianshu.com/p/f7fd7aa6c1c6)。
+> php-fpm 的 fpm 指 FastCGI Process Manager：FastCGI 进程管理器，是一种面向高负载的 PHP 解释器。现在算是主流的 PHP 解释器。关于 PHP-FPM 更多的资料可以参考 [nginx 如何解析 php 文件 php-fpm 的解释](https://www.jianshu.com/p/f7fd7aa6c1c6)。
+> {: id="20210130015406-moksvy5"}
 {: id="20210130003411-3ikx2zv"}
+
+#### 测试启动
+{: id="20210130015413-j1rrk1d"}
+
+```shell
+# 测试配置文件是否正常
+nginx -t
+# 如果报告了任何错误，请返回并重新检查您的文件，然后再继续。
+
+# 重新加载Nginx的配置文件
+/etc/init.d/nginx reload
+
+
+```
+{: id="20210130015511-p8r7cci"}
 
 ### 安装 php7
 {: id="20210130001815-ry9wdu3"}
@@ -552,10 +573,6 @@ phpwebcounter/focal 1.0-5 all
 ```
 {: id="20210130010609-83an36b"}
 
-{: id="20210130010546-c3szlq3"}
-
-{: id="20210130010546-k0wwy4s"}
-
 也可以使用
 {: id="20210130002013-y6j6wuu"}
 
@@ -570,8 +587,6 @@ sudo -y apt install php7.4-fpm php7.4-mysql php7.4-curl php7.4-json php7.4-mbstr
 ```
 {: id="20210130002019-0tlkl1g"}
 
-{: id="20210130002233-r9xnu4z"}
-
 ### 安装 mysql
 {: id="20210130002234-aqzoayw"}
 
@@ -583,12 +598,6 @@ ubuntu 20.04 使用 `apt install mysql-server mysql-client` 自动会安装 5.7 
 
 `apt install php-mysql`
 {: id="20210130010815-86crero"}
-
-{: id="20210130010839-vc2b4ua"}
-
-{: id="20210130010838-fswgqza"}
-
-{: id="20210130005042-wzibsye"}
 
 ### 运行在公网下
 {: id="20210130005042-bauy9y1"}
@@ -602,8 +611,6 @@ ubuntu 20.04 使用 `apt install mysql-server mysql-client` 自动会安装 5.7 
 直接将主机与光猫相连,这样就可以直接访问对于的 ip+ 端口到自己的服务器
 {: id="20210130005150-9x9v49b"}
 
-{: id="20210130005236-oo2s5ep"}
-
 方法二:主机与路由器连接
 {: id="20210130005236-1lnzg84"}
 
@@ -612,8 +619,6 @@ ubuntu 20.04 使用 `apt install mysql-server mysql-client` 自动会安装 5.7 
 
 ![](assets/tplink-dmz-host-setting.png)
 {: id="20210130005420-d6cw4qg"}
-
-{: id="20210130005242-ntz80dc"}
 
 
 {: id="20210130001809-7h4gs4n" type="doc"}
