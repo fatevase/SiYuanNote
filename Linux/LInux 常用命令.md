@@ -4,7 +4,7 @@
 ### 查看系统内核版本
 {: id="20210125120831-1v4x4f0"}
 
->  uname -r
+> uname -r
 > {: id="20210125120926-lojh8cx"}
 {: id="20210125120901-3wcuc0o"}
 
@@ -50,6 +50,26 @@ VERSION_CODENAME=focal
 UBUNTU_CODENAME=focal
 ```
 {: id="20210125121007-l3hq0rs"}
+
+{: id="20210130004830-im8pvax"}
+
+### 查看网络状态
+{: id="20210130004831-440t5du"}
+
+> apt install net-tools
+> {: id="20210130004839-uv2foz1"}
+>
+> ifconfig //ifconfig 命令被用于配置和显示 Linux 内核中网络接口的网络参数
+> {: id="20210130004848-a0z44ri"}
+>
+> netstat -rn //查看内核 IP 路由表
+> {: id="20210130004910-8e69hid"}
+>
+> nm-tool //使用 nm-tool 来查看查看 IP,网关,DNS
+> {: id="20210130004911-mzjz8v5"}
+{: id="20210130004837-6y27xqb"}
+
+{: id="20210130005035-zro21p2"}
 
 
 {: id="20210125120818-o302py1" type="doc"}
