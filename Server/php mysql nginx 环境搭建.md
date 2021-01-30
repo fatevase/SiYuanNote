@@ -195,7 +195,7 @@ root /home/www/;
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
-# 修改无法访问指向
+# 修改无法访问指向 伪静态(typecho 需要注释掉)
                 try_files $uri $uri/ =404;
         }
 
