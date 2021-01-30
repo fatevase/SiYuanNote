@@ -242,6 +242,17 @@ nginx -t
 ### 安装 mysql
 {: id="20210130023159-elfy221"}
 
+```shell
+apt install mysql-client mysql-server
+
+/etc/init.d/mysql start
+
+mysqladmin -u root -p password 123456
+
+/etc/init.d/mysql restart
+```
+{: id="20210130114727-8sxc6jx"}
+
 {: id="20210130023158-r47kl30"}
 
 ### 运行在公网下
