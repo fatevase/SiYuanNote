@@ -247,11 +247,20 @@ apt install mysql-client mysql-server
 
 /etc/init.d/mysql start
 
-mysqladmin -u root -p password 123456
+mysql
+use mysql;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 
 /etc/init.d/mysql restart
 ```
 {: id="20210130114727-8sxc6jx"}
+
+{: id="20210130120511-api0pt3"}
+
+设置 php 支持 mysql
+{: id="20210130120511-a98aggs"}
+
+{: id="20210130120525-pgirz5d"}
 
 {: id="20210130023158-r47kl30"}
 
