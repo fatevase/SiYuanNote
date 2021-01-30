@@ -289,5 +289,23 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 ![](assets/tplink-dmz-host-setting.png)
 {: id="20210130005420-d6cw4qg"}
 
+{: id="20210130224228-hne7pau"}
+
+### DDNS 域名动态解析
+{: id="20210130224229-aw69592"}
+
+{: id="20210130224308-5xgc0y8"}
+
+安装
+{: id="20210130224306-rteg0l2"}
+
+{: id="20210130224300-fynb6wx"}
+
+```
+# sudo apt-get install python3
+# sudo apt-get install python3-pip
+```
+{: id="20210130224259-i0d9l8o"}
+
 
 {: id="20210130001809-7h4gs4n" type="doc"}
