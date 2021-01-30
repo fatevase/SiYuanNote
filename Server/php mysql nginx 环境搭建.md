@@ -252,6 +252,10 @@ use mysql;
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 
 /etc/init.d/mysql restart
+
+# 默认密码
+/etc/mysql/debian.cnf
+
 ```
 {: id="20210130114727-8sxc6jx"}
 
