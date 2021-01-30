@@ -29,12 +29,10 @@ sudo -y apt install php7.4-fpm php7.4-mysql php7.4-curl php7.4-json php7.4-mbstr
 ```
 {: id="20210130002019-0tlkl1g"}
 
-
 {: id="20210130113049-asl9tzj"}
 
 通过 `ps aux|grep php`,检查 php-fpm 服务有没有启动,没有启动手动启动下该服务 `/etc/init.d/php-fom7.4 start`.
 {: id="20210130002234-aqzoayw"}
-
 
 {: id="20210130113051-y1fa8sm"}
 
@@ -46,7 +44,6 @@ ubuntu 20.04 使用 `apt install mysql-server mysql-client` 自动会安装 5.7 
 
 `apt install php-mysql`
 {: id="20210130010815-86crero"}
-
 
 {: id="20210130023159-qrkaq9w"}
 
@@ -81,7 +78,6 @@ Ubuntu 安装之后的文件结构大致为:
 
 nginx 安装好之后，会创建/etc/nginx/conf.d/default.conf 文件，里面记录网站的配置信息。
 {: id="20210130023200-bk5oykr"}
-
 
 {: id="20210130023200-cer8ow3"}
 
@@ -153,7 +149,6 @@ server {
 * {: id="20210130023200-gfcvfuk"}location ~ /.ht- 通过添加 deny all 指令，如果任何.htaccess 文件碰巧进入文档根目录，它们将不会被提供给访问者。
 {: id="20210130023200-ie1hvwq"}
 
-
 {: id="20210130113223-ugjbbvc"}
 
 要为了让 nginx 支持 php, 需要手动设置 php-fpm 的监听路径, 文件夹 `etc/php/7.x/fpm/pool.d/www.conf` 中找到对应的监听地址.
@@ -219,9 +214,7 @@ root /home/www/;
 ```
 {: id="20210130113726-6i1xkzm"}
 
-
 {: id="20210130023200-vbd7bto"}
-
 
 {: id="20210130113852-o08w0el"}
 
@@ -243,7 +236,6 @@ nginx -t
 
 ```
 {: id="20210130023200-r74jppg"}
-
 
 {: id="20210130023200-5mq8h62"}
 
@@ -267,15 +259,12 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 ```
 {: id="20210130114727-8sxc6jx"}
 
-
 {: id="20210130120511-api0pt3"}
 
 设置 php 支持 mysql
 {: id="20210130120511-a98aggs"}
 
-
 {: id="20210130120525-pgirz5d"}
-
 
 {: id="20210130023158-r47kl30"}
 
@@ -300,18 +289,15 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 ![](assets/tplink-dmz-host-setting.png)
 {: id="20210130005420-d6cw4qg"}
 
-
 {: id="20210130224228-hne7pau"}
 
 ### DDNS 域名动态解析
 {: id="20210130224229-aw69592"}
 
-
 {: id="20210130224308-5xgc0y8"}
 
 下载:https://github.com/NewFuture/DDNS
 {: id="20210130224306-rteg0l2"}
-
 
 {: id="20210130224339-8rmav6n"}
 
@@ -335,7 +321,6 @@ curl -sSL https://github.com/NewFuture/DDNS/releases/download/v2.9.7/create-task
 ```
 {: id="20210130224547-1fqbxod"}
 
-
 {: id="20210130230035-ftaquel"}
 
 #### 使用 pip 安装
@@ -348,12 +333,10 @@ ddns
 ```
 {: id="20210130235104-knyombb"}
 
-
 {: id="20210130235053-dc4swwb"}
 
 #### 使用
 {: id="20210130230036-r6iu8xl"}
-
 
 {: id="20210130235052-6i5gcc7"}
 
@@ -372,27 +355,25 @@ config.json 配置文件
 * {: id="20210130230053-j77tf76"}推荐使用 vscode 等支持 JsonSchema 的编辑器编辑配置文件
 {: id="20210130230053-iswb1z9"}
 
-
 {: id="20210130230109-xm5frda"}
 
 #### 配置参数表
 {: id="20210130230116-khctm16"}
 
-|  key  |  type  | required |  default  |      description      | tips                                                                                                                                                                                                                                            |
-| :----: | :----: | :------: | :--------: | :--------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|   id   | string |   √   |    无    |     api 访问 ID     | Cloudflare 为邮箱(使用 Token 时留空)<br/>HE.net 可留空                                                                                                                                                                               |
-| token | string |   √   |    无    |    api 授权 token    | 部分平台叫 secret key , **反馈粘贴时删除**                                                                                                                                                                                          |
+|  key  |  type  | required |  default  |      description      | tips                                                                                                                                                                                                                                        |
+| :------: | :------: | :--------: | :----------: | :---------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   id   | string |   √   |    无    |     api 访问 ID     | Cloudflare 为邮箱(使用 Token 时留空)<br/>HE.net 可留空                                                                                                                                                                           |
+| token | string |   √   |    无    |   api 授权 token   | 部分平台叫 secret key , **反馈粘贴时删除**                                                                                                                                                                                      |
 |  dns  | string |    No    | `"dnspod"` |     dns 服务商     | 阿里 DNS 为 `alidns`,<br/>Cloudflare 为 `cloudflare`,<br/>dns.com 为 `dnscom`,<br/>DNSPOD 国内为 `dnspod`,<br/>DNSPOD 国际版为 `dnspod_com`,<br/>HE.net 为 `he`,<br/>华为 DNS 为 `huaweidns`,<br/>自定义回调为 `callback` |
-|  ipv4  | array |    No    |    `[]`    |   ipv4 域名列表   | 为 `[]` 时,不会获取和更新 IPv4 地址                                                                                                                                                                                                  |
-|  ipv6  | array |    No    |    `[]`    |   ipv6 域名列表   | 为 `[]` 时,不会获取和更新 IPv6 地址                                                                                                                                                                                                  |
-| index4 | string |   int   |   array   |           No           | `"default"`                                                                                                                                                                                                                                     |
-| index6 | string |   int   |   array   |           No           | `"default"`                                                                                                                                                                                                                                     |
-|  ttl  | number |    No    |   `null`   | DNS 解析 TTL 时间 | 不设置采用 DNS 默认策略                                                                                                                                                                                                                |
-| proxy | string |    No    |    无    | http 代理 `;` 分割 | 多代理逐个尝试直到成功,`DIRECT` 为直连                                                                                                                                                                                            |
-| debug |  bool  |    No    |  `false`  |   是否开启调试   | 运行异常时,打开调试输出,方便诊断错误                                                                                                                                                                                           |
-| cache |  bool  |    No    |   `true`   |   是否缓存记录   | 正常情况打开避免频繁更新                                                                                                                                                                                                            |
+|  ipv4  | array |    No    |    `[]`    |   ipv4 域名列表   | 为 `[]` 时,不会获取和更新 IPv4 地址                                                                                                                                                                                                |
+|  ipv6  | array |    No    |    `[]`    |   ipv6 域名列表   | 为 `[]` 时,不会获取和更新 IPv6 地址                                                                                                                                                                                                |
+| index4 | string |   int   |   array   |          No          | `"default"`                                                                                                                                                                                                                                 |
+| index6 | string |   int   |   array   |          No          | `"default"`                                                                                                                                                                                                                                 |
+|  ttl  | number |    No    |   `null`   | DNS 解析 TTL 时间 | 不设置采用 DNS 默认策略                                                                                                                                                                                                            |
+| proxy | string |    No    |    无    | http 代理 `;` 分割 | 多代理逐个尝试直到成功,`DIRECT` 为直连                                                                                                                                                                                         |
+| debug |  bool  |    No    |  `false`  |  是否开启调试  | 运行异常时,打开调试输出,方便诊断错误                                                                                                                                                                                       |
+| cache |  bool  |    No    |   `true`   |  是否缓存记录  | 正常情况打开避免频繁更新                                                                                                                                                                                                        |
 {: id="20210130230116-e15uk2j"}
-
 
 {: id="20210130231345-tm8e7wb"}
 
@@ -417,7 +398,6 @@ config.json 配置文件
 ```
 {: id="20210130230116-vtbpla0"}
 
-
 {: id="20210130235147-uuns1bn"}
 
 #### 输出
@@ -426,8 +406,27 @@ config.json 配置文件
 ![dy-ddns-test](assets/dy-ddns-test.png)
 {: id="20210130235243-zs8fl6u"}
 
+{: id="20210131004312-7b6aq83"}
 
+{: id="20210131004312-05mnbru"}
+
+dns 解析设定
 {: id="20210130235155-aomgaq1"}
+
+```
+_Service._Proto.Name TTL Class SRV Priority Weight Port Target
+
+Service: 服务名称，前缀“_”是为防止与DNS Label（普通域名）冲突。
+Proto:   服务使用的通信协议，_TCP、_UDP、其它标准协议或者自定义的协议。
+Name:    提供服务的域名。
+TTL:     缓存有效时间。
+CLASS:   类别
+Priority: 该记录的优先级，数值越小表示优先级越高，范围0-65535。
+Weight:   该记录的权重，数值越高权重越高，范围0-65535。   
+Port:     服务端口号，0-65535。
+Target:   host地址。
+```
+{: id="20210131004316-47n7qw8"}
 
 
 {: id="20210130001809-7h4gs4n" type="doc"}
