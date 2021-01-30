@@ -29,19 +29,20 @@ sudo -y apt install php7.4-dev   //phpize需要
 sudo -y apt install php-pear     //pecl需要
 sudo -y apt install php7.4-fpm php7.4-mysql php7.4-curl php7.4-json php7.4-mbstring php7.4-xml php7.4-intl
 ```
-{: id="20210130002019-0tlkl1g"}
+{: id="20210130002019-0tlkl1g" fold="0"}
 
 ### 安装 mysql
-{: id="20210130002234-aqzoayw"}
+{: id="20210130002234-aqzoayw" fold="1"}
 
 ubuntu 20.04 使用 `apt install mysql-server mysql-client` 自动会安装 5.7 版本,
-{: id="20210130002510-pie30mp"}
+{: id="20210130002510-pie30mp" fold="2"}
 
 先检查下自己有没有安装 php-mysql 扩展,`apt list php-mysql`, 如果没有显示则手动安装扩展
-{: id="20210130010724-oajb94r"}
+{: id="20210130010724-oajb94r" fold="2"}
 
 `apt install php-mysql`
-{: id="20210130010815-86crero"}
+{: id="20210130010815-86crero" fold="2"}
+
 
 {: id="20210130023159-qrkaq9w"}
 
@@ -178,9 +179,12 @@ nginx -t
 ```
 {: id="20210130023200-r74jppg"}
 
+
 {: id="20210130023200-5mq8h62"}
 
+
 {: id="20210130023159-elfy221"}
+
 
 {: id="20210130023158-r47kl30"}
 
