@@ -301,7 +301,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 
 {: id="20210130224339-8rmav6n"}
 
-配置环境:python3 pip 
+#### 配置环境:python3 pip
 {: id="20210130224300-fynb6wx"}
 
 ```
@@ -310,7 +310,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 ```
 {: id="20210130224259-i0d9l8o"}
 
-安装 ddns
+#### 安装 ddns
 {: id="20210130224546-lb88vfv"}
 
 ```
@@ -320,6 +320,48 @@ curl https://github.com/NewFuture/DDNS/releases/download/v2.9.7/ddns -#SLo ddns 
 curl -sSL https://github.com/NewFuture/DDNS/releases/download/v2.9.7/create-task.sh | bash
 ```
 {: id="20210130224547-1fqbxod"}
+
+{: id="20210130230035-ftaquel"}
+
+#### 使用
+{: id="20210130230036-r6iu8xl"}
+
+```
+ddns -c path/to/config.json
+# 或者源码运行
+python run.py -c /path/to/config.json
+```
+{: id="20210130230045-2kg5wsi"}
+
+config.json 配置文件
+{: id="20210130230048-dn3j9m5"}
+
+* {: id="20210130230053-mf57cwb"}首次运行会自动生成一个模板配置文件
+* {: id="20210130230053-soif2b7"}可以使用 `-c` 使用指定的配置文件 (默认读取当前目录的 config.json)
+* {: id="20210130230053-j77tf76"}推荐使用 vscode 等支持 JsonSchema 的编辑器编辑配置文件
+{: id="20210130230053-iswb1z9"}
+
+{: id="20210130230109-xm5frda"}
+
+#### 配置参数表
+{: id="20210130230116-khctm16"}
+
+|  key  |  type  | required |  default  |      description      | tips                                                                                                                                                                                                                                        |
+| :------: | :------: | :--------: | :----------: | :---------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   id   | string |   √   |    无    |     api 访问 ID     | Cloudflare 为邮箱(使用 Token 时留空)<br/>HE.net 可留空                                                                                                                                                                           |
+| token | string |   √   |    无    |   api 授权 token   | 部分平台叫 secret key , **反馈粘贴时删除**                                                                                                                                                                                      |
+|  dns  | string |    No    | `"dnspod"` |     dns 服务商     | 阿里 DNS 为 `alidns`,<br/>Cloudflare 为 `cloudflare`,<br/>dns.com 为 `dnscom`,<br/>DNSPOD 国内为 `dnspod`,<br/>DNSPOD 国际版为 `dnspod_com`,<br/>HE.net 为 `he`,<br/>华为 DNS 为 `huaweidns`,<br/>自定义回调为 `callback` |
+|  ipv4  | array |    No    |    `[]`    |   ipv4 域名列表   | 为 `[]` 时,不会获取和更新 IPv4 地址                                                                                                                                                                                                |
+|  ipv6  | array |    No    |    `[]`    |   ipv6 域名列表   | 为 `[]` 时,不会获取和更新 IPv6 地址                                                                                                                                                                                                |
+| index4 | string |   int   |   array   |          No          | `"default"`                                                                                                                                                                                                                                 |
+| index6 | string |   int   |   array   |          No          | `"default"`                                                                                                                                                                                                                                 |
+|  ttl  | number |    No    |   `null`   | DNS 解析 TTL 时间 | 不设置采用 DNS 默认策略                                                                                                                                                                                                            |
+| proxy | string |    No    |    无    | http 代理 `;` 分割 | 多代理逐个尝试直到成功,`DIRECT` 为直连                                                                                                                                                                                         |
+| debug |  bool  |    No    |  `false`  |  是否开启调试  | 运行异常时,打开调试输出,方便诊断错误                                                                                                                                                                                       |
+| cache |  bool  |    No    |   `true`   |  是否缓存记录  | 正常情况打开避免频繁更新                                                                                                                                                                                                        |
+{: id="20210130230116-e15uk2j"}
+
+{: id="20210130230116-vtbpla0"}
 
 
 {: id="20210130001809-7h4gs4n" type="doc"}
