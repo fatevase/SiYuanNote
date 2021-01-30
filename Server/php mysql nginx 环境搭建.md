@@ -296,9 +296,12 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 
 {: id="20210130224308-5xgc0y8"}
 
-安装
+下载:https://github.com/NewFuture/DDNS
 {: id="20210130224306-rteg0l2"}
 
+{: id="20210130224339-8rmav6n"}
+
+配置环境:python3 pip 
 {: id="20210130224300-fynb6wx"}
 
 ```
@@ -306,6 +309,17 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456';
 # sudo apt-get install python3-pip
 ```
 {: id="20210130224259-i0d9l8o"}
+
+安装 ddns
+{: id="20210130224546-lb88vfv"}
+
+```
+# 1. 下载ddns 
+curl https://github.com/NewFuture/DDNS/releases/download/v2.9.7/ddns -#SLo ddns && chmod +x ddns
+# 2. [可选] 定时任务(当前目录): 
+curl -sSL https://github.com/NewFuture/DDNS/releases/download/v2.9.7/create-task.sh | bash
+```
+{: id="20210130224547-1fqbxod"}
 
 
 {: id="20210130001809-7h4gs4n" type="doc"}
