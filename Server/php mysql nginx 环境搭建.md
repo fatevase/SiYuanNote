@@ -361,6 +361,27 @@ config.json 配置文件
 | cache |  bool  |    No    |   `true`   |  是否缓存记录  | 正常情况打开避免频繁更新                                                                                                                                                                                                        |
 {: id="20210130230116-e15uk2j"}
 
+{: id="20210130231345-tm8e7wb"}
+
+配置
+{: id="20210130231341-xlw5a1u"}
+
+```shell
+{
+  "$schema": "https://ddns.newfuture.cc/schema/v2.8.json",
+  "id": "LTAI4GDg5VbypoozXNPDVjQ9",
+  "token": "nV7KTRTGIRogiGuad2qwPioDidSVXK",
+  "dns": "alidns",
+  "ipv4": ["ddns.squirtle.cc", "ipv4.ddns.squirtle.cc"],
+  "ipv6": ["ipv6.ddns.squirtle.cc"],
+  "index4": "public",
+  "index6": "public",
+  "ttl": 120,
+  "debug": false
+}
+
+
+```
 {: id="20210130230116-vtbpla0"}
 
 
