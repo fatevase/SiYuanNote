@@ -151,10 +151,30 @@ server {
 
 {: id="20210130113223-ugjbbvc"}
 
-要为了让 nginx 支持 php, 需要手动设置 php-fpm 的监听路径, 
+要为了让 nginx 支持 php, 需要手动设置 php-fpm 的监听路径, 文件夹 `etc/php/7.x/fpm/pool.d/www.conf` 中找到对应的监听地址.
 {: id="20210130113222-hb1lkmk"}
 
-#### 修改内容
+```nginx
+; The address on which to accept FastCGI requests.
+; Valid syntaxes are:
+;   'ip.add.re.ss:port'    - to listen on a TCP socket to a specific IPv4 address on
+;                            a specific port;
+;   '[ip:6:addr:ess]:port' - to listen on a TCP socket to a specific IPv6 address on
+;                            a specific port;
+;   'port'                 - to listen on a TCP socket to all addresses
+;                            (IPv6 and IPv4-mapped) on a specific port;
+;   '/path/to/unix/socket' - to listen on a unix socket.
+; Note: This value is mandatory.
+# 就是这个地址
+listen = /run/php/php7.4-fpm.sock
+
+```
+{: id="20210130113437-gb3r1lu"}
+
+记住这个地址跳转到 `/etc/nginx/sites-enabled/default` 路径修改配置文件
+{: id="20210130113519-9yg9r8e"}
+
+#### 修改 Nginx 配置文件
 {: id="20210130023200-olm6ehb"}
 
 1. {: id="20210130023200-tebqlsk"}将 root(网站根目录) 设置放在外面
@@ -163,17 +183,40 @@ server {
 {: id="20210130023200-3lmm65m"}
 
 ```nginx
-        location ~ \.php$ {
-                include snippets/fastcgi-php.conf;
-                # With php-fpm (or other unix sockets):
-                fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
-                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-                # With php-cgi (or other tcp sockets):
-        #       fastcgi_pass 127.0.0.1:9000;
+# 修改默认路径
+root /home/www/;
+
+        # Add index.php to the list if you are using PHP
+# 添加php文件支持
+        index index.html index.htm index.php;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+# 修改无法访问指向
+                try_files $uri $uri/ =404;
         }
 
+        # pass PHP scripts to FastCGI server
+        #
+# 设置php文件监听
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+        #
+        #       # With php-fpm (or other unix sockets):
+	#	此处路径为对于php-fpm下的wwww.conf中的监听路径
+                fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        }
 ```
+{: id="20210130113726-6i1xkzm"}
+
 {: id="20210130023200-vbd7bto"}
+
+{: id="20210130113852-o08w0el"}
 
 > php-fpm 的 fpm 指 FastCGI Process Manager：FastCGI 进程管理器，是一种面向高负载的 PHP 解释器。现在算是主流的 PHP 解释器。关于 PHP-FPM 更多的资料可以参考 [nginx 如何解析 php 文件 php-fpm 的解释](https://www.jianshu.com/p/f7fd7aa6c1c6)。
 > {: id="20210130023200-pwgpn4t"}
