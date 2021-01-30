@@ -323,8 +323,22 @@ curl -sSL https://github.com/NewFuture/DDNS/releases/download/v2.9.7/create-task
 
 {: id="20210130230035-ftaquel"}
 
+#### 使用 pip 安装
+{: id="20210130235054-ea4klmp"}
+
+```shell
+pip install ddns
+#运行
+ddns
+```
+{: id="20210130235104-knyombb"}
+
+{: id="20210130235053-dc4swwb"}
+
 #### 使用
 {: id="20210130230036-r6iu8xl"}
+
+{: id="20210130235052-6i5gcc7"}
 
 ```
 ddns -c path/to/config.json
@@ -383,6 +397,16 @@ config.json 配置文件
 
 ```
 {: id="20210130230116-vtbpla0"}
+
+{: id="20210130235147-uuns1bn"}
+
+#### 输出
+{: id="20210130235147-dsd9zw0"}
+
+![dy-ddns-test](assets/dy-ddns-test.png)
+{: id="20210130235243-zs8fl6u"}
+
+{: id="20210130235155-aomgaq1"}
 
 
 {: id="20210130001809-7h4gs4n" type="doc"}
