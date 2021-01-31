@@ -352,12 +352,58 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 在使用 `-d` 参数时，容器启动后会进入后台。 某些时候需要进入容器进行操作，有很多种方法，包括使用 `docker attach` 命令或 `nsenter` 工具等。
 {: id="20210131123127-sopt0qw"}
 
+1.attach 命令
+{: id="20210131124046-x9xn29x"}
+
 `docker attach` 是 Docker 自带的命令。下面示例如何使用该命令。
 {: id="20210131123145-8k94mdi"}
 
+```bash
+sudo docker ps
+CONTAINER ID   IMAGE          COMMAND       CREATED        STATUS         PORTS                  NAMES
+9e2144e7d6e5   ubuntu:20.04   "/bin/bash"   25 hours ago   Up 2 minutes   0.0.0.0:7225->80/tcp   cool_varahamihira
+(base) vase@vase:~$ sudo docker attach cool_varahamihira
+root@9e2144e7d6e5:/# 
+
+```
 {: id="20210131123145-ryk2656"}
 
+> 但是使用 `attach` 命令有时候并不方便。当多个窗口同时 attach 到同一个容器的时候，所有窗口都会同步显示。当某个窗口因命令阻塞时,其他窗口也无法执行操作了。
+> {: id="20210131124001-3i0vuth"}
 {: id="20210131122545-s4ggqol"}
+
+{: id="20210131124003-b0f59te"}
+
+2.nsenter 命令
+{: id="20210131124108-j22lt31"}
+
+```
+nsenter --target $PID --mount --uts --ipc --net --pid
+```
+{: id="20210131124240-q29td0s"}
+
+> 需要安装 util-linux 包 2.23 版本以上
+> {: id="20210131124316-oxdlqz3"}
+{: id="20210131124108-qi9ufcd"}
+
+{: id="20210131124350-hfs8hc5"}
+
+```bash
+$ sudo docker run -idt ubuntu
+243c32535da7d142fb0e6df616a3c3ada0b8ab417937c853a9e1c251f499f550
+$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+243c32535da7        ubuntu:latest       "/bin/bash"         18 seconds ago      Up 17 seconds                           nostalgic_hypatia
+$ PID=$(docker-pid 243c32535da7)
+10981
+$ sudo nsenter --target 10981 --mount --uts --ipc --net --pid
+root@243c32535da7:/#
+```
+{: id="20210131124348-1uvljf5"}
+
+{: id="20210131124349-lohi2ym"}
+
+{: id="20210131124004-hotj62q"}
 
 #### 删除容器
 {: id="20210126001755-4ye7sy9"}
