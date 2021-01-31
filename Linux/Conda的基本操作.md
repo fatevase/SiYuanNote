@@ -39,8 +39,8 @@ ssl_verify: true
 ## conda 安装使用注意事项
 {: id="20210110140120-6dkvrzi"}
 
-ubuntu 安装conda后要手动将conda加入系统环境变量中，方便之后的使用
-{: id="null"}
+Ubuntu 安装conda后要手动将conda加入系统环境变量中，方便之后的使用
+{: id="20210131232640-qa84ich"}
 
 ```
 $ echo 'export PATH="/home/vase/miniconda4/bin:$ PATH"' >> ~/.profile
@@ -50,6 +50,7 @@ $ source ~/.profile
 
 在安装conda的时候可以手动选择conda的安装路径
 {: id="20210110140253-da7ocgd"}
+
 
 {: id="20210110142822-nevym7g"}
 
