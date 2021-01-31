@@ -4,8 +4,9 @@
 #### 摘要
 {: id="20210125120003-gbnbdau"}
 
-建议使用 websocket 进行链接,安全性对比 tcp 高不少,要求更高的安全性可以选择 ws+tls 的 https 证书形式
+建议使用 WebSocket 进行链接,安全性对比 tcp 高不少,要求更高的安全性可以选择 ws+tls 的 https 证书形式
 {: id="20210125120017-io3ys5x"}
+
 
 {: id="20210125120033-jitp100"}
 
@@ -16,15 +17,16 @@
 > {: id="20210122032926-a630m9z"}
 >
 > 安装 v2ray：wget https://github.com/v2fly/fhs-install-v2ray/blob/master/install-release.sh && bash install-release.sh
-> {: id="null"}
+> {: id="20210131232640-key22nd"}
 {: id="20210122032926-0inqpys"}
+
 
 {: id="20210125115955-kddmotu"}
 
 ## 解析域名
 {: id="20210122033201-urfi1ux"}
 
-ws 操作需要解析一个域名到自己的 vps 中, 随便买一个即可.如果需要加入 tls 加密,则需要在申请个 https 的证书,这个证书有脚本自动获取,也可以手动,这里我推荐手动,因为脚本会有失误的时候,且每 3 个月过期一次,手动申请的有效期一年,也就是 1 年只需要操作一次即可.
+ws 操作需要解析一个域名到自己的 VPS 中, 随便买一个即可.如果需要加入 tls 加密,则需要在申请个 https 的证书,这个证书有脚本自动获取,也可以手动,这里我推荐手动,因为脚本会有失误的时候,且每 3 个月过期一次,手动申请的有效期一年,也就是 1 年只需要操作一次即可.
 {: id="20210122033236-wcqgzsu"}
 
 [这里也有自动申请的方式](https://neko.re/archives/112.html)
@@ -41,9 +43,10 @@ OS 不同，方法不同，参考 https://certbot.eff.org/
 ```
 {: id="20210122033431-umlsf85"}
 
+
 {: id="20210125115955-inaqim3"}
 
-安装好 Nginx 后, cd 到 /etc/nginx/conf.d，添加文件 v2ray.conf，填入以下内容，文中 example.com 修改为你解析到 vps 的域名
+安装好 Nginx 后, cd 到 /etc/nginx/conf.d，添加文件 v2ray.conf，填入以下内容，文中 example.com 修改为你解析到 VPS 的域名
 {: id="20210122032926-ecles8h"}
 
 ```
@@ -102,6 +105,7 @@ server {
 [UUID 在线生成](https://www.uuidgenerator.net/)
 {: id="20210122034012-ji70uqu"}
 
+
 {: id="20210125115955-40y794v"}
 
 ```json
@@ -138,6 +142,7 @@ server {
 ```
 {: id="20210122032926-ygr5fnm"}
 
+
 {: id="20210125115955-0a9yd5j"}
 
 ## 客户端连接
@@ -145,6 +150,7 @@ server {
 
 客户端连接的时候设置 path 为 ray，开启底层传输安全（tls），地址即为你的域名，用户 id 即为你的 uuid
 {: id="20210122033802-0lm3s4e"}
+
 
 {: id="20210125115955-t1axjgc"}
 
