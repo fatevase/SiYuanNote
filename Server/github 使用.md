@@ -59,9 +59,16 @@ git config  credential.helper store
 打开.git 文件夹内的 config 文件，会发现多了两行
 {: id="20210201010812-1vns028"}
 
-{: id="20210201010812-fsb543g"}
+```yaml
+[credential]
+	helper = store
+```
+{: id="20210201010939-bwpilz2"}
 
+之后 git push 后再输入一次账户密码以后就不用输入了
 {: id="20210201010745-hqynxqe"}
+
+{: id="20210201011003-s979ckc"}
 
 ### 综述
 {: id="20210125120515-4po5584"}
