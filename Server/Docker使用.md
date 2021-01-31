@@ -175,7 +175,7 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 ```
 {: id="20210125235122-ax993bg"}
 
-{: id="20210127121913-87pmv8i"}
+{: id="20210131122545-y6gm6u8"}
 
 #### 列出本地镜像
 {: id="20210125235134-a3eejyd"}
@@ -208,14 +208,14 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 使用 `docker rmi -f $(docker images -aq)` 删除全部镜像。
 {: id="20210125235828-xely6yb"}
 
-{: id="20210127121913-sb4fg3l"}
+{: id="20210131122545-vx6b7b4"}
 
 #### 创建新镜像
 {: id="20210127114852-8zfptmc"}
 
-{: id="20210127121913-54ylz5o"}
+{: id="20210131122545-zi0bgf5"}
 
-1. 创建镜像前我们需要创建对于的 Dockerfile
+1. {: id="20210131122545-ytus0mi"}创建镜像前我们需要创建对于的 Dockerfile
 {: id="20210127120057-mylzg2c"}
 
 ```shell
@@ -225,7 +225,7 @@ $ touch Dockerfile
 ```
 {: id="20210127115602-u7bncue"}
 
-{: id="20210127115514-9rzr916"}
+{: id="20210131122545-l5r909q"}
 
 2. {: id="20210127122003-6b7qirz"}Dockerfile 中每一条指令都用于创建镜像每一层
 {: id="20210127122000-lqgtlch"}
@@ -246,7 +246,7 @@ RUN gem install sinatra
 * {: id="20210127115523-0xtmlqs"}`RUN` 开头的指令会在创建中运行，比如安装一个软件包，在这里使用 apt-get 来安装了一些软件
 {: id="20210127115523-k1y0xht"}
 
-{: id="20210127122038-wib7sp2"}
+{: id="20210131122545-jeg0z8s"}
 
 3. {: id="20210127122032-g0n7dhv"}编写完成 Dockerfile 后可以使用 `docker build` 来生成镜像。
 {: id="20210127122031-77xu7jn"}
@@ -259,9 +259,9 @@ sudo docker build -t="ouruser/sinatra:v2" .1
 * {: id="20210127122139-ua6bbj8"}其中 `-t` 标记来添加 tag，指定新的镜像的用户信息。 “.” 是 Dockerfile 所在的路径（当前目录），也可以替换为一个具体的 Dockerfile 的路径。
 {: id="20210127122127-y6klwro"}
 
-{: id="20210127122127-e8k9435"}
+{: id="20210131122545-vzj5j9x"}
 
-{: id="20210127122110-svqjpnh"}
+{: id="20210131122545-83nh0va"}
 
 ### 容器相关指令
 {: id="20210125235828-qrg3srp"}
@@ -327,7 +327,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 ```
 {: id="20210126001754-i4o8160"}
 
-{: id="20210127121913-3npesks"}
+{: id="20210131122545-ab1zyfi"}
 
 #### 启动和停止容器
 {: id="20210126002437-tl7fd1u"}
@@ -344,7 +344,20 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker kill 容器ID`:强制停止容器
 {: id="20210126002605-8s41dbb"}
 
-{: id="20210127121913-y4l1snh"}
+{: id="20210131123126-2avo4gn"}
+
+#### 进入容器
+{: id="20210131123127-z0wgysu"}
+
+在使用 `-d` 参数时，容器启动后会进入后台。 某些时候需要进入容器进行操作，有很多种方法，包括使用 `docker attach` 命令或 `nsenter` 工具等。
+{: id="20210131123127-sopt0qw"}
+
+`docker attach` 是 Docker 自带的命令。下面示例如何使用该命令。
+{: id="20210131123145-8k94mdi"}
+
+{: id="20210131123145-ryk2656"}
+
+{: id="20210131122545-s4ggqol"}
 
 #### 删除容器
 {: id="20210126001755-4ye7sy9"}
@@ -358,7 +371,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker ps -a -q |xqrgs docker rm`:强制删除全部容器
 {: id="20210126002320-f260s08"}
 
-{: id="20210127121913-37sgsjv"}
+{: id="20210131122545-17zaz0m"}
 
 ### 常用其他命令
 {: id="20210126002813-0y9de6y"}
@@ -373,7 +386,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 > {: id="20210126002930-excqzj4"}
 {: id="20210126002919-4bogq1m"}
 
-{: id="20210127121913-ryf1tx7"}
+{: id="20210131122545-80g5fcd"}
 
 #### docker 日志
 {: id="20210126003011-mfmvuk8"}
@@ -381,7 +394,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker logs -f -t --tail ? 容器ID`: 查看该镜像的运行的?条日志
 {: id="20210126003023-rd1hntp"}
 
-{: id="20210127121913-hkhtxjo"}
+{: id="20210131122545-4a6obtf"}
 
 #### 查看 docker 进程
 {: id="20210126003443-cv177qt"}
@@ -389,7 +402,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker top 容器ID`:查看容器中的进程 ID
 {: id="20210126003500-qg93zm7"}
 
-{: id="20210127121913-7eq34qi"}
+{: id="20210131122545-j8l06z6"}
 
 #### 查看容器信息
 {: id="20210126003601-xp4n67k"}
@@ -397,7 +410,7 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 `docker inspect 容器ID`: 查看容器的所有信息
 {: id="20210126003609-qfu7548"}
 
-{: id="20210127121913-xc7x52x"}
+{: id="20210131122545-48gsrz2"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
