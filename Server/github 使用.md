@@ -215,5 +215,32 @@ git clone https://github.com/ProjectName.git #将对应的项目下载下来
 > {: id="20210110105947-be0vbor"}
 {: id="20210110105947-tsa953d"}
 
+{: id="20210227133715-lnnuhrr"}
+
+{: id="20210227133721-sevuvnk"}
+
+{: id="20210227133722-lfjvdcz"}
+
+### git常见问题
+{: id="20210227133721-4lhgfkb" updated="20210227133727"}
+
+{: id="20210227133727-f0setfg"}
+
+问题: `fatal: 拒绝合并无关的历史`
+{: id="20210227133727-8hq5y3q" updated="20210227133816"}
+
+原因:`本地初始化的项目 与 github 版本不一致, 导致无法提交`
+{: id="20210227133753-5sacnz6" updated="20210227133757"}
+
+> ```
+> git pull origin master --allow-unrelated-histories 
+> ```
+> {: id="20210227133731-n204gav" updated="20210227133739"}
+>
+> {: id="20210227133801-csyagvo"}
+{: id="20210227133730-k6aroon" updated="20210227133731"}
+
+{: id="20210227133740-c8es5mq"}
+
 
 {: id="20201120095601-8jm5kh2" type="doc"}
