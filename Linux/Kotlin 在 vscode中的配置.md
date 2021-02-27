@@ -15,10 +15,8 @@ https://github.com/JetBrains/kotlin
 {: id="20210227143943-o7zoryk" updated="20210227144019"}
 
 对于vscode我们需要的插件有
-{: id="20210227144020-qj86c9x" updated="20210227144035"}
+{: id="20210227144020-qj86c9x" updated="20210227144657"}
 
-* {: id="20210227144040-5qg98mq"}kotlin(fwcd) 代码提示
-  {: id="20210227144040-91nirbk" updated="20210227144203"}
 * {: id="20210227144109-szzeyif"}kotlin language(mathiasfrohlich) 语言支持
   {: id="20210227144109-lnxkqo5" updated="20210227144207"}
 * {: id="20210227144135-w5jqq5m"}code runner(jun han) 代码运行
