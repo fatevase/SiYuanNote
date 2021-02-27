@@ -301,7 +301,13 @@ dependencies {
 重启vscode等插件识别项目后自动安装.gradle相关内容
 {: id="20210227175743-bzhxrur" updated="20210227175851"}
 
-{: id="20210227175816-a5awgb6" updated="20210227175819"}
+![image.png](assets/20210227181150-mjtcbw1-image.png)
+{: id="20210227175816-a5awgb6" updated="20210227181150"}
+
+最终目录格式,其中通过`build`打包的jar包存放在 build/lib中
+{: id="20210227181159-rkxeebo" updated="20210227181249"}
+
+{: id="20210227181221-ui91blz"}
 
 
 {: id="20210227143834-hlch7fc" type="doc"}
