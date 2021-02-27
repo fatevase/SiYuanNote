@@ -202,10 +202,21 @@ git pull origin master
 #clone
 git clone https://github.com/ProjectName.git #将对应的项目下载下来
 
+# .gitignore 使用
+# 首先取消所有不需要提交的文件
+git rm -r --cached .
+# 修改.gitignore 文件 
+*.a       # 忽略所有 .a 结尾的文件
+!lib.a    # 但 lib.a 除外
+/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+build/    # 忽略 build/ 目录下的所有文件
+doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 
+# 使用添加全部文件 这时候github会自动帮我们忽略对应的文件
+git add .
 
 ```
-{: id="20210110105947-5diroam"}
+{: id="20210110105947-5diroam" updated="20210227135456"}
 
 > Git config -l 查看配置文件信息
 > {: id="20210110105947-hhy3h4h"}
