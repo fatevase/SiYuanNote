@@ -45,7 +45,9 @@
 {: id="20210201010746-kq6xgpe"}
 
 1. {: id="20210201010812-ldw8db2"}在项目文件夹下
+   {: id="20210227124353-w66pqbb"}
 2. {: id="20210201010812-bpzosvb"}输入命令
+   {: id="20210227124353-urg2dhk"}
 {: id="20210201010812-to2u16s"}
 
 ```bash hljs
@@ -113,8 +115,10 @@ git init
 echo "test" >> README.md
 git commit -m "first commit"
 git remote add origin git@github.com:YourName/ProjectName.git
+# 使用https 则是使用账号密码登录 使用git@则是使用ssh登陆(使用ssh登陆需要提前配置ssh)
+# git remote set-url origin https://UserA@github.com/UserA/repoA.git
 ```
-{: id="20210110105947-w6mbrdg"}
+{: id="20210110105947-w6mbrdg" updated="20210227133613"}
 
 添加后，远程库的名字就是 origin，这是 Git 默认的叫法，也可以改成别的，但是 origin 这个名字一看就知道是远程库
 下一步，就可以把本地库的所有内容推送到远程库上
