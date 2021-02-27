@@ -257,16 +257,20 @@ exec "$JAVACMD" "$@"
 {: id="20210227175831-bk9xlr9" updated="20210227175842"}
 
 ```
+// 定义一些插件
 plugins {
 	id 'java'
 }
 
 group = 'cc.squirtle'
 version = '0.0.1-SNAPSHOT'
+//jdk版本声明
 sourceCompatibility = '14'
 
 //配置国内源和自己需要的其他源
+// 使用的仓库优先级
 repositories {
+　　	//mavenCentral()
 	//minecraftapi源
         maven {
         url "https://hub.spigotmc.org/nexus/content/repositories/snapshots"
@@ -289,7 +293,7 @@ dependencies {
 }
 
 ```
-{: id="20210227175843-75f3lop" updated="20210227180018"}
+{: id="20210227175843-75f3lop" updated="20210227180457"}
 
 
 {: id="20210227175851-k3l6885" updated="20210227175816"}
