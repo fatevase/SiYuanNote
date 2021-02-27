@@ -49,5 +49,28 @@ fun main() {
 ```
 {: id="20210227144302-1lwhm5o" updated="20210227144318"}
 
+{: id="20210227161121-s584jvp"}
+
+{: id="20210227161122-102zqs9"}
+
+vscode 配置 gradle
+{: id="20210227161122-j9ddymh" updated="20210227161130"}
+
+首先下载gradle
+{: id="20210227161130-j7bymij" updated="20210227161135"}
+
+https://gradle.org/releases/
+{: id="20210227161136-ea8qm3l" updated="20210227161248"}
+
+配置环境变量使用
+{: id="20210227161324-brjrrdc"}
+
+```
+export PATH=$PATH:/opt/gradle/gradle-6.8.3/bin
+```
+{: id="20210227161315-oicc4ud" updated="20210227161324"}
+
+{: id="20210227161357-goplh16"}
+
 
 {: id="20210227143834-hlch7fc" type="doc"}
