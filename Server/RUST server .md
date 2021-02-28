@@ -53,7 +53,21 @@ wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm
 
 {: id="20210228211720-wslbkg6"}
 
-{: id="20210228211721-f69etvi"}
+{: id="20210228212654-48lfibn"}
+
+{: id="20210228212654-429s4gq"}
+
+docker 一键安装
+{: id="20210228211721-f69etvi" updated="20210228212702"}
+
+```bash
+docker pull gameservermanagers/linuxgsm-docker
+
+
+$ mkdir -p ~/lgsm && sudo chown -R 750:750 ~/lgsm
+$ docker run -d --name lgsm-docker -p <server-ports>:<server-ports>  --restart always --net=host --hostname LGSM -it -v "~/software/lgsm:/home/lgsm/" gameservermanagers/linuxgsm-docker
+```
+{: id="20210228212702-6ef967t" updated="20210228213025"}
 
 
 {: id="20210228210707-lzb5b0v" type="doc"}
