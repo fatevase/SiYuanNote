@@ -80,8 +80,8 @@ vscode 在使用gradle 首先确保安装对应插件
 **Gradle Extension Pack**
 {: id="20210227175424-3gc942c" updated="20210227175425"}
 
-![gradleplugins.png](assets/20210227175518-9tc2gop-gradle-plugins.png)
-{: id="20210227175427-b5d1zy3" updated="20210227175518"}
+![gradleplugins.png](assets/gradle-plugins.png)
+{: id="20210227175427-b5d1zy3" updated="20210228130851"}
 
 之后在工作空间添加相关的设置,让其识别到.gradlew 和build.gradle
 {: id="20210227175520-jhj3n5b" updated="20210227175603"}
@@ -332,8 +332,8 @@ dependencies {
 重启vscode等插件识别项目后自动安装.gradle相关内容
 {: id="20210227175743-bzhxrur" updated="20210227175851"}
 
-![image.png](assets/20210227181150-mjtcbw1-image.png)
-{: id="20210227175816-a5awgb6" updated="20210227181150"}
+![image.png](assets/gradle-files-tree.png)
+{: id="20210227175816-a5awgb6" updated="20210228131019"}
 
 * {: id="20210228130651-btknh7a"}我们在build.gradle进行包依赖等管理
   {: id="20210228130651-96mv01d" updated="20210228130653"}
@@ -350,8 +350,14 @@ dependencies {
 最终目录格式,其中通过`build`打包的jar包存放在 build/lib中
 {: id="20210227181159-rkxeebo" updated="20210228130617"}
 
+
+{: id="20210228130744-d0qyfp7" updated="20210228124950"}
+
+### Kotlin使用gradle
+{: id="20210228130744-du0gt82" updated="20210228130756"}
+
 以下针对kotlin 用gradle进行打包jar
-{: id="20210227181221-ui91blz" updated="20210228124950"}
+{: id="20210227181221-ui91blz" updated="20210228130744"}
 
 ```
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
