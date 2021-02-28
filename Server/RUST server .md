@@ -15,8 +15,8 @@ apt install curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux c
 
 {: id="20210228211048-48mf53q"}
 
-利用linux-gsm安装依赖
-{: id="20210228211050-s7otc79" updated="20210228211635"}
+如果已经安装了对应的gsm启动文件,可以利用linux-gsm安装依赖
+{: id="20210228211050-s7otc79" updated="20210228211657"}
 
 ```bash
 ./rustserver install
@@ -36,9 +36,24 @@ steamcmd只允许运行在非root权限下的用户中,所以需要新建用户
 adduser steam
 su - steam
 
-wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh rustserver
 ```
-{: id="20210228211437-le55egp" updated="20210228211514"}
+{: id="20210228211437-le55egp" updated="20210228211706"}
+
+{: id="20210228211707-zeajbsd"}
+
+下载并启动
+{: id="20210228211707-jichjzu" updated="20210228211734"}
+
+```bash
+mkdir /home/steam/rust && cd /home/steam/rust/
+wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh rustserver
+./rustserver install
+```
+{: id="20210228211715-xajwlt8" updated="20210228212555"}
+
+{: id="20210228211720-wslbkg6"}
+
+{: id="20210228211721-f69etvi"}
 
 
 {: id="20210228210707-lzb5b0v" type="doc"}
