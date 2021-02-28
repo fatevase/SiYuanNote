@@ -9,9 +9,9 @@
 ```
 dpkg --add-architecture i386
 apt update
-apt install curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux netcat lib32gcc1 lib32stdc++6 steamcmd lib32z1
+apt install curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux netcat lib32gcc1 lib32stdc++6 steamcmd lib32z1 python3 cpio libsdl2-2.0-0:i386
 ```
-{: id="20210228210714-mg8h2ig" updated="20210228210826"}
+{: id="20210228210714-mg8h2ig" updated="20210228213922"}
 
 {: id="20210228211048-48mf53q"}
 
