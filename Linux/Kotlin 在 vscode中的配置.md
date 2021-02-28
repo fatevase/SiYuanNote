@@ -295,7 +295,6 @@ dependencies {
 ```
 {: id="20210227175843-75f3lop" updated="20210227180457"}
 
-
 {: id="20210227175851-k3l6885" updated="20210227175816"}
 
 重启vscode等插件识别项目后自动安装.gradle相关内容
@@ -307,7 +306,49 @@ dependencies {
 最终目录格式,其中通过`build`打包的jar包存放在 build/lib中
 {: id="20210227181159-rkxeebo" updated="20210227181249"}
 
-{: id="20210227181221-ui91blz"}
+{: id="20210228124923-lu2c1kc"}
+
+{: id="20210228124923-zbye6h5"}
+
+以下针对kotlin 用gradle进行打包jar
+{: id="20210227181221-ui91blz" updated="20210228124950"}
+
+```
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+plugins {
+
+	kotlin("jvm") version "1.4.30"
+}
+
+
+group = "cc.squirtle"
+version = "0.1"
+java.sourceCompatibility = JavaVersion.VERSION_14
+
+repositories {
+		maven{url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")}
+		maven{url = uri("https://maven.aliyun.com/repository/google")}
+		maven{url = uri("https://maven.aliyun.com/repository/public")}
+		maven{url = uri("https://maven.aliyun.com/repository/jcenter")}
+}
+
+dependencies {
+	compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+}
+
+tasks.withType<KotlinCompile> {
+	kotlinOptions {
+		freeCompilerArgs = listOf("-Xjsr305=strict")
+		jvmTarget = "14"
+	}
+}
+
+
+```
+{: id="20210228124950-w7plfgk" updated="20210228125027"}
 
 
 {: id="20210227143834-hlch7fc" type="doc"}
