@@ -1,29 +1,44 @@
-https://www.jianshu.com/p/90158cdc6d18
-{: id="20210227143834-xewept6" updated="20210227143835"}
+# Kotlin
+{: id="20210228130037-bwivh9g" updated="20210228130044"}
 
-{: id="20210227143835-vwk3f9t" updated="20210227143835"}
+#### 简介
+{: id="20210228130200-41nmdfe" updated="20210228130206"}
 
-为了使用kotlin,首先我们需要安装对应的环境
-{: id="20210227143835-07y2bff" updated="20210227143857"}
+目前Kotlin语法与swift十分相似,打算开发ios相关软件,在学习kotlin同时也为之后的mac.ios上的相关开发作准备
+{: id="20210228130037-8h8gcy7" updated="20210228130200"}
 
-https://github.com/JetBrains/kotlin
-{: id="20210227143858-n20m09g" updated="20210227143942"}
+{: id="20210228130251-97lx2ex" updated="20210227143835"}
 
-{: id="20210227143943-nkmo97x" updated="20210227143942"}
+## kotlin in vscode
+{: id="20210228130252-9bh7b7b" updated="20210228130320"}
+
+### kotlin环境安装
+{: id="20210228130349-4gwk268" updated="20210228130355"}
+
+本人还是喜欢使用vscode,为了使用kotlin,首先我们需要安装对应的环境
+{: id="20210227143835-vwk3f9t" updated="20210228130349"}
+
+> https://github.com/JetBrains/kotlin
+> {: id="20210228130341-g06y1r1"}
+{: id="20210227143858-n20m09g" updated="20210228130341"}
 
 下载放到本地文件夹下如`~`
 {: id="20210227143943-o7zoryk" updated="20210227144019"}
 
+
+{: id="20210228130357-7iqpacg" updated="20210227144657"}
+
+### vscode 相关配置
+{: id="20210228130344-zgw1yzc" updated="20210228130410"}
+
 对于vscode我们需要的插件有
-{: id="20210227144020-qj86c9x" updated="20210227144657"}
+{: id="20210227144020-qj86c9x" updated="20210228130344"}
 
 * {: id="20210227144109-szzeyif"}kotlin language(mathiasfrohlich) 语言支持
   {: id="20210227144109-lnxkqo5" updated="20210227144207"}
 * {: id="20210227144135-w5jqq5m"}code runner(jun han) 代码运行
   {: id="20210227144135-uvkhacy" updated="20210227144211"}
 {: id="20210227144037-egjq344" updated="20210227144040"}
-
-{: id="20210227144212-15dh563"}
 
 配置对应的sttings让code runner可以找到我们本地的kotlinc
 {: id="20210227143857-33bxtos" updated="20210227144241"}
@@ -36,8 +51,6 @@ https://github.com/JetBrains/kotlin
 ```
 {: id="20210227144248-k05h7rb" updated="20210227144248"}
 
-{: id="20210227144257-837v1n3"}
-
 测试
 {: id="20210227144258-pz4cta2" updated="20210227144302"}
 
@@ -49,12 +62,17 @@ fun main() {
 ```
 {: id="20210227144302-1lwhm5o" updated="20210227144318"}
 
-{: id="20210227161121-s584jvp"}
 
-{: id="20210227161122-102zqs9"}
+{: id="20210228130417-4l94r6y" updated="20210227161130"}
+
+
+{: id="20210228130418-juje07t" updated="20210228130417"}
+
+### gradle包管理配置与使用
+{: id="20210228130418-5ck6vho" updated="20210228130437"}
 
 vscode 配置 gradle
-{: id="20210227161122-j9ddymh" updated="20210227161130"}
+{: id="20210227161122-j9ddymh" updated="20210228130418"}
 
 vscode 在使用gradle 首先确保安装对应插件
 {: id="20210227161130-j7bymij" updated="20210227175405"}
@@ -74,8 +92,14 @@ vscode 在使用gradle 首先确保安装对应插件
 ```
 {: id="20210227175604-1b1ryam" updated="20210227175615"}
 
-之后在项目文件夹下新建`gradlew`
-{: id="20210227175545-juaob3h" updated="20210227175657"}
+
+{: id="20210228130443-9of0b5i" updated="20210227175657"}
+
+#### 为了简便,我们并不安装gradle环境,而是使用gradlew进行项目的安装管理,
+{: id="20210228130442-8ujebst" updated="20210228130509"}
+
+项目文件夹下新建`gradlew`
+{: id="20210227175545-juaob3h" updated="20210228130514"}
 
 ```
 #!/usr/bin/env sh
@@ -249,12 +273,22 @@ eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$A
 exec "$JAVACMD" "$@"
 
 ```
-{: id="20210227175657-2hflu30" updated="20210227175720"}
+{: id="20210227175657-2hflu30" updated="20210228130525"}
 
-{: id="20210227175741-ehn0tsy"}
 
-再新建`build.gradle`
-{: id="20210227175831-bk9xlr9" updated="20210227175842"}
+{: id="20210228130547-vy08yf3" updated="20210228130547"}
+
+此时该项目已经支持gradle了
+{: id="20210228130520-l5m84mw" updated="20210228130547"}
+
+
+{: id="20210228130548-4cvp2z9" updated="20210228130520"}
+
+#### 创建build文件
+{: id="20210228130548-87b1zm3" updated="20210228130602"}
+
+新建`build.gradle`
+{: id="20210227175831-bk9xlr9" updated="20210228130605"}
 
 ```
 // 定义一些插件
@@ -295,20 +329,26 @@ dependencies {
 ```
 {: id="20210227175843-75f3lop" updated="20210227180457"}
 
-{: id="20210227175851-k3l6885" updated="20210227175816"}
-
 重启vscode等插件识别项目后自动安装.gradle相关内容
 {: id="20210227175743-bzhxrur" updated="20210227175851"}
 
 ![image.png](assets/20210227181150-mjtcbw1-image.png)
 {: id="20210227175816-a5awgb6" updated="20210227181150"}
 
+* {: id="20210228130651-btknh7a"}我们在build.gradle进行包依赖等管理
+  {: id="20210228130651-96mv01d" updated="20210228130653"}
+* {: id="20210228130654-7sbw6kl"}使用gradlew对项目进行打包
+  {: id="20210228130654-x361noj" updated="20210228130654"}
+* {: id="20210228130658-1mm8kld"}.gradle 为gradlew生成文件
+  {: id="20210228130658-w8gfsnc" updated="20210228130713"}
+* {: id="20210228130714-bhl4uff"}settings.gradle可以对项目进行一些基本配置
+  {: id="20210228130714-sl2a2sh" updated="20210228130727"}
+* {: id="20210228130730-mnwfs9v"}build 为打包编译文件
+  {: id="20210228130730-7czcxpz" updated="20210228130739"}
+{: id="20210228130617-j51ws65" updated="20210228130651"}
+
 最终目录格式,其中通过`build`打包的jar包存放在 build/lib中
-{: id="20210227181159-rkxeebo" updated="20210227181249"}
-
-{: id="20210228124923-lu2c1kc"}
-
-{: id="20210228124923-zbye6h5"}
+{: id="20210227181159-rkxeebo" updated="20210228130617"}
 
 以下针对kotlin 用gradle进行打包jar
 {: id="20210227181221-ui91blz" updated="20210228124950"}
@@ -349,6 +389,22 @@ tasks.withType<KotlinCompile> {
 
 ```
 {: id="20210228124950-w7plfgk" updated="20210228125027"}
+
+{: id="20210228130236-l25lfzs"}
+
+## 相关参考
+{: id="20210228130158-9pqeu22" updated="20210228130224"}
+
+https://www.jianshu.com/p/90158cdc6d18
+{: id="20210227143834-xewept6" updated="20210228130037"}
+
+{: id="20210228130241-01o3g99"}
+
+{: id="20210228130239-8mvm366"}
+
+{: id="20210228130240-3k9vruc"}
+
+{: id="20210228130239-wuav5fr"}
 
 
 {: id="20210227143834-hlch7fc" type="doc"}
