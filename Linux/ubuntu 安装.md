@@ -121,7 +121,34 @@ sudo dpkg --remove softname
 ```
 {: id="20210110111200-cbn5w01"}
 
-{: id="20210122225943-81a5vci"}
+{: id="20210228135109-wxciyjz" updated="20210228135109"}
+
+### apt 下载加速
+{: id="20210122225943-81a5vci" updated="20210228135114"}
+
+配置`/etc/apt/apt.conf`
+{: id="20210228135139-5wfb036" updated="20210228135156"}
+
+```bash
+sudo nano /etc/apt/apt.conf
+```
+{: id="20210228135140-mevhlzj" updated="20210228135147"}
+
+配置对应你需要加速的节点
+{: id="20210228135153-fz8jc9t" updated="20210228135308"}
+
+```bash
+Acquire::http::Proxy "http://127.0.0.1:8889";
+Acquire::https::Proxy "http://127.0.0.1:8889";
+#Acquire::https::Proxy "socks5://127.0.0.1:1089"
+
+```
+{: id="20210228135153-2auw6h2" updated="20210228135313"}
+
+之后就可以愉快的进行apt install 了
+{: id="20210228135153-9oa84hc" updated="20210228135331"}
+
+{: id="20210228135329-il77alh" updated="20210228135329"}
 
 
 {: id="20210105194423-yg7b5jv" type="doc"}
