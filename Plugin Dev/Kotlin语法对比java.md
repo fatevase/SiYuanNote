@@ -433,7 +433,29 @@ fun FunctionName(p1: String?, p2:Int?){
 {: id="20210301214120-s9u42nh" updated="20210302181538"}
 
 更正:问题确实出在导出包的问题上,kotlin导出的jar包中需要包含kotlin运行的库文件,但是目前并不想让kotlin调用自身的库文件,而是完全的调用java的库文件,
-{: id="20210302181539-9a28r82" updated="20210302181704"}
+{: id="20210302181539-9a28r82" updated="20210302182407"}
+
+kotlin中定义的String等数据类型默认是Kotlin.String 等 这时候使用String.contains() 或者相关数据类型下的方法时,就会遇到冲突,因为并没有导入相关的kotlin包,故在使用kotlin类的时候会出现相关错误
+{: id="20210302182408-9rw50pk" updated="20210302182523"}
+
+解决方法1:在build.gradle.kts中添加
+{: id="20210302182642-jbxs9af" updated="20210302182706"}
+
+```
+tasks.withType<Jar> {
+    // Otherwise you'll get a "No main manifest attribute" error
+
+
+    // To add all of the dependencies
+    from(sourceSets.main.get().output)
+
+    dependsOn(configurations.runtimeClasspath)
+    from({
+        configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
+    })
+}
+```
+{: id="20210302182649-o0e6hbg" updated="20210302182649"}
 
 
 {: id="20210228192115-adk1min" type="doc"}
