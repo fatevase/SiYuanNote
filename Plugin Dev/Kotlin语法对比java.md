@@ -438,8 +438,8 @@ fun FunctionName(p1: String?, p2:Int?){
 kotlin中定义的String等数据类型默认是Kotlin.String 等 这时候使用String.contains() 或者相关数据类型下的方法时,就会遇到冲突,因为并没有导入相关的kotlin包,故在使用kotlin类的时候会出现相关错误
 {: id="20210302182408-9rw50pk" updated="20210302182523"}
 
-解决方法1:在build.gradle.kts中添加
-{: id="20210302182642-jbxs9af" updated="20210302182706"}
+解决方法1:在build.gradle.kts中添加打包(将依赖全部打包到jar中)
+{: id="20210302182642-jbxs9af" updated="20210302182727"}
 
 ```
 tasks.withType<Jar> {
@@ -456,6 +456,14 @@ tasks.withType<Jar> {
 }
 ```
 {: id="20210302182649-o0e6hbg" updated="20210302182649"}
+
+解决方法2:
+{: id="20210302182729-dq8c0y7" updated="20210302182736"}
+
+在使用对应String or Int类型等提前导入 java.lang.*
+{: id="20210302182736-jniupic" updated="20210302182800"}
+
+{: id="20210302182801-j5wa81i"}
 
 
 {: id="20210228192115-adk1min" type="doc"}
