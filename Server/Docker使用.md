@@ -35,8 +35,11 @@
 {: id="20210125121840-8kid908"}
 
 * {: id="20210125121817-fzhlyqk"}[docker 教程](https://www.bilibili.com/video/BV1og4y1q7M4?p=6):https://www.bilibili.com/video/BV1og4y1q7M4
+  {: id="20210304154546-qxieqho"}
 * {: id="20210125121817-cjhfsly"}[docker-document](https://docs.docker.com/):https://docs.docker.com/
+  {: id="20210304154546-ondidwt"}
 * {: id="20210125234031-8gmjvn2"}[docker 中文文档](http://www.dockerinfo.net):http://www.dockerinfo.net
+  {: id="20210304154546-ogmmgh6"}
 {: id="20210125121817-nfsboj9"}
 
 > 以下以 Ubuntu20.04LTS 进行安装操作,具体其他操作系统查看[官方文档](https://docs.docker.com/engine/install/):https://docs.docker.com/engine/install/
@@ -187,10 +190,15 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 {: id="20210125235210-8st6rp1"}
 
 * {: id="20210125235210-60vxxid"}来自于哪个仓库，比如 ubuntu
+  {: id="20210304154546-1lgxwxy"}
 * {: id="20210125235210-wf75h1a"}镜像的标记，比如 18.04
+  {: id="20210304154546-vg3us82"}
 * {: id="20210125235210-23p6c4d"}它的 `ID` 号（唯一）
+  {: id="20210304154546-voios9z"}
 * {: id="20210125235210-p3c197m"}创建时间
+  {: id="20210304154546-dmxjet2"}
 * {: id="20210125235210-jwkhund"}镜像大小
+  {: id="20210304154546-37ke5br"}
 {: id="20210125235210-o4i8lcw"}
 
 其中镜像的 `ID` 唯一标识了镜像，如果 ID 相同表示他为同一个镜像。
@@ -216,6 +224,7 @@ hello-world   latest    bf756fb1ae65   12 months ago   13.3kB
 {: id="20210131122545-zi0bgf5"}
 
 1. {: id="20210131122545-ytus0mi"}创建镜像前我们需要创建对于的 Dockerfile
+   {: id="20210304154546-1dcr6i4"}
 {: id="20210127120057-mylzg2c"}
 
 ```shell
@@ -228,6 +237,7 @@ $ touch Dockerfile
 {: id="20210131122545-l5r909q"}
 
 2. {: id="20210127122003-6b7qirz"}Dockerfile 中每一条指令都用于创建镜像每一层
+   {: id="20210304154546-vh70eqn"}
 {: id="20210127122000-lqgtlch"}
 
 ```shell
@@ -241,14 +251,19 @@ RUN gem install sinatra
 {: id="20210127115523-dttitbd"}
 
 * {: id="20210127115523-a1xy5ua"}使用 `#` 来注释
+  {: id="20210304154546-f08n9nn"}
 * {: id="20210127115523-8rxu1tp"}`FROM` 指令告诉 Docker 使用哪个镜像作为基础
+  {: id="20210304154546-gjoyzx5"}
 * {: id="20210127115523-kgj6xpr"}接着是维护者的信息
+  {: id="20210304154546-pzthcy3"}
 * {: id="20210127115523-0xtmlqs"}`RUN` 开头的指令会在创建中运行，比如安装一个软件包，在这里使用 apt-get 来安装了一些软件
+  {: id="20210304154546-w91soiz"}
 {: id="20210127115523-k1y0xht"}
 
 {: id="20210131122545-jeg0z8s"}
 
 3. {: id="20210127122032-g0n7dhv"}编写完成 Dockerfile 后可以使用 `docker build` 来生成镜像。
+   {: id="20210304154546-zijn55c"}
 {: id="20210127122031-77xu7jn"}
 
 ```shell
@@ -257,6 +272,7 @@ sudo docker build -t="ouruser/sinatra:v2" .1
 {: id="20210127122058-ry8fg2s"}
 
 * {: id="20210127122139-ua6bbj8"}其中 `-t` 标记来添加 tag，指定新的镜像的用户信息。 “.” 是 Dockerfile 所在的路径（当前目录），也可以替换为一个具体的 Dockerfile 的路径。
+  {: id="20210304154546-g21hgtw"}
 {: id="20210127122127-y6klwro"}
 
 {: id="20210131122545-vzj5j9x"}
@@ -276,10 +292,16 @@ sudo docker build -t="ouruser/sinatra:v2" .1
 > {: id="20210126000308-g315it6"}
 >
 > * {: id="20210126000527-wz1w4y2"}--name="Name" 设定容器名称
+>   {: id="20210304154546-g6j9zgd"}
 > * {: id="20210126000531-11ga3gc"}-d 后台方式运行
+>   {: id="20210304154546-kdzzl35"}
 > * {: id="20210126000534-u7q54fe"}-it 使用交互方式运行,进入容器查看
+>   {: id="20210304154546-meig0nk"}
 > * {: id="20210126000539-nj469xu"}-p 指定容器端口 -p 主机端口:容器端口
+>   {: id="20210304154546-z2nkm2d"}
+>
 >   * {: id="20210126000559-zge16ax"}不填写默认随即端口
+>     {: id="20210304154546-igkh2kd"}
 >   {: id="20210126000559-z93n3dn"}
 > {: id="20210126000315-fzeoi3l"}
 {: id="20210126000307-1ryoxwp"}
@@ -314,8 +336,11 @@ bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  s
 > {: id="20210126001622-oo89qj6"}
 >
 > * {: id="20210126001640-c458mjh"}-a 列出历史运行过的容器
+>   {: id="20210304154546-5ztccfc"}
 > * {: id="20210126001655-mqyqn9b"}-n=? 列出最近运行的?个容器
+>   {: id="20210304154546-duvsxb5"}
 > * {: id="20210126001804-tncp7b2"}-aq 列出运行容器的 ID
+>   {: id="20210304154546-c08wewy"}
 > {: id="20210126001638-q5kugss"}
 {: id="20210126001621-6f19sxa"}
 
@@ -372,6 +397,12 @@ root@9e2144e7d6e5:/#
 > {: id="20210131124001-3i0vuth"}
 {: id="20210131122545-s4ggqol"}
 
+{: id="20210304213405-nw7vj13"}
+
+{: id="20210304213403-msec6p0"}
+
+{: id="20210304213403-ncki8tt"}
+
 {: id="20210131124003-b0f59te"}
 
 2.nsenter 命令
@@ -403,7 +434,13 @@ root@243c32535da7:/#
 
 {: id="20210131124349-lohi2ym"}
 
-{: id="20210131124004-hotj62q"}
+##### 以root身份进入容器
+{: id="20210131124004-hotj62q" updated="20210304213434"}
+
+```bash
+sudo docker exec -u root -it <容器名或ID> bash
+```
+{: id="20210304213435-jdzq42f" updated="20210304213501"}
 
 #### 删除容器
 {: id="20210126001755-4ye7sy9"}
