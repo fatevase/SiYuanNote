@@ -456,8 +456,29 @@ sudo docker exec -u root -it <容器名或ID> bash
 
 {: id="20210131122545-17zaz0m"}
 
+### docker 导入导出
+{: id="20210304213757-gr5pxyf" updated="20210304213817"}
+
+#### 导出容器:
+{: id="20210304213812-8ukk02s" updated="20210304213922"}
+
+`sudo docker export 容器名 > /path/to/file.tar`
+{: id="20210304213826-mvher0b" updated="20210304213907"}
+
+#### 导入容器:
+{: id="20210304213910-j1r8nbj" updated="20210304213926"}
+
+```bash
+docker import  /CONTAINER.tar name/anothername
+```
+{: id="20210304213915-x4wkwro" updated="20210304214153"}
+
+{: id="20210304213910-x1xr29m"}
+
+{: id="20210304213802-3cm16zl"}
+
 ### 常用其他命令
-{: id="20210126002813-0y9de6y"}
+{: id="20210126002813-0y9de6y" updated="20210304213800"}
 
 #### 后台启动容器
 {: id="20210126002819-hwa8llf"}
