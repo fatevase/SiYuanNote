@@ -514,7 +514,17 @@ docker import  /CONTAINER.tar name/anothername
 `docker inspect 容器ID`: 查看容器的所有信息
 {: id="20210126003609-qfu7548"}
 
-{: id="20210131122545-48gsrz2"}
+{: id="20210306120034-331afqy"}
+
+#### docker 以root账号登陆
+{: id="20210131122545-48gsrz2" updated="20210306120049"}
+
+```bash
+docker exec -ti -u root 容器ID bash
+```
+{: id="20210306120049-1q08hgb" updated="20210306120107"}
+
+{: id="20210306120110-f41lv03"}
 
 
 {: id="20210125115524-zotzeow" type="doc"}
