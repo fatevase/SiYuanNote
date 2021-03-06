@@ -148,7 +148,30 @@ Acquire::https::Proxy "http://127.0.0.1:8889";
 之后就可以愉快的进行apt install 了
 {: id="20210228135153-9oa84hc" updated="20210228135331"}
 
-{: id="20210228135329-il77alh" updated="20210228135329"}
+{: id="20210306143736-ploxosw" updated="20210228135329"}
+
+### 软件单独配置代理
+{: id="20210228135329-il77alh" updated="20210306143745"}
+
+有的软件是不会使用全局代理的 需要使用proxychains进行代理运行
+{: id="20210306143745-erqudai" updated="20210306143810"}
+
+```bash
+sudo apt install proxychains
+
+sudo nano /etc/proxychains.confg
+
+# in the last line place your proxy information like this:
+
+#socks4         127.0.0.1 9050
+socks5          127.0.0.1 1080
+
+
+# run software on proxy
+
+proxychains steam
+```
+{: id="20210306143811-rxzwnoy" updated="20210306143937"}
 
 
 {: id="20210105194423-yg7b5jv" type="doc"}
