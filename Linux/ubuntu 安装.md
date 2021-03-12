@@ -159,7 +159,8 @@ Acquire::https::Proxy "http://127.0.0.1:8889";
 ```bash
 sudo apt install proxychains
 
-sudo nano /etc/proxychains.confg
+sudo nano /etc/proxychains.conf
+
 
 # in the last line place your proxy information like this:
 
@@ -171,7 +172,7 @@ socks5          127.0.0.1 1080
 
 proxychains steam
 ```
-{: id="20210306143811-rxzwnoy" updated="20210306143937"}
+{: id="20210306143811-rxzwnoy" updated="20210312162520"}
 
 
 {: id="20210105194423-yg7b5jv" type="doc"}
