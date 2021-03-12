@@ -30,8 +30,25 @@
   {: id="20210310134117-j5y319y" updated="20210310134611"}
 {: id="20210310131552-pw4j6qc" updated="20210310134118"}
 
+
+{: id="20210312133454-xm57jci" updated="20210312132402"}
+
+attention layer:
+{: id="20210312133454-7wwi12l" updated="20210312133502"}
+
+![selfattentionlayer.png](assets/attention-layer.png)
+{: id="20210312133503-si9fb8y" updated="20210312133520"}
+
+{: id="20210312133502-h9wz1kf" updated="20210312133502"}
+
+
+{: id="20210312133454-9sy7s4q" updated="20210312133454"}
+
+
+{: id="20210312133455-oqcuwpf" updated="20210312133454"}
+
 self-attention
-{: id="20210310134940-7yeolzy" updated="20210312132402"}
+{: id="20210310134940-7yeolzy" updated="20210312133455"}
 
 {: id="20210312133243-4nh1h4t" updated="20210312132402"}
 
@@ -40,6 +57,13 @@ self-attention
 
 ![selfattentionlayer.png](assets/self-attention-layer.png)
 {: id="20210312132402-l3mfvne" updated="20210312132838"}
+
+{: id="20210312133750-qvk27nr" updated="20210312133748"}
+
+![selfattentionlayer.png](assets/self-attention-layer-3.png)
+{: id="20210312133738-rhfkcro" updated="20210312133805"}
+
+{: id="20210312133742-kui257y"}
 
 
 {: id="20210308181939-xa4vtt3" type="doc"}
