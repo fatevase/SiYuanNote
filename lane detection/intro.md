@@ -30,20 +30,24 @@
   {: id="20210310134117-j5y319y" updated="20210310134611"}
 {: id="20210310131552-pw4j6qc" updated="20210310134118"}
 
-
 {: id="20210312133454-xm57jci" updated="20210312132402"}
 
 attention layer:
 {: id="20210312133454-7wwi12l" updated="20210312133502"}
+
+{: id="20210312184422-naqv76o" updated="20210312133502"}
+
+![selfattentionlayer.png](assets/attention-layer-2.png)
+{: id="20210312184422-km3vv3y" updated="20210312184426"}
+
+{: id="20210312184422-zqp8cyh" updated="20210312133502"}
 
 ![selfattentionlayer.png](assets/attention-layer.png)
 {: id="20210312133503-si9fb8y" updated="20210312133520"}
 
 {: id="20210312133502-h9wz1kf" updated="20210312133502"}
 
-
 {: id="20210312133454-9sy7s4q" updated="20210312133454"}
-
 
 {: id="20210312133455-oqcuwpf" updated="20210312133454"}
 
