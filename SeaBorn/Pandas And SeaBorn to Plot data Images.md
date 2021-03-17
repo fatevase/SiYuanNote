@@ -34,7 +34,7 @@ pd.read_csv(file_path,index_col="index_name")
 
 ```python
 plt.title("line title")
-sns.lineplot(data)
+sns.lineplot(data=data)
 ```
 {: id="20210317165012-c472014" updated="20210317165100"}
 
@@ -93,6 +93,7 @@ sns.barplot(y=data.index,x=data["solumn"])
 {: id="20210317171840-wpparfw" updated="20210317171845"}
 
 > data.iloc[[uint]] # 获取指定的行(通过数字)
+>
 > {: id="20210317171848-j01wchk" updated="20210317183903"}
 >
 > data.loc[[label_name]] # 获取指定的行(通过指定标签)
