@@ -59,7 +59,33 @@ sns.lineplot(data)
 > {: id="20210317170816-9xt3dbs" updated="20210317170825"}
 {: id="20210317170816-v6jt9dh" updated="20210317170834"}
 
-{: id="20210317171311-cdmg5o3"}
+排序
+{: id="20210317171311-cdmg5o3" updated="20210317171316"}
+
+> ```python
+> # 按指定的一列排序
+> lists.sort_values(by="Price",inplace=True,ascending=False)
+>
+> # 指定多列排序(注意：对Worthy列升序，再对Price列降序)，ascending不指定的话，默认是True升序
+> lists.sort_values(by=["Worthy","Price"],inplace=True,ascending=[True,False])
+> ```
+> {: id="20210317171318-78p0dwb" updated="20210317171348"}
+{: id="20210317171317-n1xv29d" updated="20210317171318"}
+
+{: id="20210317171839-csuxtle"}
+
+获取对于行
+{: id="20210317171840-wpparfw" updated="20210317171845"}
+
+> ign_data.iloc[[uint]] # 获取指定的行(通过数字)
+> {: id="20210317171848-j01wchk" updated="20210317171911"}
+>
+> ign_data.loc[[label_name]] # 获取指定的行(通过指定标签)
+> {: id="20210317171958-l0ggwel" updated="20210317172017"}
+{: id="20210317171846-4wzj0ms" updated="20210317171958"}
+
+ 
+{: id="20210317171856-85t6awn"}
 
 
 {: id="20210317164510-ifnkhu1" type="doc"}
