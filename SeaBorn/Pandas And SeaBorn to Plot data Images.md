@@ -44,10 +44,10 @@ sns.lineplot(data)
 {: id="20210317164548-zk9rauv" updated="20210317165108"}
 
 ```python
-plt.title("line title")
-sns.barplot(data)
+plt.title("bar title")
+sns.barplot(y=data.index,x=data["solumn"])
 ```
-{: id="20210317174720-v5tnm81" updated="20210317174728"}
+{: id="20210317174720-v5tnm81" updated="20210317175626"}
 
 {: id="20210317174721-qgncmnf"}
 
