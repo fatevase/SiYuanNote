@@ -33,10 +33,11 @@ pd.read_csv(file_path,index_col="index_name")
 {: id="20210317164532-d105iqr" updated="20210317164554"}
 
 ```python
+plt.xticks(rotation=90, fontsize=10)# 可以将x轴上的字旋转90度
 plt.title("line title")
 sns.lineplot(data=data)
 ```
-{: id="20210317165012-c472014" updated="20210317165100"}
+{: id="20210317165012-c472014" updated="20210317190741"}
 
 {: id="20210317165057-nyc0wdq"}
 
