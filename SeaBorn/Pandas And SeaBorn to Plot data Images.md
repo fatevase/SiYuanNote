@@ -92,11 +92,11 @@ sns.barplot(y=data.index,x=data["solumn"])
 获取对于行
 {: id="20210317171840-wpparfw" updated="20210317171845"}
 
-> ign_data.iloc[[uint]] # 获取指定的行(通过数字)
-> {: id="20210317171848-j01wchk" updated="20210317171911"}
+> data.iloc[[uint]] # 获取指定的行(通过数字)
+> {: id="20210317171848-j01wchk" updated="20210317183903"}
 >
-> ign_data.loc[[label_name]] # 获取指定的行(通过指定标签)
-> {: id="20210317171958-l0ggwel" updated="20210317172017"}
+> data.loc[[label_name]] # 获取指定的行(通过指定标签)
+> {: id="20210317171958-l0ggwel" updated="20210317183902"}
 {: id="20210317171846-4wzj0ms" updated="20210317171958"}
 
 {: id="20210317172721-31mur1m" updated="20210317172721"}
