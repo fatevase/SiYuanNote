@@ -43,7 +43,13 @@ sns.lineplot(data)
 ### ChartPlot
 {: id="20210317164548-zk9rauv" updated="20210317165108"}
 
-{: id="20210317165109-p974ujb"}
+```python
+plt.title("line title")
+sns.barplot(data)
+```
+{: id="20210317174720-v5tnm81" updated="20210317174728"}
+
+{: id="20210317174721-qgncmnf"}
 
 {: id="20210317170759-dpotq3c"}
 
