@@ -97,7 +97,26 @@ sns.barplot(y=data.index,x=data["solumn"])
 >
 > data.loc[[label_name]] # 获取指定的行(通过指定标签)
 > {: id="20210317171958-l0ggwel" updated="20210317183902"}
-{: id="20210317171846-4wzj0ms" updated="20210317171958"}
+>
+> data.loc[index] # 同上
+> {: id="20210317185144-vy98umv" updated="20210317185149"}
+{: id="20210317171846-4wzj0ms" updated="20210317185144"}
+
+{: id="20210317185141-iecdo59"}
+
+{: id="20210317184705-3936a9e" updated="20210317172721"}
+
+用pandas读取某一个特征（列）对应的某一行（i）行的数据
+{: id="20210317184703-q3pgmtz" updated="20210317184705"}
+
+> ```python
+> data.loc[i,'WT_Runcode']
+> data['WT_Runcode'][i ] # same things
+> ```
+> {: id="20210317184706-7c8nvwg" updated="20210317184725"}
+{: id="20210317184706-l3mj1gc" updated="20210317184706"}
+
+{: id="20210317184703-3xz0qb6" updated="20210317172721"}
 
 {: id="20210317172721-31mur1m" updated="20210317172721"}
 
@@ -114,7 +133,7 @@ sns.barplot(y=data.index,x=data["solumn"])
 {: id="20210317172658-m4dpxnx" updated="20210317173010"}
 
 > data.columns
-> {: id="20210317173011-2xytq5k" updated="20210317173016"}
+> {: id="20210317173011-2xytq5k" updated="20210317184416"}
 {: id="20210317173010-lpdi59p" updated="20210317173011"}
 
 {: id="20210317173434-lh9hijv"}
